@@ -9,11 +9,13 @@ const Homepage = () => {
     <>
       <Header />
       <main className="home">
-        <Section1 />
+        <div className="w-full h-full bg-[#171a1f]/50">
+          <Section1 />
 
-        <Section2 />
+          <Section2 />
 
-        <Section3 />
+          <Section3 />
+        </div>
       </main>
       <Footer />
     </>

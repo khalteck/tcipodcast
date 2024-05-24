@@ -4,6 +4,7 @@ export default {
   theme: {
     backgroundImage: {
       flare: "url('/images/flare2.png')",
+      flare2: "url('/images/flare.png')",
     },
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],
