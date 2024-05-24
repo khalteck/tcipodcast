@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* base styles */
+body {
+  background: #171a1f;
+  @apply text-primary font-quicksand;
+}
+h1 {
+  @apply font-bold text-primary text-2xl md:text-3xl;
+}
+
+h2 {
+  @apply font-bold text-primary text-5xl lg:text-6xl;
+}
+
+h3 {
+  @apply font-bold text-primary text-3xl md:text-4xl;
+}
+
+section {
+  @apply w-full max-w-[1550px] mx-auto px-5 md:px-8 lg:px-14;
+}
+header {
+  @apply w-full max-w-[1550px] pt-5 md:pt-8 px-5 md:px-8 lg:px-14 mx-auto;
+}
+
+header > div {
+  @apply w-full border-b border-neutral-100/10 pb-5;
+}
+
+.logo-cont {
+  @apply flex gap-3 items-center;
+}
+
+.center-flex {
+  @apply flex justify-center items-center;
+}
+
+.nav-link {
+  @apply hover:opacity-100 hover:text-secondary opacity-90;
+}
+
+.nav-link-mobile {
+  @apply hover:text-secondary;
+}
+/* button styles */
+button {
+  @apply flex gap-2 items-center uppercase border rounded-md transition-all duration-300;
+}
+button:hover {
+  @apply border-secondary;
+}
+.btn-primary {
+  @apply text-sm px-5 py-2 border-primary/30;
+}
+
+.btn-secondary {
+  @apply text-sm px-8 py-3 flex items-center border-primary/50;
+}
+
+/* random styles */
+
+/* .grid-container {
+  @apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5;
+}
+
+.card {
+  @apply w-full h-[350px] border-[15px] border-[#1f1e20] rounded-lg;
+}
+
+.card-overlay {
+  @apply w-full h-full absolute top-0 left-0 bg-gradient-to-t from-[#1f1e20] via-transparent to-transparent;
+}
+
+.card-popup-overlay {
+  @apply w-full h-[100px] bg-gradient-to-b from-[#1f1e20]/90 via-[#1f1e20]/50 to-transparent absolute top-0 left-0;
+} */
+
+.loader-message-card {
+  @apply w-full text-[.95rem] md:text-[1.2rem] p-[25px] md:py-[20px] rounded-lg flex flex-col gap-4 justify-center items-center;
+}
+
+/* custom animations */
+@layer utilities {
+  .quickview {
+    animation: quickview 0.6s ease;
+  }
+  @keyframes quickview {
+    0% {
+      transform: translateY(-50px);
+      -webkit-transform: translateY(-50px); /* Safari and Chrome */
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      -webkit-transform: translateY(0px); /* Safari and Chrome */
+      opacity: 1;
+    }
+  }
+
+  .expand {
+    animation: expand 0.6s ease-in-out;
+  }
+
+  @keyframes expand {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .blurry {
+    backdrop-filter: blur(14px);
+  }
+}
