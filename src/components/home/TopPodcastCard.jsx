@@ -3,8 +3,8 @@ import { FaMicrophoneAlt } from "react-icons/fa";
 const TopPodcastCard = ({ item, index }) => {
   return (
     <div
-      className={`p-6 border-primary/20 border rounded-xl ${
-        index === 1 && "border-[#ea580c]"
+      className={`p-6 border rounded-xl cursor-pointer hover:bg-secondary/50 hover:rotate-6 bg-primary/10 transition-all duration-500 ${
+        index % 2 === 0 ? "border-[#ea580c]/70" : "border-primary/40"
       }`}
     >
       <div className="flex gap-3">

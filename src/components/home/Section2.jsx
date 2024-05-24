@@ -7,7 +7,7 @@ const Section2 = () => {
       <div className="w-full md:w-[45%]">
         <div className="w-full sm:w-[350px] relative px-5">
           <div className="w-full sm:w-[350px] p-7 rounded-2xl bg-[#414144]/80 flex flex-col gap-2 absolute top-0 left-0 z-20">
-            <p className="font-bold text-xl">120 million +</p>
+            <p className="font-bold text-xl blink text-white">120 million +</p>
             <small>World-wide podcast listeners 2024</small>
           </div>
           <div className="w-full h-[100px] p-7 rounded-2xl bg-[#2c2a2f] flex flex-col gap-2 translate-y-[40px] z-10"></div>

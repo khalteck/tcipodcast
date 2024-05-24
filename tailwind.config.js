@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    backgroundImage: {
+      flare: "url('/images/flare2.png')",
+    },
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],
     },
