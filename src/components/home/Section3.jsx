@@ -3,7 +3,7 @@ import topPodcastData from "../../data/topPodcasts.json";
 
 const Section3 = () => {
   return (
-    <section className="py-[120px] bg-flare2 bg-no-repeat bg-[length:250px_auto] md:bg-[length:500px_auto] bg-left-top md:bg-left-bottom">
+    <section className="py-[120px] bg-no-repeat bg-[length:250px_auto] md:bg-[length:500px_auto] bg-left-top md:bg-left-bottom">
       <h3 className="text-center">Top Episodes For You</h3>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-10">
@@ -12,7 +12,9 @@ const Section3 = () => {
         })}
       </div>
       <div className="center-flex mt-14 md:mt-[100px]">
-        <button className="btn-custom">View all</button>
+        <button className="btn-secondary w-full md:w-1/3 center-flex">
+          View all
+        </button>
       </div>
     </section>
   );
