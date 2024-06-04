@@ -13,11 +13,24 @@ const AppContextProvider = ({ children }) => {
 
   const [loader, setLoader] = useState(false);
 
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
   return (
     <AppContext.Provider
       value={{
         currentPage,
         loader,
+        navigate,
+        scrollToTop,
+        setIsScrolled,
+        isScrolled,
       }}
     >
       {children}

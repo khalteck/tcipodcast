@@ -4,48 +4,93 @@ import { FaItunes } from "react-icons/fa";
 
 const Section2 = () => {
   return (
-    <section className="w-full flex md:flex-row flex-col gap-10 justify-between mt-10 md:mt-0">
-      <div className="w-full md:w-[45%]">
-        <div className="w-full sm:w-[350px] relative px-5">
-          <div className="w-full sm:w-[350px] p-7 rounded-2xl bg-[#663881] flex flex-col gap-2 absolute top-0 left-0 z-20">
-            <p className="font-bold text-xl blink text-white">120 million +</p>
-            <small className="text-white/70">
-              World-wide podcast listeners 2024
-            </small>
-          </div>
-          <div className="w-full h-[100px] p-7 rounded-2xl bg-[#2c2a2f]/70 flex flex-col gap-2 translate-y-[40px] z-10"></div>
-        </div>
-      </div>
-      <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-between gap-10 mt-14 md:mt-0">
-        <div className="w-full md:w-1/2 border border-primary/50 p-3 rounded-md hover:bg-secondary/70 hover:rotate-6 bg-[#663881]/10 transition-all duration-500">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-full center-flex">
-              <FaSpotify size={"20px"} color="#ffc65b" />
+    <div className="w-full bg-[#0c0c1d] md:h-[300px] relative">
+      <div className="w-full md:h-full top-0 left-0 md:absolute">
+        <section>
+          {/* hosts */}
+          <div className="w-full py-5 md:py-10 flex items-center">
+            <div className="w-14 h-14 p-1 bg-primary1 rounded-full flex center-flex relative -left-0">
+              <img
+                alt=""
+                src="/images/host.jpg"
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
-            <div>
-              <p className="font-bold text-md lg:text-lg">Listen on Spotify</p>
-              <p className="opacity-80 text-sm lg:text-[1rem] underline cursor-pointer">
-                Listen Now
-              </p>
+            <div className="w-14 h-14 p-1 bg-primary1 rounded-full flex center-flex relative -left-[15px]">
+              <img
+                alt=""
+                src="/images/hero1.jpg"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <div className="w-14 h-14 p-1 bg-primary1 rounded-full flex center-flex relative -left-[30px]">
+              <img
+                alt=""
+                src="/images/host.jpg"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <div className="w-14 h-14 p-1 bg-primary1 rounded-full flex center-flex relative -left-[45px]">
+              <img
+                alt=""
+                src="/images/hero1.jpg"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <div className="text-white underline cursor-pointer md:ml-10">
+              Contact our hosts
             </div>
           </div>
-        </div>
 
-        <div className="w-full md:w-1/2 border border-primary/50 p-3 rounded-md hover:bg-secondary/70 hover:rotate-6 bg-[#663881]/10 transition-all duration-500">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-full center-flex">
-              <FaItunes size={"20px"} color="#ffc65b" />
+          {/* streaming platforms */}
+          <div className="md:h-[150px] flex gap-3 md:gap-5 items-center text-white border-t md:border-none border-white/20">
+            <div className="flex items-center gap-3 md:pr-3">
+              <img
+                alt="icon"
+                src="/images/icons8-spotify.png"
+                className="w-8 md:w-12 h-auto"
+              />
+              <div>
+                <p className="font-medium md:font-bold text-sm md:text-md lg:text-lg">
+                  Spotify Podcast
+                </p>
+                <p className="opacity-80 text-[.75em] md:text-sm lg:text-[1rem] underline cursor-pointer">
+                  Listen Now
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold text-md lg:text-lg">Listen on Apple</p>
-              <p className="opacity-80 text-sm lg:text-[1rem] underline cursor-pointer">
-                Listen Now
-              </p>
+            <div className="w-[2px] h-[100px] bg-transparent md:bg-white rounded-full"></div>
+            <div className="flex items-center gap-3">
+              <img
+                alt="icon"
+                src="/images/icons8-podcast-96.png"
+                className="w-10 md:w-14 h-auto"
+              />
+              <div>
+                <p className="font-medium md:font-bold text-sm md:text-md lg:text-lg">
+                  Apple Podcast
+                </p>
+                <p className="opacity-80 text-[.75em] md:text-sm lg:text-[1rem] underline cursor-pointer">
+                  Listen Now
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="w-full flex md:flex-row flex-col md:gap-10 justify-between md:mt-0">
+        <div className="w-full md:w-1/2"></div>
+        <div className="w-full md:w-1/2 h-[200px] md:h-[300px] bg-hero bg-cover bg-no-repeat bg-center flex flex-col md:flex-row justify-between md:gap-10 md:mt-0 relative">
+          <div className="w-full h-full absolute top-0 left-0 bg-primary1/40 md:bg-primary1/30 center-flex">
+            <p className="text-[2.5rem] text-white text-center font-sevillana">
+              10,000+ <br />
+              Worldwide Listeners
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

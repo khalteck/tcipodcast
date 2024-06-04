@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa6";
 const TopPodcastCard = ({ item, index }) => {
   return (
     <div
-      className={`p-6 rounded-sm shadow-custom bg-[#e0c0f3]/30 border-[#663881]`}
+      className={`p-6 rounded-sm shadow-custom bg-[#e0c0f3]/30 border-primary1`}
     >
       <div className="flex gap-3">
         <div className="w-[80px] md:w-[80px] h-[80px] rounded-full center-flex bg-[#414144]/80">

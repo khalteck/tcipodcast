@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
 
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -16,23 +17,23 @@ h1 {
 }
 
 h2 {
-  @apply font-bold text-primary text-[2.5rem] lg:text-[4rem] leading-tight;
+  @apply font-bold text-primary text-[2rem] md:text-[2.25rem] lg:text-[3.5rem] leading-tight;
 }
 
 h3 {
-  @apply font-bold text-primary text-3xl md:text-4xl;
+  @apply font-bold text-primary text-3xl lg:text-4xl;
 }
 
 section {
   @apply w-full max-w-[1550px] mx-auto px-5 md:px-8 lg:px-14;
 }
-header {
-  @apply w-full max-w-[1550px] pt-5 md:pt-8 px-5 md:px-8 lg:px-14 mx-auto;
+/* header {
+  @apply w-full pt-5 md:pt-8 px-5 md:px-8 lg:px-14 mx-auto;
 }
 
 header > div {
   @apply w-full border-b border-neutral-100/10 pb-5;
-}
+} */
 
 .logo-cont {
   @apply flex gap-2 items-center;
@@ -47,7 +48,7 @@ header > div {
 }
 
 .nav-link-mobile {
-  @apply hover:text-secondary;
+  @apply hover:text-secondary border-b border-primary1/50;
 }
 /* button styles */
 button {
@@ -75,6 +76,10 @@ button {
 
 .loader-message-card {
   @apply w-full text-[.95rem] md:text-[1.2rem] p-[25px] md:py-[20px] rounded-lg flex flex-col gap-4 justify-center items-center;
+}
+
+.circle-decor {
+  @apply w-[280px] h-[280px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] md:mx-auto object-cover rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
 }
 
 /* custom animations */
@@ -121,7 +126,52 @@ button {
     }
   }
 
+  .rotate {
+    animation: rotate 10s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .blurry {
     backdrop-filter: blur(14px);
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: black;
+  }
+
+  .pagination a {
+    color: #333;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 7px 12px;
+    text-decoration: none;
+    border: 1px solid rgb(172, 168, 168);
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+
+  .pagination a:hover {
+    background-color: #f2f2f2;
+  }
+
+  .pagination .active a {
+    background-color: #ffc65b;
+    border: 1px solid rgb(172, 168, 168);
+  }
+
+  .pagination .break-me {
+    padding: 8px 12px;
   }
 }

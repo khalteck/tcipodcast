@@ -5,21 +5,31 @@ export default {
     backgroundImage: {
       flare: "url('/images/flare2.png')",
       flare2: "url('/images/flare.png')",
+      hero: "url('/images/pod3.jpg')",
     },
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],
       poppins: ["Poppins", "sans-serif"],
+      sevillana: ["Sevillana", "cursive"],
     },
     extend: {
       colors: {
-        // primary: "#e5e5e5",
         primary: "#2a354e",
+        primary1: "#481297",
+        primary2: "#01ffff",
         secondary: "#ffc65b",
       },
       boxShadow: {
         custom: "7px 7px rgba(42, 53, 78, 0.8)",
         clicked: "2px 2px rgba(42, 53, 78, 0.8)",
       },
+    },
+    screens: {
+      sm: "640px", // Small screens (e.g., smartphones)
+      md: "860px", // Medium screens (e.g., tablets)
+      lg: "1200px", // Large screens (e.g., laptops)
+      xl: "1480px", // Extra-large screens (e.g., desktops)
+      "2xl": "1536px", // 2x extra-large screens (e.g., large desktops)
     },
   },
   plugins: [],

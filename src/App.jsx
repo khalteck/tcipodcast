@@ -10,6 +10,7 @@ import { lazy, Suspense } from "react";
 
 // Code splitting - dynamic import of components
 const Homepage = lazy(() => import("./pages/home/Homepage"));
+const Episodes = lazy(() => import("./pages/episodes/Episodes"));
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       {/* Routes component to define application routes */}
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/episodes" element={<Episodes />} />
       </Routes>
     </Suspense>
   );
