@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/common/footer/Footer";
-import Header from "../../components/common/header/Header";
-import PodcastCard from "../../components/home/PodcastCard";
-import topPodcastData from "../../data/topPodcasts.json";
+import Footer from "../../../components/common/footer/Footer";
+import Header from "../../../components/common/header/Header";
+import PodcastCard from "../../../components/home/PodcastCard";
+import topPodcastData from "../../../data/topPodcasts.json";
 import ReactPaginate from "react-paginate";
-import { useAppContext } from "../../contexts/AppContext";
+import { useAppContext } from "../../../contexts/AppContext";
+import ScrollToTop from "../../../ScrollToTop";
 
 const Episodes = () => {
   const { scrollToTop } = useAppContext();
@@ -60,6 +61,8 @@ const Episodes = () => {
         </section>
       </main>
       <Footer />
+
+      <ScrollToTop />
     </>
   );
 };

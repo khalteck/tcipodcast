@@ -8,7 +8,7 @@ const Section3 = () => {
     <div className="relative">
       <section
         id="episodes"
-        className="pt-[50px] pb-[150px] md:pt-[120px] md:pb-[200px] lg:pb-[500px]"
+        className="pt-[50px] pb-[150px] md:pt-[120px] sm:pb-[200px] md:pb-[300px] lg:pb-[500px] xxl:pb-[700px]"
       >
         <h3 className="text-center">Top Episodes For You</h3>
 
@@ -29,7 +29,7 @@ const Section3 = () => {
 
       {/* sharp edge bottom */}
       <svg
-        className="w-full absolute bottom-[0px] left-0 z-0 hidden md:block"
+        className="w-full absolute bottom-[-0.5px] xxl:bottom-[-1px] left-0 z-0 hidden md:block"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >

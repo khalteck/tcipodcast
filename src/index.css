@@ -48,7 +48,7 @@ header > div {
 }
 
 .nav-link-mobile {
-  @apply hover:text-secondary border-b border-primary1/50;
+  @apply hover:text-secondary;
 }
 /* button styles */
 button {
@@ -84,18 +84,31 @@ button {
 
 /* custom animations */
 @layer utilities {
+  .bgslide {
+    animation: bgslide 0.6s ease-in-out;
+  }
+
+  @keyframes bgslide {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .quickview {
     animation: quickview 0.6s ease;
   }
   @keyframes quickview {
     0% {
-      transform: translateY(-50px);
-      -webkit-transform: translateY(-50px); /* Safari and Chrome */
+      transform: translateX(-100px);
+      -webkit-transform: translateX(-100px); /* Safari and Chrome */
       opacity: 0;
     }
     100% {
-      transform: translateY(0px);
-      -webkit-transform: translateY(0px); /* Safari and Chrome */
+      transform: translateX(0px);
+      -webkit-transform: translateX(0px); /* Safari and Chrome */
       opacity: 1;
     }
   }
@@ -140,7 +153,7 @@ button {
   }
 
   .blurry {
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(8px);
   }
 
   .pagination {

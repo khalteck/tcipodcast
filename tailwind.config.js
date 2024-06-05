@@ -17,7 +17,7 @@ export default {
         primary: "#2a354e",
         primary1: "#481297",
         primary2: "#01ffff",
-        secondary: "#ffc65b",
+        secondary: "#f9a815",
       },
       boxShadow: {
         custom: "7px 7px rgba(42, 53, 78, 0.8)",
@@ -29,7 +29,7 @@ export default {
       md: "860px", // Medium screens (e.g., tablets)
       lg: "1200px", // Large screens (e.g., laptops)
       xl: "1480px", // Extra-large screens (e.g., desktops)
-      "2xl": "1536px", // 2x extra-large screens (e.g., large desktops)
+      xxl: "2036px", // 2x extra-large screens (e.g., large desktops)
     },
   },
   plugins: [],

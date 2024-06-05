@@ -4,7 +4,10 @@ import { MdMessage } from "react-icons/md";
 const Section4 = () => {
   return (
     <>
-      <section className="w-full bg-primary2/10 md:bg-inherit py-[80px] md:py-0 flex flex-col md:flex-row gap-5 md:gap-0">
+      <section
+        id="contact"
+        className="w-full bg-primary2/10 md:bg-inherit py-[80px] md:pt-[100px] md:pb-0 flex flex-col md:flex-row gap-5 md:gap-0"
+      >
         <div className="w-full md:w-1/2">
           <img
             alt="hero"

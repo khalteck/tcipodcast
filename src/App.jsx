@@ -9,8 +9,8 @@ import Loader from "./components/common/Loader";
 import { lazy, Suspense } from "react";
 
 // Code splitting - dynamic import of components
-const Homepage = lazy(() => import("./pages/home/Homepage"));
-const Episodes = lazy(() => import("./pages/episodes/Episodes"));
+const Homepage = lazy(() => import("./pages/client/home/Homepage"));
+const Episodes = lazy(() => import("./pages/client/episodes/Episodes"));
 
 function App() {
   return (

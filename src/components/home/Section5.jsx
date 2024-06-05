@@ -1,6 +1,6 @@
 const Section5 = () => {
   return (
-    <section className="py-[80px] md:pb-[80px]">
+    <section id="community" className="py-[80px] md:pb-[80px]">
       <h3 className="text-center">Join The Community</h3>
       <p className="mt-5 mb-7 text-center">
         Join the Tcipod community and never miss out on new and exciting

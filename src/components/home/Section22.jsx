@@ -2,7 +2,7 @@ import { MdMessage } from "react-icons/md";
 
 const Section22 = () => {
   return (
-    <div className="w-full bg-primary1/90 pb-[100px] md:pb-[200px] lg:pb-[300px] relative">
+    <div className="w-full bg-primary1/90 pb-[100px] md:pb-[200px] lg:pb-[300px] xxl:pb-[100px] relative">
       <section className="w-full py-[80px] md:py-[100px] flex flex-col md:flex-row gap-10">
         <div className="w-full md:w-1/2">
           <img alt="hero" src="/images/hero1.jpg" className="w-full h-auto" />
@@ -25,7 +25,7 @@ const Section22 = () => {
 
       {/* sharp edge bottom */}
       <svg
-        className="w-full absolute bottom-[-1px] left-0 z-0 hidden md:block"
+        className="w-full absolute bottom-[-1px] left-0 z-0 hidden md:block xxl:hidden"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >

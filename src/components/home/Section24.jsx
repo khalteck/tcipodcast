@@ -7,7 +7,7 @@ import { useAppContext } from "../../contexts/AppContext";
 const Section24 = () => {
   const { navigate } = useAppContext();
   return (
-    <div className="w-full mt-[80px]">
+    <div id="about" className="w-full mt-[80px]">
       <section className="w-full pb-[80px] md:py-0 flex flex-col md:flex-row gap-10">
         <div className="w-full flex md:flex-row flex-col gap-4 md:w-1/2">
           <img

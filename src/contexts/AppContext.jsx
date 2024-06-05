@@ -22,6 +22,21 @@ const AppContextProvider = ({ children }) => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // to handle scroll to sections
+  function handleScrollTo(param) {
+    const element = document.getElementById(param);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.scrollY - 150;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    } else {
+      navigate(`/#${param}`);
+    }
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -31,6 +46,7 @@ const AppContextProvider = ({ children }) => {
         scrollToTop,
         setIsScrolled,
         isScrolled,
+        handleScrollTo,
       }}
     >
       {children}

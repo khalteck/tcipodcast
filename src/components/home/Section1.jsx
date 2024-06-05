@@ -45,12 +45,8 @@ const Section1 = () => {
             </button>
           </div>
 
-          <div className="w-full md:w-1/2 relative">
-            <img
-              alt="hero"
-              src="/images/podcast.jpg"
-              className="w-full h-auto"
-            />
+          <div className="w-full sm:w-[70%] mx-auto md:w-1/2 relative">
+            <img alt="hero" src="/images/hero1.png" className="w-full h-auto" />
           </div>
         </section>
       </div>

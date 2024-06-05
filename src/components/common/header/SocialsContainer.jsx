@@ -11,59 +11,120 @@ const SocialsContainer = () => {
   return (
     <>
       <div className="rounded-sm md:flex hidden gap-5 items-center">
-        <FaInstagram
-          color={`${isScrolled ? "black" : "white"}`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaTiktok
-          color={`${isScrolled ? "black" : "white"}`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaFacebookSquare
-          color={`${isScrolled ? "black" : "white"}`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaXTwitter
-          color={`${isScrolled ? "black" : "white"}`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaLinkedin
-          color={`${isScrolled ? "black" : "white"}`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
+        <a
+          href="https://www.instagram.com/tcipod?igsh=MnFoaHNncjlqZXgz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaInstagram
+            color={`${isScrolled ? "black" : "white"}`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaTiktok
+            color={`${isScrolled ? "black" : "white"}`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61555765794362"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaFacebookSquare
+            color={`${isScrolled ? "black" : "white"}`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://x.com/_tcipod?t=Gi3QvuM3-mZZszrOj31uxw&s=09"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaXTwitter
+            color={`${isScrolled ? "black" : "white"}`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/the-chronicles-of-an-immigrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaLinkedin
+            color={`${isScrolled ? "black" : "white"}`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
       </div>
 
       <div className="rounded-sm md:hidden flex gap-5 items-center">
-        <FaInstagram
-          color={`black`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaTiktok
-          color={`black`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaFacebookSquare
-          color={`black`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaXTwitter
-          color={`black`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
-        <FaLinkedin
-          color={`black`}
-          size={"25px"}
-          className="hover:scale-125 cursor-pointer transition-all duration-300"
-        />
+        <a
+          href="https://www.instagram.com/tcipod?igsh=MnFoaHNncjlqZXgz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaInstagram
+            color={`#f9a815`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaTiktok
+            color={`#f9a815`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61555765794362"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaFacebookSquare
+            color={`#f9a815`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://x.com/_tcipod?t=Gi3QvuM3-mZZszrOj31uxw&s=09"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaXTwitter
+            color={`#f9a815`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/the-chronicles-of-an-immigrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaLinkedin
+            color={`#f9a815`}
+            size={"25px"}
+            className="hover:scale-125 cursor-pointer transition-all duration-300"
+          />
+        </a>
       </div>
     </>
   );

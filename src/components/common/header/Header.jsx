@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../../../contexts/AppContext";
 
 const Header = () => {
-  const { isScrolled, setIsScrolled } = useAppContext();
+  const { isScrolled, setIsScrolled, navigate, handleScrollTo } =
+    useAppContext();
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -40,7 +41,10 @@ const Header = () => {
       } w-full h-[80px] flex items-center px-3 transition-all duration-500 z-[999]`}
     >
       <div className="w-full max-w-[1500px] md:px-7 mx-auto flex">
-        <div className="logo-cont flex items-center">
+        <div
+          onClick={() => navigate("/")}
+          className="logo-cont flex items-center cursor-pointer"
+        >
           <FaMicrophoneAlt
             color={isScrolled ? "#481297" : "white"}
             size={"40px"}
@@ -54,12 +58,27 @@ const Header = () => {
           <li className="nav-link cursor-pointer">
             <Link to={"/"}>Home</Link>
           </li>
-          <li className="nav-link cursor-pointer">About</li>
-          <li className="nav-link cursor-pointer">Community</li>
+          <li
+            onClick={() => handleScrollTo("about")}
+            className="nav-link cursor-pointer"
+          >
+            About
+          </li>
+          <li
+            onClick={() => handleScrollTo("community")}
+            className="nav-link cursor-pointer"
+          >
+            Community
+          </li>
           <li className="nav-link cursor-pointer">
             <Link to={"/episodes"}>Episodes</Link>
           </li>
-          <li className="nav-link cursor-pointer">Contact</li>
+          <li
+            onClick={() => handleScrollTo("contact")}
+            className="nav-link cursor-pointer"
+          >
+            Contact
+          </li>
         </ul>
 
         <div className="hidden md:flex items-center gap-6 text-sm ml-auto">
@@ -73,7 +92,12 @@ const Header = () => {
           />
         </div>
 
-        {showDropdown && <Dropdown handleDropdown={handleDropdown} />}
+        {showDropdown && (
+          <Dropdown
+            handleDropdown={handleDropdown}
+            showDropdown={showDropdown}
+          />
+        )}
       </div>
     </header>
   );
