@@ -69,6 +69,10 @@ button {
   @apply w-full sm:w-[300px] center-flex text-sm px-8 py-4 flex items-center border-primary/50;
 }
 
+.btn-custom2 {
+  @apply w-full center-flex px-4 py-2 flex items-center border border-secondary/50 shadow-custom bg-secondary font-medium hover:shadow-clicked;
+}
+
 /* random styles */
 .home {
   @apply relative bg-no-repeat bg-[right_top_6rem] md:bg-[right_top_9rem] bg-[length:250px_auto] md:bg-[length:500px_auto];

@@ -37,6 +37,14 @@ const AppContextProvider = ({ children }) => {
     }
   }
 
+  //to handle podcast popup
+  const [podcast, setPodcast] = useState(null);
+
+  console.log("podcast", podcast);
+
+  function handleToggleModal(item) {
+    item ? setPodcast(item) : setPodcast(null);
+  }
   return (
     <AppContext.Provider
       value={{
@@ -47,6 +55,8 @@ const AppContextProvider = ({ children }) => {
         setIsScrolled,
         isScrolled,
         handleScrollTo,
+        podcast,
+        handleToggleModal,
       }}
     >
       {children}

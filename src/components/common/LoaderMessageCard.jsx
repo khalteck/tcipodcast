@@ -7,7 +7,7 @@ const LoaderMessageCard = () => {
         One moment please, <br />
         we are downloading some good vibes…
       </p>
-      <BeatLoader color={"#ffc65b"} size={60} />
+      <BeatLoader color={"#f9a815"} size={60} />
     </div>
   );
 };

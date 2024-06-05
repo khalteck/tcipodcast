@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import { useState, useRef } from "react";
-import { IoClose } from "react-icons/io5";
-import { ClipLoader } from "react-spinners";
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { useAppContext } from "../../../contexts/AppContext";
 

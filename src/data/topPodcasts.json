@@ -1,86 +1,110 @@
 [
   {
     "id": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "My Migration Story: Bravely Told",
     "authors": ["Mo Mebude", "John Doe"],
-    "duration": "23 minutes 56 seconds",
+    "duration": "23 m 56 s",
     "date": "1st Feb, 2024"
   },
   {
     "id": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Faith in the Midst of Chaos",
     "authors": ["Mo Mebude"],
-    "duration": "18 minutes 30 seconds",
+    "duration": "18 m 30 s",
     "date": "21st March, 2024"
   },
   {
     "id": 3,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Answers to Your UK Immigration Questions",
     "authors": ["Mo Mebude", "Jane Doe"],
-    "duration": "50 minutes 29 seconds",
+    "duration": "50 m 29 s",
     "date": "7th March, 2024"
   },
   {
     "id": 4,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "My Migration Story: Bravely Told",
     "authors": ["Mo Mebude", "John Doe"],
-    "duration": "23 minutes 56 seconds",
+    "duration": "23 m 56 s",
     "date": "1st Feb, 2024"
   },
   {
     "id": 5,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Faith in the Midst of Chaos",
     "authors": ["Mo Mebude"],
-    "duration": "18 minutes 30 seconds",
+    "duration": "18 m 30 s",
     "date": "21st March, 2024"
   },
   {
     "id": 6,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Answers to Your UK Immigration Questions",
     "authors": ["Mo Mebude", "Jane Doe"],
-    "duration": "50 minutes 29 seconds",
+    "duration": "50 m 29 s",
     "date": "7th March, 2024"
   },
   {
     "id": 7,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "My Migration Story: Bravely Told",
     "authors": ["Mo Mebude", "John Doe"],
-    "duration": "23 minutes 56 seconds",
+    "duration": "23 m 56 s",
     "date": "1st Feb, 2024"
   },
   {
     "id": 8,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Faith in the Midst of Chaos",
     "authors": ["Mo Mebude"],
-    "duration": "18 minutes 30 seconds",
+    "duration": "18 m 30 s",
     "date": "21st March, 2024"
   },
   {
     "id": 9,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Answers to Your UK Immigration Questions",
     "authors": ["Mo Mebude", "Jane Doe"],
-    "duration": "50 minutes 29 seconds",
+    "duration": "50 m 29 s",
     "date": "7th March, 2024"
   },
   {
     "id": 10,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "My Migration Story: Bravely Told",
     "authors": ["Mo Mebude", "John Doe"],
-    "duration": "23 minutes 56 seconds",
+    "duration": "23 minu 56 s",
     "date": "1st Feb, 2024"
   },
   {
     "id": 11,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Faith in the Midst of Chaos",
     "authors": ["Mo Mebude"],
-    "duration": "18 minutes 30 seconds",
+    "duration": "18 minu 30 s",
     "date": "21st March, 2024"
   },
   {
     "id": 12,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "thumbnail": "/images/hero1.jpg",
     "title": "Answers to Your UK Immigration Questions",
     "authors": ["Mo Mebude", "Jane Doe"],
-    "duration": "50 minutes 29 seconds",
+    "duration": "50 minu 29 s",
     "date": "7th March, 2024"
   }
 ]

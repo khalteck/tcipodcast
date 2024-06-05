@@ -11,6 +11,7 @@ import { lazy, Suspense } from "react";
 // Code splitting - dynamic import of components
 const Homepage = lazy(() => import("./pages/client/home/Homepage"));
 const Episodes = lazy(() => import("./pages/client/episodes/Episodes"));
+const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
 
 function App() {
   return (
@@ -19,8 +20,12 @@ function App() {
     <Suspense fallback={<Loader />}>
       {/* Routes component to define application routes */}
       <Routes>
+        {/* client pages */}
         <Route path="/" element={<Homepage />} />
         <Route path="/episodes" element={<Episodes />} />
+
+        {/* admin pages */}
+        <Route path="/admin" element={<Dashboard />} />
       </Routes>
     </Suspense>
   );

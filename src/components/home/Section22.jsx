@@ -5,21 +5,51 @@ const Section22 = () => {
     <div className="w-full bg-primary1/90 pb-[100px] md:pb-[200px] lg:pb-[300px] xxl:pb-[100px] relative">
       <section className="w-full py-[80px] md:py-[100px] flex flex-col md:flex-row gap-10">
         <div className="w-full md:w-1/2">
-          <img alt="hero" src="/images/hero1.jpg" className="w-full h-auto" />
+          <img
+            alt="hero"
+            src="/images/hero1.jpg"
+            className="w-full h-auto"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          />
         </div>
         <div className="w-full md:w-1/2 flex flex-col gap-5">
-          <h3 className="text-white">Help us Help You</h3>
-          <h3 className="text-white">We offer the best for you</h3>
+          <h3
+            className="text-white"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            Help us Help You
+          </h3>
+          <h3
+            className="text-white"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            We offer the best for you
+          </h3>
 
-          <p className="text-lg leading-relaxed mt-5 text-white">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="text-lg leading-relaxed mt-5 text-white"
+          >
             Send your migration dilemmas- you don't have to go through your
             migration journey alone. If you have a challenge, question or some
             exciting news we want to hear it.{" "}
           </p>
 
-          <button className="btn-secondary mt-5 w-fit">
-            Get in Touch <MdMessage color="#2a354e" size={"15"} />
-          </button>
+          <a
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            href="mailto:tcipod1@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="btn-secondary mt-5 w-fit">
+              Get in Touch <MdMessage color="#2a354e" size={"15"} />
+            </button>
+          </a>
         </div>
       </section>
 

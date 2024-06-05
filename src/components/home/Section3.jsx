@@ -10,14 +10,20 @@ const Section3 = () => {
         id="episodes"
         className="pt-[50px] pb-[150px] md:pt-[120px] sm:pb-[200px] md:pb-[300px] lg:pb-[500px] xxl:pb-[700px]"
       >
-        <h3 className="text-center">Top Episodes For You</h3>
+        <h3 data-aos="fade-up" data-aos-duration="1000" className="text-center">
+          Top Episodes For You
+        </h3>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-5">
           {topPodcastData?.slice(0, 6)?.map((item, index) => {
             return <PodcastCard key={index} item={item} index={index} />;
           })}
         </div>
-        <div className="center-flex mt-14 md:mt-[100px]">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="center-flex mt-14 md:mt-[100px]"
+        >
           <button
             onClick={() => navigate("/episodes")}
             className="btn-secondary w-full md:w-1/3 center-flex"
