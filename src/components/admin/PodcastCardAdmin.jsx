@@ -48,7 +48,7 @@ const PodcastCardAdmin = ({ item }) => {
               />
               <div className="w-fit h-fit p-1 rounded-full bg-blue-400 hover:scale-125">
                 <PiPencilSimpleLineFill
-                  color={"#2a354e"}
+                  color={"white"}
                   size={"17px"}
                   className="cursor-pointer"
                   // onClick={() => handleToggleModal(item)}
@@ -56,7 +56,7 @@ const PodcastCardAdmin = ({ item }) => {
               </div>
               <div className="w-fit h-fit p-1 rounded-full bg-red-500 hover:scale-125">
                 <RiDeleteBin6Fill
-                  color={"#2a354e"}
+                  color={"white"}
                   size={"17px"}
                   className="cursor-pointer"
                   // onClick={() => handleToggleModal(item)}

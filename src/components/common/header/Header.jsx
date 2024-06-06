@@ -5,6 +5,7 @@ import SocialsContainer from "./SocialsContainer";
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../../contexts/AppContext";
+import Logo from "../Logo";
 
 const Header = () => {
   const { isScrolled, setIsScrolled, navigate, handleScrollTo } =
@@ -36,48 +37,66 @@ const Header = () => {
     <header
       className={`${
         isScrolled
-          ? "fixed top-0 left-0 w-full bg-neutral-50 text-primary shadow-md"
-          : "relative bg-primary1/90 text-white border-b border-neutral-400/30"
-      } w-full h-[80px] flex items-center px-3 transition-all duration-500 z-[999]`}
+          ? "fixed top-0 left-0 w-full bg-neutral-50 text-primary shadow-md h-[80px]"
+          : "relative bg-primary1/90 text-white border-b border-neutral-400/30 h-[80px] md:h-[90px]"
+      } w-full flex items-center px-3 transition-all duration-500 z-[999]`}
     >
       <div className="w-full max-w-[1500px] md:px-7 mx-auto flex">
         <div
           onClick={() => navigate("/")}
           className="logo-cont flex items-center cursor-pointer"
         >
-          <FaMicrophoneAlt
-            color={isScrolled ? "#481297" : "white"}
-            size={"40px"}
-          />
-          <h1 className={`${isScrolled ? "text-[#481297]" : "text-white"}`}>
-            TCIPOD
-          </h1>
+          <Logo type={"white"} />
         </div>
 
         <ul className="hidden md:flex gap-5 lg:gap-7 items-center uppercase font-medium text-[.75rem] lg:text-sm ml-[100px]">
-          <li className="nav-link cursor-pointer">
+          <li
+            className={`nav-link cursor-pointer ${
+              isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+            }`}
+          >
             <Link to={"/"}>Home</Link>
           </li>
           <li
             onClick={() => handleScrollTo("about")}
-            className="nav-link cursor-pointer"
+            className={`nav-link cursor-pointer ${
+              isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+            }`}
           >
             About
           </li>
           <li
             onClick={() => handleScrollTo("community")}
-            className="nav-link cursor-pointer"
+            className={`nav-link cursor-pointer ${
+              isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+            }`}
           >
             Community
           </li>
-          <li className="nav-link cursor-pointer">
+          <li
+            className={`nav-link cursor-pointer ${
+              isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+            }`}
+          >
             <Link to={"/episodes"}>Episodes</Link>
           </li>
           <li
             onClick={() => handleScrollTo("contact")}
-            className="nav-link cursor-pointer"
+            className={`nav-link cursor-pointer ${
+              isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+            }`}
           >
             Contact
+          </li>
+          <li
+            onClick={() => navigate("/admin")}
+            className={`nav-link cursor-pointer px-2 rounded-sm ${
+              isScrolled
+                ? "bg-primary1 text-white"
+                : "bg-secondary text-primary"
+            }`}
+          >
+            ADMIN
           </li>
         </ul>
 

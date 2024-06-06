@@ -10,7 +10,7 @@ const SocialsContainer = () => {
 
   return (
     <>
-      <div className="rounded-sm md:flex hidden gap-5 items-center">
+      <div className="rounded-sm md:flex hidden md:gap-2 lg:gap-5 items-center">
         <a
           href="https://www.instagram.com/tcipod?igsh=MnFoaHNncjlqZXgz"
           target="_blank"
@@ -18,7 +18,7 @@ const SocialsContainer = () => {
         >
           <FaInstagram
             color={`${isScrolled ? "black" : "white"}`}
-            size={"25px"}
+            size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
         </a>
@@ -29,7 +29,7 @@ const SocialsContainer = () => {
         >
           <FaTiktok
             color={`${isScrolled ? "black" : "white"}`}
-            size={"25px"}
+            size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
         </a>
@@ -40,7 +40,7 @@ const SocialsContainer = () => {
         >
           <FaFacebookSquare
             color={`${isScrolled ? "black" : "white"}`}
-            size={"25px"}
+            size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
         </a>
@@ -51,7 +51,7 @@ const SocialsContainer = () => {
         >
           <FaXTwitter
             color={`${isScrolled ? "black" : "white"}`}
-            size={"25px"}
+            size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
         </a>
@@ -62,7 +62,7 @@ const SocialsContainer = () => {
         >
           <FaLinkedin
             color={`${isScrolled ? "black" : "white"}`}
-            size={"25px"}
+            size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
         </a>
@@ -75,7 +75,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaInstagram
-            color={`#f9a815`}
+            color={`#fcea10`}
             size={"25px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -87,7 +87,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaTiktok
-            color={`#f9a815`}
+            color={`#fcea10`}
             size={"25px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -98,7 +98,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaFacebookSquare
-            color={`#f9a815`}
+            color={`#fcea10`}
             size={"25px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -109,7 +109,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaXTwitter
-            color={`#f9a815`}
+            color={`#fcea10`}
             size={"25px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -120,7 +120,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaLinkedin
-            color={`#f9a815`}
+            color={`#fcea10`}
             size={"25px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />

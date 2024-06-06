@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 2,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 3,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 4,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 5,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 6,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 7,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 8,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 9,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  },
+  {
+    "id": 10,
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+2348123456789"
+  }
+]

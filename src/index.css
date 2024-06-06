@@ -44,7 +44,7 @@ header > div {
 }
 
 .nav-link {
-  @apply hover:opacity-100 hover:text-secondary opacity-90;
+  @apply hover:opacity-100 opacity-90;
 }
 
 .nav-link-mobile {
@@ -184,7 +184,7 @@ button {
   }
 
   .pagination .active a {
-    background-color: #ffc65b;
+    background-color: #fcea10;
     border: 1px solid rgb(172, 168, 168);
   }
 

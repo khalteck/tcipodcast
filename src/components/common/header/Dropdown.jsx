@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../../../contexts/AppContext";
 
 const Dropdown = ({ handleDropdown, showDropdown }) => {
-  const { navigate, handleScrollTo } = useAppContext();
+  const { navigate, handleScrollTo, isScrolled } = useAppContext();
   const [showTray, setShowTray] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
         <div className="w-[75%] h-screen bg-[#5828a1] text-secondary md:hidden overflow-y-auto px-5 md:px-8 py-8 quickview">
           <div className="w-full flex justify-between">
             <div className="logo-cont">
-              <FaMicrophoneAlt color="#f9a815" size={"30px"} />
+              <FaMicrophoneAlt color="#fcea10" size={"30px"} />
               <h1 className="text-secondary">TCIPOD</h1>
             </div>
 
@@ -34,7 +34,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
               }}
               className="flex md:hidden"
             >
-              <IoClose color="#f9a815" size={"40px"} />
+              <IoClose color="#fcea10" size={"40px"} />
             </div>
           </div>
 
@@ -86,6 +86,15 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
               className="nav-link-mobile cursor-pointer"
             >
               Contact Us
+            </li>
+            <li
+              onClick={() => {
+                handleDropdown();
+                navigate("/admin");
+              }}
+              className={`nav-link-mobile w-fit text-[.85rem] cursor-pointer px-2 rounded-sm bg-secondary text-primary`}
+            >
+              ADMIN DASHBOARD
             </li>
             <li className="mt-10">
               <SocialsContainer />

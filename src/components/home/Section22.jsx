@@ -60,7 +60,7 @@ const Section22 = () => {
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#fff"
+          fill="#f5f5f5"
           fillOpacity="1"
           d="M0,192L288,288L576,128L864,288L1152,0L1440,160L1440,320L1152,320L864,320L576,320L288,320L0,320Z"
         ></path>
@@ -73,7 +73,7 @@ const Section22 = () => {
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#fff"
+          fill="#f5f5f5"
           fillOpacity="1"
           d="M0,192L288,288L576,128L864,288L1152,0L1440,160L1440,320L1152,320L864,320L576,320L288,320L0,320Z"
         ></path>

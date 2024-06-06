@@ -17,7 +17,7 @@ export default {
         primary: "#2a354e",
         primary1: "#481297",
         primary2: "#01ffff",
-        secondary: "#f9a815",
+        secondary: "#fcea10",
       },
       boxShadow: {
         custom: "7px 7px rgba(42, 53, 78, 0.8)",

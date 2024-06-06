@@ -6,7 +6,7 @@ const Section4 = () => {
     <>
       <section
         id="contact"
-        className="w-full bg-primary2/10 md:bg-inherit py-[80px] md:pt-[100px] md:pb-0 flex flex-col md:flex-row gap-5 md:gap-0"
+        className="w-full bg-primary2/10 md:bg-inherit py-[80px] md:pt-0 md:pb-0 flex flex-col md:flex-row gap-5 md:gap-0"
       >
         <div className="w-full md:w-1/2">
           <h3

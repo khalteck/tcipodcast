@@ -17,8 +17,8 @@ const Footer = () => {
             <p className="mb-5">TCI: The Chronicles of an Immigrant</p>
             <p className="flex gap-2 items-center">
               <MdEmail color="white" size="20px" />
-              <a href="mailto:email@gmail.com" className="cursor-pointer">
-                email@gmail.com
+              <a href="mailto:tcipod1@gmail.com" className="cursor-pointer">
+                tcipod1@gmail.com
               </a>
             </p>
           </div>
