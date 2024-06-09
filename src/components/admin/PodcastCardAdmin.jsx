@@ -13,7 +13,7 @@ const PodcastCardAdmin = ({ item }) => {
       <div
         onMouseOver={() => setHover(item)}
         onMouseOut={() => setHover(null)}
-        className={`w-full p-2 md:p-3 rounded-lg flex gap-3 border shadow-md transition-all duration-300 text-[.75rem] ${
+        className={`w-full p-2 md:p-3 rounded-lg flex gap-3 border transition-all duration-300 text-[.75rem] ${
           hover?.id === item?.id ? "bg-secondary" : "bg-white"
         }`}
       >

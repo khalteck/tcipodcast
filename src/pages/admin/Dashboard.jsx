@@ -11,9 +11,34 @@ import { FaMicrophoneAlt } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa6";
 import PodcastCardAdmin from "../../components/admin/PodcastCardAdmin";
 import PaginatedList from "../../components/admin/PaginatedList";
+import { useDispatch } from "react-redux";
+import {
+  useFetchAdminInfoQuery,
+  useLogoutUserMutation,
+} from "../../redux/features/firebaseSlice";
+import { removeUser } from "../../redux/features/userSlice";
+import { ClipLoader } from "react-spinners";
 
 const Dashboard = () => {
   const { navigate } = useAppContext();
+  const dispatch = useDispatch();
+
+  const [logoutUser, { isLoading, isSuccess }] = useLogoutUserMutation();
+
+  async function handleLogout() {
+    await logoutUser();
+  }
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(removeUser());
+      navigate("/");
+    }
+  }, [isSuccess]);
+
+  const { isLoading: loadingInfo, data: infoData } = useFetchAdminInfoQuery();
+
+  console.log("infoData", infoData);
 
   return (
     <>
@@ -22,10 +47,10 @@ const Dashboard = () => {
         <div className="w-full h-[200px] bg-primary1/90 center-flex md:flex-row flex-col gap-10 relative">
           <h2 className="text-white">Admin Dashboard</h2>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => handleLogout()}
             className="w-fit bg-secondary font-bold px-5 py-2 text-[.75rem] shadow-custom hover:shadow-clicked"
           >
-            Back to website
+            {isLoading ? <ClipLoader color="black" size={"20px"} /> : "Log out"}
           </button>
         </div>
         <section className="py-[50px] min-h-screen ">
@@ -40,7 +65,7 @@ const Dashboard = () => {
               <div className="w-full">
                 <p>Total Podcasts</p>
                 <p className="text-[2rem] font-bold flex gap-2 items-center">
-                  8
+                  {loadingInfo ? <ClipLoader /> : infoData?.total_podcasts}
                   <FaCaretUp color="green" size={"20px"} />
                   <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
                     View all
@@ -56,7 +81,12 @@ const Dashboard = () => {
               <div className="w-full">
                 <p>Total Joined Community</p>
                 <p className="text-[2rem] font-bold flex gap-2 items-center">
-                  32
+                  {loadingInfo ? (
+                    <ClipLoader />
+                  ) : (
+                    infoData?.total_joined_community
+                  )}
+
                   <FaCaretUp color="green" size={"20px"} />
                   <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
                     View all

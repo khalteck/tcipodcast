@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../../contexts/AppContext";
+import { useSelector } from "react-redux";
 
 const Dropdown = ({ handleDropdown, showDropdown }) => {
   const { navigate, handleScrollTo, isScrolled } = useAppContext();
+
+  const user = useSelector((state) => state.user.user);
+
   const [showTray, setShowTray] = useState(false);
 
   useEffect(() => {
@@ -87,15 +91,17 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
             >
               Contact Us
             </li>
-            <li
-              onClick={() => {
-                handleDropdown();
-                navigate("/admin");
-              }}
-              className={`nav-link-mobile w-fit text-[.85rem] cursor-pointer px-2 rounded-sm bg-secondary text-primary`}
-            >
-              ADMIN DASHBOARD
-            </li>
+            {user && (
+              <li
+                onClick={() => {
+                  handleDropdown();
+                  navigate("/admin");
+                }}
+                className={`nav-link-mobile w-fit text-[.85rem] cursor-pointer px-2 rounded-sm bg-secondary text-primary`}
+              >
+                ADMIN DASHBOARD
+              </li>
+            )}
             <li className="mt-10">
               <SocialsContainer />
             </li>

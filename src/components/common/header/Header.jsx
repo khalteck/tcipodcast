@@ -6,10 +6,13 @@ import { FaMicrophoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../../contexts/AppContext";
 import Logo from "../Logo";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { isScrolled, setIsScrolled, navigate, handleScrollTo } =
     useAppContext();
+
+  const user = useSelector((state) => state.user.user);
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -88,16 +91,18 @@ const Header = () => {
           >
             Contact
           </li>
-          <li
-            onClick={() => navigate("/admin")}
-            className={`nav-link cursor-pointer px-2 rounded-sm ${
-              isScrolled
-                ? "bg-primary1 text-white"
-                : "bg-secondary text-primary"
-            }`}
-          >
-            ADMIN
-          </li>
+          {user && (
+            <li
+              onClick={() => navigate("/admin")}
+              className={`nav-link cursor-pointer px-2 rounded-sm ${
+                isScrolled
+                  ? "bg-primary1 text-white"
+                  : "bg-secondary text-primary"
+              }`}
+            >
+              ADMIN
+            </li>
+          )}
         </ul>
 
         <div className="hidden md:flex items-center gap-6 text-sm ml-auto">
