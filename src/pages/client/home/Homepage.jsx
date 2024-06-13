@@ -34,12 +34,12 @@ const Homepage = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className="home">
         <div className="w-full h-full bg-[#f5f5f5]/50">
           <Section1 />
 
-          <Section2 />
+          {/* <Section2 /> */}
 
           <Section24 />
 

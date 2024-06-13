@@ -6,6 +6,7 @@ export default {
       flare: "url('/images/flare2.png')",
       flare2: "url('/images/flare.png')",
       hero: "url('/images/pod3.jpg')",
+      hero2: "url('/images/podcast.jpg')",
     },
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],
@@ -16,7 +17,7 @@ export default {
       colors: {
         primary: "#2a354e",
         primary1: "#481297",
-        primary2: "#01ffff",
+        primary2: "#370680",
         secondary: "#fcea10",
       },
       boxShadow: {

@@ -17,7 +17,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaInstagram
-            color={`${isScrolled ? "black" : "white"}`}
+            color={"white"}
             size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -28,7 +28,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaTiktok
-            color={`${isScrolled ? "black" : "white"}`}
+            color={"white"}
             size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -39,7 +39,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaFacebookSquare
-            color={`${isScrolled ? "black" : "white"}`}
+            color={"white"}
             size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -50,7 +50,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaXTwitter
-            color={`${isScrolled ? "black" : "white"}`}
+            color={"white"}
             size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />
@@ -61,7 +61,7 @@ const SocialsContainer = () => {
           rel="noreferrer"
         >
           <FaLinkedin
-            color={`${isScrolled ? "black" : "white"}`}
+            color={"white"}
             size={"20px"}
             className="hover:scale-125 cursor-pointer transition-all duration-300"
           />

@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-  @apply font-bold text-primary text-[2rem] md:text-[2.25rem] lg:text-[3.5rem] leading-tight;
+  @apply font-bold text-primary text-[2rem] md:text-[2.25rem] lg:text-[4rem] leading-tight;
 }
 
 h3 {
@@ -54,9 +54,7 @@ header > div {
 button {
   @apply flex gap-2 items-center uppercase rounded-sm transition-all duration-300;
 }
-/* button:hover {
-  @apply border-secondary;
-} */
+
 .btn-primary {
   @apply text-sm pb-2 px-1 border-b-2 border-primary/60;
 }

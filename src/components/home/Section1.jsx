@@ -2,6 +2,7 @@ import { FaPlay } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import SocialsContainer from "../common/header/SocialsContainer";
 import { useAppContext } from "../../contexts/AppContext";
+import Header from "../common/header/Header";
 
 const Section1 = () => {
   function scrollToEpisodes() {
@@ -12,8 +13,9 @@ const Section1 = () => {
   }
 
   return (
-    <div>
-      <div className="w-full md:min-h-[450px] bg-primary1/90">
+    <div className="w-full h-screen relative bg-[#ff4402] pb-[100px] md:pb-[200px] lg:pb-[300px]">
+      <Header />
+      <div className="w-full">
         <section className="w-full py-10 md:pb-0 flex md:flex-row flex-col-reverse gap-10 justify-between z-50 text-white">
           <div className="w-full md:w-1/2 flex flex-col justify-center gap-5 md:gap-8">
             <h2 className="text-white">
@@ -23,19 +25,6 @@ const Section1 = () => {
             <div className="w-full lg:w-2/3 font-medium text-sm lg:text-lg">
               Stories That Inspire, Voices That Resonate: Capturing Moments,
               Evoking Emotions.
-              <br />
-              <div className="flex gap-2 items-center mt-4">
-                <div className="bg-secondary w-3 h-4"></div>
-                <Typewriter
-                  words={["By Mo Mebude"]}
-                  loop={true}
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={4000}
-                />
-              </div>
             </div>
             <button
               onClick={scrollToEpisodes}
@@ -45,10 +34,22 @@ const Section1 = () => {
             </button>
           </div>
 
-          <div className="w-full sm:w-[70%] mx-auto md:w-1/2 relative">
+          {/* <div className="w-full sm:w-[70%] mx-auto md:w-1/2 relative">
             <img alt="hero" src="/images/hero1.png" className="w-full h-auto" />
+          </div> */}
+
+          <div className="w-[45%] h-full min-h-[500px] absolute top-0 right-0">
+            <div className="relative w-full h-full bg-hero2 bg-no-repeat bg-cover bg-center">
+              <div className="w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col">
+                <p>ddrdrtrdxghfjfc</p>
+              </div>
+            </div>
           </div>
         </section>
+      </div>
+
+      <div className="w-full absolute bottom-0 left-0">
+        <img alt="wave" src="/images/wave2.png" className="w-full h-auto" />
       </div>
     </div>
   );
