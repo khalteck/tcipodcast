@@ -33,6 +33,10 @@ const PaginatedList = ({ data, type }) => {
     setPageNumber(selected);
     scrollToTop();
   };
+
+  // to fetch data
+  // const { isLoading: loadingInfo, data: infoData } = useFetchInitialCommunityQuery();
+
   return (
     <div>
       <div className="w-full bg-neutral-100 flex flex-col gap-2 md:p-3 py-2">

@@ -18,9 +18,10 @@ import {
 } from "../../redux/features/firebaseSlice";
 import { removeUser } from "../../redux/features/userSlice";
 import { ClipLoader } from "react-spinners";
+import CommunityList from "../../components/admin/CommunityList";
 
 const Dashboard = () => {
-  const { navigate } = useAppContext();
+  const { navigate, handleScrollTo } = useAppContext();
   const dispatch = useDispatch();
 
   const [logoutUser, { isLoading, isSuccess }] = useLogoutUserMutation();
@@ -38,7 +39,7 @@ const Dashboard = () => {
 
   const { isLoading: loadingInfo, data: infoData } = useFetchAdminInfoQuery();
 
-  console.log("infoData", infoData);
+  // console.log("infoData", infoData);
 
   return (
     <>
@@ -50,7 +51,7 @@ const Dashboard = () => {
             onClick={() => handleLogout()}
             className="w-fit bg-secondary font-bold px-5 py-2 text-[.75rem] shadow-custom hover:shadow-clicked"
           >
-            {isLoading ? <ClipLoader color="black" size={"20px"} /> : "Log out"}
+            {isLoading ? <ClipLoader color="black" size={"15px"} /> : "Log out"}
           </button>
         </div>
         <section className="py-[50px] min-h-screen ">
@@ -62,12 +63,19 @@ const Dashboard = () => {
               <div className="w-fit h-fit p-3 bg-primary1 rounded-md">
                 <FaMicrophoneAlt color="#f9a815" size={"50px"} />
               </div>
-              <div className="w-full">
+              <div className="w-full flex flex-col">
                 <p>Total Podcasts</p>
-                <p className="text-[2rem] font-bold flex gap-2 items-center">
-                  {loadingInfo ? <ClipLoader /> : infoData?.total_podcasts}
-                  <FaCaretUp color="green" size={"20px"} />
-                  <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
+                <p className="text-[2rem] font-bold flex gap-2 items-center mt-auto">
+                  {loadingInfo ? (
+                    <ClipLoader size={"20px"} />
+                  ) : (
+                    infoData?.total_podcasts
+                  )}
+                  <FaCaretUp color="green" size={"15px"} />
+                  <button
+                    onClick={() => handleScrollTo("podcasts")}
+                    className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto"
+                  >
                     View all
                   </button>
                 </p>
@@ -78,17 +86,20 @@ const Dashboard = () => {
               <div className="w-fit h-fit p-3 bg-primary1 rounded-md">
                 <FaMicrophoneAlt color="#f9a815" size={"50px"} />
               </div>
-              <div className="w-full">
+              <div className="w-full flex flex-col">
                 <p>Total Joined Community</p>
-                <p className="text-[2rem] font-bold flex gap-2 items-center">
+                <p className="text-[2rem] font-bold flex gap-2 items-center mt-auto">
                   {loadingInfo ? (
-                    <ClipLoader />
+                    <ClipLoader size={"20px"} />
                   ) : (
                     infoData?.total_joined_community
                   )}
 
                   <FaCaretUp color="green" size={"20px"} />
-                  <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
+                  <button
+                    onClick={() => handleScrollTo("joined-community")}
+                    className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto"
+                  >
                     View all
                   </button>
                 </p>
@@ -103,13 +114,24 @@ const Dashboard = () => {
           </div>
 
           <div className="w-full mt-10 flex flex-col md:flex-row gap-5 md:gap-7">
-            <div className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white">
-              <h4 className="font-bold">Podcasts</h4>
+            <div
+              id="podcasts"
+              className="w-full h-fit md:w-1/2 md:p-4 rounded-md bg-white"
+            >
+              <h4 className="font-bold px-2 md:px-0">Podcasts</h4>
               <PaginatedList data={topPodcastData} type={"podcast"} />
             </div>
-            <div className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white">
-              <h4 className="font-bold">Joined Community</h4>
-              <PaginatedList data={communityData} type={"community"} />
+            <div
+              id="joined-community"
+              className="w-full h-fit md:w-1/2 md:p-4 rounded-md bg-white"
+            >
+              <div className="w-full flex justify-between">
+                <h4 className="font-bold px-2 md:px-0">Joined Community</h4>
+                <small className="font-medium">
+                  Showing 5 of {infoData?.total_joined_community}
+                </small>
+              </div>
+              <CommunityList data={communityData} type={"community"} />
             </div>
           </div>
         </section>

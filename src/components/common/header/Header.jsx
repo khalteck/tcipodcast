@@ -94,7 +94,7 @@ const Header = () => {
           {user && (
             <li
               onClick={() => navigate("/admin")}
-              className={`nav-link cursor-pointer px-2 rounded-sm ${
+              className={`nav-link cursor-pointer px-2 rounded-md ${
                 isScrolled
                   ? "bg-primary1 text-white"
                   : "bg-secondary text-primary"
