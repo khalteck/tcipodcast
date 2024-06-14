@@ -11,7 +11,7 @@ const Logo = ({ type }) => {
             ? `/images/logo-${type}.png`
             : `/images/logo-${"primary"}.png`
         }
-        className="w-[150px] md:w-[250px] h-auto"
+        className="w-[200px] md:w-[250px] h-auto"
       />
     </div>
   );

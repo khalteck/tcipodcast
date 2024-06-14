@@ -12,9 +12,11 @@ import ScrollToTop from "../../../ScrollToTop";
 import { useEffect } from "react";
 import { useAppContext } from "../../../contexts/AppContext";
 import { useLocation } from "react-router-dom";
+import Modal from "../../../components/home/Modal";
+import Section6 from "../../../components/home/Section6";
 
 const Homepage = () => {
-  const { currentPage } = useAppContext();
+  const { currentPage, handleToggleModal, podcast } = useAppContext();
 
   const location = useLocation();
 
@@ -35,25 +37,25 @@ const Homepage = () => {
   return (
     <>
       <Header />
-      
+
       <main className="home">
         <div className="w-full h-full bg-[#f5f5f5]/50">
           <Section1 />
 
-          {/* <Section2 /> */}
-
-          <Section24 />
-
           <Section3 />
 
-          <Section22 />
-
-          <Section23 />
-
-          <Section4 />
-
           <Section5 />
+
+          <Section6 />
         </div>
+
+        {/* //pop up modal */}
+        {podcast && (
+          <Modal
+            onClose={handleToggleModal}
+            action={() => console.log("play")}
+          />
+        )}
       </main>
       <Footer />
 

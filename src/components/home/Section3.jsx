@@ -1,57 +1,65 @@
 import topPodcastData from "../../data/topPodcasts.json";
 import PodcastCard from "./PodcastCard";
 import { useAppContext } from "../../contexts/AppContext";
+import PodcastCard2 from "./PodcastCard2";
+import { IoPlay } from "react-icons/io5";
 
 const Section3 = () => {
   const { navigate } = useAppContext();
   return (
-    <div className="relative">
-      <section
-        id="episodes"
-        className="pt-[50px] pb-[150px] md:pt-[120px] sm:pb-[200px] md:pb-[300px] lg:pb-[500px] xxl:pb-[700px]"
-      >
-        <h3 className="text-center">Top Episodes For You</h3>
-
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-5">
-          {topPodcastData?.slice(0, 6)?.map((item, index) => {
-            return <PodcastCard key={index} item={item} index={index} />;
-          })}
-        </div>
-        <div className="center-flex mt-14 md:mt-[100px]">
-          <button
-            onClick={() => navigate("/episodes")}
-            className="btn-secondary w-full md:w-1/3 center-flex"
+    <div id="episodes" className="relative bg-[#01ffff] text-primary1">
+      <section className="pt-[50px] pb-[80px] md:pb-[150px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10">
+        <div className="w-full md:w-1/2">
+          <h3
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="text-center"
           >
-            View all
-          </button>
+            Latest Episode
+          </h3>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            className="text-center md:text-[1.25rem]"
+          >
+            Sharing untold migration stories from around the world
+          </p>
+
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            className="w-full mt-10"
+          >
+            {topPodcastData?.slice(0, 1)?.map((item, index) => {
+              return <PodcastCard2 key={index} item={item} index={index} />;
+            })}
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            className="mt-10 center-flex"
+          >
+            <button
+              onClick={() => navigate("/episodes")}
+              className="btn-custom3"
+            >
+              More Episodes <IoPlay color="white" />
+            </button>
+          </div>
+        </div>
+        <div className="w-full md:w-1/2">
+          <img
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            alt="hero"
+            src="/images/pod3.jpg"
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] object-cover rounded-[50px]"
+          />
         </div>
       </section>
-
-      {/* sharp edge bottom */}
-      <svg
-        className="w-full absolute bottom-[-0.5px] xxl:bottom-[-1px] left-0 z-0 hidden md:block"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill="#5828a1"
-          fillOpacity="1"
-          d="M0,192L288,288L576,128L864,288L1152,0L1440,160L1440,320L1152,320L864,320L576,320L288,320L0,320Z"
-        ></path>
-      </svg>
-
-      {/* mobile wave */}
-      <svg
-        className="w-full absolute bottom-[-1px] left-0 z-0 block md:hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill="#5828a1"
-          fillOpacity="1"
-          d="M0,192L288,288L576,128L864,288L1152,0L1440,160L1440,320L1152,320L864,320L576,320L288,320L0,320Z"
-        ></path>
-      </svg>
     </div>
   );
 };

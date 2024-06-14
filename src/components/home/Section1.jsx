@@ -14,43 +14,128 @@ const Section1 = () => {
 
   return (
     <div className="w-full relative bg-primary1 pb-[100px] md:pb-[200px] lg:pb-[300px]">
-      <section className="md:pt-[50px]">
+      <section className="pt-10 md:pt-[50px]">
+        <img
+          alt="hero"
+          src="/images/podcast.jpg"
+          className="w-full md:w-[60%] h-[300px] md:h-[500px] xl:h-[700px] object-cover rounded-[50px] md:hidden flex mb-10"
+        />
         <div className="w-full text-secondary">
-          <div>
-            <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem]">
-              MY DREAMS ARE
+          <div data-aos="fade-down" data-aos-duration="1000">
+            <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] font-gluten">
+              MY DREAMS <span className="hidden md:inline">ARE</span>
             </h1>
           </div>
           <div className="w-full flex md:flex-row flex-col md:gap-[100px] items-center">
-            <h1 className="w-full md:w-fit text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem]">
-              VALID
+            <h1
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              className="w-full md:w-fit text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] font-gluten"
+            >
+              <span className="inline md:hidden">ARE</span> VALID
             </h1>
-            <div className="w-full md:w-[500px] md:text-[1.25rem] font-medium">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="w-full md:w-[500px] md:text-[1.25rem] font-medium"
+            >
               <p className="text-white">
                 Stories That Inspire, Voices That Resonate: Capturing Moments,
                 Evoking Emotions.
               </p>
-              <p className="mt-7 font-bold">
-                Hosted by Mo & Produced by Folawe
-              </p>
-              <button className="btn-custom3 mt-3">
+              <div className="flex gap-2 items-center mt-4">
+                <div className="bg-secondary w-3 h-4"></div>
+                <Typewriter
+                  words={["Hosted by Mo & Produced by Folawe"]}
+                  loop={true}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={4000}
+                />
+              </div>
+              <button onClick={scrollToEpisodes} className="btn-custom3 mt-3">
                 Start Listening <IoPlay color="white" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="w-full mt-10 flex gap-10">
+        <div className="w-full mt-10 md:mt-[80px] flex md:flex-row flex-col-reverse gap-10">
           <img
+            data-aos="zoom-in"
+            data-aos-duration="1000"
             alt="hero"
             src="/images/podcast.jpg"
-            className="w-full md:w-[60%] h-[300px] md:h-[500px] xl:h-[700px] object-cover rounded-[50px]"
+            className="w-full md:w-[60%] h-[300px] md:h-[500px] xl:h-[700px] object-cover rounded-[50px] hidden md:flex"
           />
-          <div className="w-full md:w-[40%] h-[300px] md:h-[500px] xl:h-[700px] bg-hero3 bg-no-repeat bg-cover rounded-[50px] flex flex-col">
-            <div className="w-full h-full bg-secondary2/80 rounded-[50px]"></div>
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            className="w-full md:w-[40%] h-fit bg-hero3 bg-no-repeat bg-cover rounded-[50px] flex flex-col"
+          >
+            <div className="w-full h-full bg-[#f800f8]/30 rounded-[50px] p-7 flex flex-col gap-5">
+              <div className="w-full p-5 rounded-[30px] bg-secondary2/90 flex md:flex-row flex-col gap-3 text-white font-bold">
+                <p className="blink">Connect with us</p>
+                <div className="flex items-center gap-6 text-sm md:ml-auto">
+                  <SocialsContainer />
+                </div>
+              </div>
+
+              <div className="w-full flex flex-col gap-5">
+                <a
+                  href="https://open.spotify.com/show/2AlbaXLHC7EW1IFvsGGlcF?si=1dQ_vKAdTQaUjOMBha7OCw"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="w-full p-5 rounded-[30px] bg-secondary2/90 flex gap-3 text-white font-bold">
+                    <img
+                      alt="icon"
+                      src="/images/icons8-spotify.png"
+                      className="w-8 md:w-12 h-auto"
+                    />
+                    <div className="">
+                      <p className="font-medium md:font-bold text-sm md:text-md lg:text-lg">
+                        Spotify Podcast
+                      </p>
+                      <p className="opacity-80 text-[.75em] md:text-sm lg:text-[1rem] underline cursor-pointer">
+                        Listen Now
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://podcasts.apple.com/gb/podcast/tci-the-chronicles-of-an-immigrant/id1727631336"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="w-full p-5 rounded-[30px] bg-secondary2/90 flex gap-3 text-white font-bold">
+                    <img
+                      alt="icon"
+                      src="/images/icons8-podcast-96.png"
+                      className="w-10 md:w-14 h-auto"
+                    />
+                    <div>
+                      <p className="font-medium md:font-bold text-sm md:text-md lg:text-lg">
+                        Apple Podcast
+                      </p>
+                      <p className="opacity-80 text-[.75em] md:text-sm lg:text-[1rem] underline cursor-pointer">
+                        Listen Now
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <div className="w-full absolute bottom-0 left-0">
+        <img alt="wave" src="/images/wave2.png" className="w-full h-auto" />
+      </div>
     </div>
   );
 };

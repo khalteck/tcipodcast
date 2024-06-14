@@ -8,6 +8,8 @@ import { useAppContext } from "../../../contexts/AppContext";
 import Logo from "../Logo";
 import { useSelector } from "react-redux";
 import { MdEmail } from "react-icons/md";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { IoShareSocial } from "react-icons/io5";
 
 const Header = () => {
   const { isScrolled, setIsScrolled, navigate, handleScrollTo } =
@@ -39,24 +41,16 @@ const Header = () => {
 
   return (
     <>
-      {/* <div className="w-full bg-secondary2">
-        <div className="w-full max-w-[1500px] p-2 mx-auto flex justify-between">
-          <button className="flex items-center gap-3 text-white font-medium">
-            <MdEmail size={"18px"} color="white" />
-            <p className="text-[.75rem]">Email Us</p>
-          </button>
-          <div className="hidden md:flex items-center gap-6 text-sm">
-            <SocialsContainer />
-          </div>
-        </div>
-      </div> */}
-
       <header
-        className={`relative bg-primary1 text-white h-[120px] px-3 w-full flex flex-col justify-center items-center transition-all duration-500`}
+        className={`relative bg-primary1 text-white h-[100px] md:h-[120px] px-3 w-full flex flex-col justify-center items-center transition-all duration-500`}
       >
         <div className="w-full max-w-[1500px] md:px-7 mx-auto flex flex-col">
           <div className="w-full flex justify-between items-center">
-            <div className="w-full flex justify-between items-center pr-5">
+            <div className="w-full flex justify-between items-center">
+              <div onClick={handleDropdown} className="flex md:hidden mr-auto">
+                <IoShareSocial color={"#fcea10"} size={"30px"} />
+              </div>
+
               <div
                 onClick={() => navigate("/")}
                 className="logo-cont flex items-center cursor-pointer"
@@ -95,6 +89,13 @@ const Header = () => {
                 >
                   <Link to={"/episodes"}>Episodes</Link>
                 </li>
+                <li
+                  className={`nav-link cursor-pointer ${
+                    isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+                  }`}
+                >
+                  <Link to={"/"}>Immigrants Corner</Link>
+                </li>
                 {/* <li
                 onClick={() => handleScrollTo("contact")}
                 className={`nav-link cursor-pointer ${
@@ -118,14 +119,16 @@ const Header = () => {
               </ul>
 
               <div className="hidden md:block">
-                <button className="btn-custom3">Contact</button>
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="btn-custom3"
+                >
+                  Get in Touch
+                </button>
               </div>
 
               <div onClick={handleDropdown} className="flex md:hidden ml-auto">
-                <HiOutlineMenuAlt3
-                  color={isScrolled ? "#481297" : "white"}
-                  size={"40px"}
-                />
+                <HiOutlineMenuAlt3 color={"#fcea10"} size={"35px"} />
               </div>
 
               {showDropdown && (
