@@ -1,12 +1,7 @@
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
 import Section1 from "../../../components/home/Section1";
-import Section2 from "../../../components/home/Section2";
 import Section3 from "../../../components/home/Section3";
-import Section22 from "../../../components/home/Section22";
-import Section23 from "../../../components/home/Section23";
-import Section24 from "../../../components/home/Section24";
-import Section4 from "../../../components/home/Section4";
 import Section5 from "../../../components/home/Section5";
 import ScrollToTop from "../../../ScrollToTop";
 import { useEffect } from "react";
