@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../../../contexts/AppContext";
 import Logo from "../Logo";
 import { useSelector } from "react-redux";
+import { MdEmail } from "react-icons/md";
 
 const Header = () => {
   const { isScrolled, setIsScrolled, navigate, handleScrollTo } =
@@ -37,92 +38,109 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      className={`relative bg-primary2 text-white border-b border-neutral-400/30 h-[80px] md:h-[200px] w-full flex items-center px-3 transition-all duration-500`}
-    >
-      <div className="w-full max-w-[1500px] md:px-7 mx-auto flex">
-        <div className="w-full md:w-[55%] flex justify-between pr-5">
-          <div className="flex flex-col items-center">
-            <div
-              onClick={() => navigate("/")}
-              className="logo-cont flex items-center cursor-pointer"
-            >
-              <Logo type={"secondary"} />
-            </div>
-            <div className="hidden md:flex items-center gap-6 text-sm mt-5">
-              <SocialsContainer />
-            </div>
+    <>
+      {/* <div className="w-full bg-secondary2">
+        <div className="w-full max-w-[1500px] p-2 mx-auto flex justify-between">
+          <button className="flex items-center gap-3 text-white font-medium">
+            <MdEmail size={"18px"} color="white" />
+            <p className="text-[.75rem]">Email Us</p>
+          </button>
+          <div className="hidden md:flex items-center gap-6 text-sm">
+            <SocialsContainer />
           </div>
+        </div>
+      </div> */}
 
-          <ul className="hidden md:flex gap-5 lg:gap-7 items-center uppercase font-medium text-[.75rem] lg:text-sm ml-[100px]">
-            {/* <li
-            className={`nav-link cursor-pointer ${
-              isScrolled ? "hover:text-primary1" : "hover:text-secondary"
-            }`}
-          >
-            <Link to={"/"}>Home</Link>
-          </li> */}
-            <li
-              onClick={() => handleScrollTo("about")}
-              className={`nav-link cursor-pointer ${
-                isScrolled ? "hover:text-primary1" : "hover:text-secondary"
-              }`}
-            >
-              About
-            </li>
-            <li
-              onClick={() => handleScrollTo("community")}
-              className={`nav-link cursor-pointer ${
-                isScrolled ? "hover:text-primary1" : "hover:text-secondary"
-              }`}
-            >
-              Community
-            </li>
-            <li
-              className={`nav-link cursor-pointer ${
-                isScrolled ? "hover:text-primary1" : "hover:text-secondary"
-              }`}
-            >
-              <Link to={"/episodes"}>Episodes</Link>
-            </li>
-            <li
-              onClick={() => handleScrollTo("contact")}
-              className={`nav-link cursor-pointer ${
-                isScrolled ? "hover:text-primary1" : "hover:text-secondary"
-              }`}
-            >
-              Contact
-            </li>
-            {user && (
-              <li
-                onClick={() => navigate("/admin")}
-                className={`nav-link cursor-pointer px-2 rounded-sm ${
-                  isScrolled
-                    ? "bg-primary1 text-white"
-                    : "bg-secondary text-primary"
+      <header
+        className={`relative bg-primary1 text-white h-[120px] px-3 w-full flex flex-col justify-center items-center transition-all duration-500`}
+      >
+        <div className="w-full max-w-[1500px] md:px-7 mx-auto flex flex-col">
+          <div className="w-full flex justify-between items-center">
+            <div className="w-full flex justify-between items-center pr-5">
+              <div
+                onClick={() => navigate("/")}
+                className="logo-cont flex items-center cursor-pointer"
+              >
+                <Logo type={"secondary"} />
+              </div>
+
+              <ul className="hidden md:flex gap-5 lg:gap-7 items-center font-medium text-[.7rem] lg:text-sm">
+                <li
+                  className={`nav-link cursor-pointer ${
+                    isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+                  }`}
+                >
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li
+                  onClick={() => handleScrollTo("about")}
+                  className={`nav-link cursor-pointer ${
+                    isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+                  }`}
+                >
+                  About
+                </li>
+                <li
+                  onClick={() => handleScrollTo("community")}
+                  className={`nav-link cursor-pointer ${
+                    isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+                  }`}
+                >
+                  Community
+                </li>
+                <li
+                  className={`nav-link cursor-pointer ${
+                    isScrolled ? "hover:text-primary1" : "hover:text-secondary"
+                  }`}
+                >
+                  <Link to={"/episodes"}>Episodes</Link>
+                </li>
+                {/* <li
+                onClick={() => handleScrollTo("contact")}
+                className={`nav-link cursor-pointer ${
+                  isScrolled ? "hover:text-primary1" : "hover:text-secondary"
                 }`}
               >
-                ADMIN
-              </li>
-            )}
-          </ul>
+                Contact
+              </li> */}
+                {user && (
+                  <li
+                    onClick={() => navigate("/admin")}
+                    className={`nav-link cursor-pointer px-2 rounded-sm ${
+                      isScrolled
+                        ? "bg-primary1 text-white"
+                        : "bg-secondary text-primary"
+                    }`}
+                  >
+                    ADMIN
+                  </li>
+                )}
+              </ul>
 
-          <div onClick={handleDropdown} className="flex md:hidden ml-auto">
-            <HiOutlineMenuAlt3
-              color={isScrolled ? "#481297" : "white"}
-              size={"40px"}
-            />
+              <div className="hidden md:block">
+                <button className="px-5 py-3 bg-secondary2 rounded-full text-white font-medium text-sm">
+                  Contact
+                </button>
+              </div>
+
+              <div onClick={handleDropdown} className="flex md:hidden ml-auto">
+                <HiOutlineMenuAlt3
+                  color={isScrolled ? "#481297" : "white"}
+                  size={"40px"}
+                />
+              </div>
+
+              {showDropdown && (
+                <Dropdown
+                  handleDropdown={handleDropdown}
+                  showDropdown={showDropdown}
+                />
+              )}
+            </div>
           </div>
-
-          {showDropdown && (
-            <Dropdown
-              handleDropdown={handleDropdown}
-              showDropdown={showDropdown}
-            />
-          )}
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
