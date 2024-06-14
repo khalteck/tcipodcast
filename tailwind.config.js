@@ -7,6 +7,7 @@ export default {
       flare2: "url('/images/flare.png')",
       hero: "url('/images/pod3.jpg')",
       hero2: "url('/images/podcast.jpg')",
+      hero3: "url('/images/pod3.jpg')",
     },
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],

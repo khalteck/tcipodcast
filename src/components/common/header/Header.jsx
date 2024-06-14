@@ -118,9 +118,7 @@ const Header = () => {
               </ul>
 
               <div className="hidden md:block">
-                <button className="px-5 py-3 bg-secondary2 rounded-full text-white font-medium text-sm">
-                  Contact
-                </button>
+                <button className="btn-custom3">Contact</button>
               </div>
 
               <div onClick={handleDropdown} className="flex md:hidden ml-auto">
