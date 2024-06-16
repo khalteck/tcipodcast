@@ -43,14 +43,6 @@ const Homepage = () => {
 
           <Section6 />
         </div>
-
-        {/* //pop up modal */}
-        {podcast && (
-          <Modal
-            onClose={handleToggleModal}
-            action={() => console.log("play")}
-          />
-        )}
       </main>
       <Footer />
 

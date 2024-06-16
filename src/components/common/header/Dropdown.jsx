@@ -91,6 +91,15 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
             </li>
             <li
               onClick={() => {
+                navigate("/immigrants-corner");
+                handleDropdown();
+              }}
+              className="nav-link-mobile cursor-pointer"
+            >
+              Immigrants Corner
+            </li>
+            <li
+              onClick={() => {
                 handleDropdown();
                 handleScrollTo("contact");
               }}

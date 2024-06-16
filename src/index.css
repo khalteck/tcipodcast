@@ -23,7 +23,7 @@ h3 {
 }
 
 section {
-  @apply w-full max-w-[1550px] mx-auto px-5 md:px-8 lg:px-14;
+  @apply w-full max-w-[1550px] mx-auto px-3 md:px-8 lg:px-14;
 }
 /* header {
   @apply w-full pt-5 md:pt-8 px-5 md:px-8 lg:px-14 mx-auto;
@@ -174,23 +174,25 @@ button {
   }
 
   .pagination a {
-    color: #333;
+    color: #2a354e;
     font-size: 15px;
     line-height: 15px;
-    padding: 7px 12px;
+    padding: 7px 20px;
     text-decoration: none;
-    border: 1px solid rgb(172, 168, 168);
+    border: 1px solid #2a354e;
     border-radius: 5px;
     margin: 0 5px;
+    font-weight: bold;
   }
 
   .pagination a:hover {
-    background-color: #f2f2f2;
+    background-color: #ff4402;
   }
 
   .pagination .active a {
-    background-color: #fcea10;
-    border: 1px solid rgb(172, 168, 168);
+    background-color: #ff4402;
+    border: 1px solid #2a354e;
+    color: white;
   }
 
   .pagination .break-me {

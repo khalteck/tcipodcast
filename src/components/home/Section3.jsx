@@ -8,7 +8,7 @@ const Section3 = () => {
   const { navigate } = useAppContext();
   return (
     <div id="episodes" className="relative bg-[#01ffff] text-primary1">
-      <section className="pt-[50px] pb-[80px] md:pb-[150px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10">
+      <section className="pt-[50px] pb-[80px] md:pb-[150px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
         <div className="w-full md:w-1/2">
           <h3
             data-aos="fade-up"

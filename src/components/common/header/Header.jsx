@@ -67,12 +67,11 @@ const Header = () => {
                   <Link to={"/"}>Home</Link>
                 </li>
                 <li
-                  onClick={() => handleScrollTo("about")}
                   className={`nav-link cursor-pointer ${
                     isScrolled ? "hover:text-primary1" : "hover:text-secondary"
                   }`}
                 >
-                  About
+                  <Link to={"/about"}>About</Link>
                 </li>
                 <li
                   onClick={() => handleScrollTo("community")}
@@ -94,7 +93,7 @@ const Header = () => {
                     isScrolled ? "hover:text-primary1" : "hover:text-secondary"
                   }`}
                 >
-                  <Link to={"/"}>Immigrants Corner</Link>
+                  <Link to={"/immigrants-corner"}>Immigrants Corner</Link>
                 </li>
                 {/* <li
                 onClick={() => handleScrollTo("contact")}

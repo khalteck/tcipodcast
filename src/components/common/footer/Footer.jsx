@@ -49,6 +49,11 @@ const Footer = () => {
             >
               Community
             </p>
+            <p className="mb-4">
+              <Link to="/immigrants-corner" className="">
+                Immigrants Corner
+              </Link>
+            </p>
             <p
               onClick={() => handleScrollTo("contact")}
               className="cursor-pointer"
