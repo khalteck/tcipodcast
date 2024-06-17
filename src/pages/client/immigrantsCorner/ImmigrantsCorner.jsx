@@ -1,3 +1,4 @@
+import FixedFloater from "../../../components/common/FixedFloater";
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
 import Section1 from "../../../components/immigrantsCorner/Section1";
@@ -13,6 +14,8 @@ const ImmigrantsCorner = () => {
         <Section1 />
 
         <Section2 />
+
+        <FixedFloater />
       </main>
 
       <Footer />

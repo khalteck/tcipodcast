@@ -1,11 +1,12 @@
 import { BsPlayCircleFill } from "react-icons/bs";
 import { useAppContext } from "../../contexts/AppContext";
+import { GiSplash } from "react-icons/gi";
 
 const Section2 = ({ latestEpisode }) => {
   const { handleToggleModal } = useAppContext();
 
   return (
-    <div className="w-full bg-secondary2 text-white pb-[80px] px-3 pt-10 md:pt-0">
+    <div className="w-full bg-secondary2 text-white pb-[80px] px-3 pt-10 md:pt-0 relative">
       <div className="w-full">
         <h3 className="text-center mb-5">Latest Episode</h3>
         <section
@@ -59,6 +60,13 @@ const Section2 = ({ latestEpisode }) => {
           </div>
         </section>
       </div>
+
+      {/* decor */}
+      <GiSplash
+        size={"100px"}
+        color="#fcea10"
+        className="absolute -bottom-2 right-10 md:right-[100px]"
+      />
     </div>
   );
 };

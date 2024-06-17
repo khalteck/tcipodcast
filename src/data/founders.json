@@ -3,24 +3,80 @@
     "id": 1,
     "name": "Moyeni Mebude",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/pod.jpg"
+    "image": "/images/pod.jpg",
+    "socials": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/tcipod"
+      },
+      {
+        "name": "tiktok",
+        "link": "https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+      },
+      {
+        "name": "twitter",
+        "link": "https://x.com/_tcipod"
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Folawe Marquis",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/host.jpg"
+    "image": "/images/host.jpg",
+    "socials": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/tcipod"
+      },
+      {
+        "name": "tiktok",
+        "link": "https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+      },
+      {
+        "name": "twitter",
+        "link": "https://x.com/_tcipod"
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Noreen Obasoyo",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/pod2.jpg"
+    "image": "/images/pod2.jpg",
+    "socials": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/tcipod"
+      },
+      {
+        "name": "tiktok",
+        "link": "https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+      },
+      {
+        "name": "twitter",
+        "link": "https://x.com/_tcipod"
+      }
+    ]
   },
   {
     "id": 4,
     "name": "Daniel Mgbolu",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/hero1.jpg"
+    "image": "/images/hero1.jpg",
+    "socials": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/tcipod"
+      },
+      {
+        "name": "tiktok",
+        "link": "https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+      },
+      {
+        "name": "twitter",
+        "link": "https://x.com/_tcipod"
+      }
+    ]
   }
 ]

@@ -3,6 +3,7 @@ import PodcastCardAdmin from "./PodcastCardAdmin";
 import ReactPaginate from "react-paginate";
 import CommunityCard from "./CommunityCard";
 import { useAppContext } from "../../contexts/AppContext";
+import ImmigrantsCornerCard from "./ImmigrantsCornerCard";
 
 const PaginatedList = ({ data, type }) => {
   const { scrollToTop } = useAppContext();
@@ -22,8 +23,10 @@ const PaginatedList = ({ data, type }) => {
     ?.map((item, index) => {
       return type === "podcast" ? (
         <PodcastCardAdmin key={index} item={item} index={index} />
-      ) : (
+      ) : type === "community" ? (
         <CommunityCard key={index} item={item} />
+      ) : (
+        <ImmigrantsCornerCard key={index} item={item} />
       );
     });
 

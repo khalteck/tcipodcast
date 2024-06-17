@@ -1,8 +1,62 @@
 import { IoPlay } from "react-icons/io5";
 import { BsSendFill } from "react-icons/bs";
 import Divider from "./Divider";
+import { useState } from "react";
+import { ClipLoader } from "react-spinners";
+import { useJoinCommunityMutation } from "../../redux/features/firebaseSlice";
 
 const Section5 = () => {
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [validationError, setvalidationError] = useState(false);
+
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+  });
+
+  function handleChange(e) {
+    setvalidationError(false);
+    const { value, id } = e.target;
+    let isValidEmail = true;
+
+    if (id === "email") {
+      // Define a regex pattern for email validation
+      const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+      isValidEmail = emailPattern.test(value);
+    }
+
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [id]: value,
+      };
+    });
+    setIsValidEmail(isValidEmail);
+  }
+
+  const [joinCommunity, { isLoading, isSuccess, isError }] =
+    useJoinCommunityMutation(formData);
+
+  async function handleJoinCommunity() {
+    if (
+      isValidEmail &&
+      formData?.email &&
+      formData?.first_name &&
+      formData?.last_name
+    ) {
+      await joinCommunity(formData);
+      setFormData({
+        first_name: "",
+        last_name: "",
+        phone: "",
+        email: "",
+      });
+    } else {
+      setvalidationError(true);
+    }
+  }
+
   return (
     <div className="w-full bg-slate-50/90 text-primary1">
       <Divider />
@@ -41,31 +95,79 @@ const Section5 = () => {
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="200"
-            className="w-full md:w-[650px] mx-auto flex flex-col gap-5"
+            className="w-full mx-auto flex flex-col gap-5"
           >
             <div className="flex md:flex-row flex-col gap-5">
               <input
                 type="text"
                 placeholder="First name"
-                className="w-full p-4 rounded-lg border border-primary1 bg-transparent outline-none text-sm"
+                id="first_name"
+                onChange={handleChange}
+                value={formData?.first_name}
+                className={`w-full p-4 rounded-lg border bg-transparent outline-none text-sm ${
+                  !isError ? "border-primary1" : "border-red-500"
+                }`}
               />
               <input
                 type="text"
                 placeholder="Last name"
-                className="w-full p-4 rounded-lg border border-primary1 bg-transparent outline-none text-sm"
+                id="last_name"
+                onChange={handleChange}
+                value={formData?.last_name}
+                className={`w-full p-4 rounded-lg border border-primary1 bg-transparent outline-none text-sm ${
+                  !isError ? "border-primary1" : "border-red-500"
+                }`}
               />
             </div>
             <div className="flex md:flex-row flex-col gap-5">
               <input
                 type="text"
                 placeholder="Email"
-                className="w-full p-4 rounded-lg border border-primary1 bg-transparent outline-none text-sm"
+                id="email"
+                onChange={handleChange}
+                value={formData?.email}
+                className={`w-full p-4 rounded-lg border border-primary1 bg-transparent outline-none text-sm ${
+                  isValidEmail ? "border-primary1" : "border-red-500"
+                } ${!isError ? "border-primary1" : "border-red-500"}`}
               />
             </div>
 
+            {validationError && (
+              <p className="text-red-500 text-sm w-full bg-red-200 p-2 rounded-sm">
+                All fields are required!
+              </p>
+            )}
+
+            {isError && (
+              <p className="text-red-500 text-sm w-full bg-red-200 p-2 rounded-sm">
+                An error occured!
+              </p>
+            )}
+
+            {isSuccess && (
+              <p className="text-green-700 text-sm w-full bg-green-200 p-2 rounded-sm">
+                You have successfully joined the TCIPOD community!
+              </p>
+            )}
+
             <div className="mt-10 center-flex">
-              <button className="btn-custom5">
-                Join Community <BsSendFill color="white" size={"15px"} />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleJoinCommunity();
+                }}
+                disabled={isLoading}
+                className={`btn-custom5 min-w-[150px] text-[1.1rem] ${
+                  isLoading && "cursor-not-allowed"
+                }`}
+              >
+                {isLoading ? (
+                  <ClipLoader color="white" size={"20px"} />
+                ) : (
+                  <>
+                    Join Community <BsSendFill color="white" size={"15px"} />
+                  </>
+                )}
               </button>
             </div>
           </form>

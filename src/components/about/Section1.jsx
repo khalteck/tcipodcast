@@ -1,3 +1,5 @@
+import { FaMicrophoneAlt } from "react-icons/fa";
+
 const Section1 = () => {
   return (
     <div className="relative">
@@ -11,6 +13,18 @@ const Section1 = () => {
       <div className="w-full absolute bottom-0 left-0">
         <img alt="wave" src="/images/waves2.png" className="w-full h-auto" />
       </div>
+      {/* deocr */}
+      <FaMicrophoneAlt
+        size={"60px"}
+        color="#fcea10"
+        className="absolute bottom-10 md:bottom-[100px] left-10 md:left-[100px] swing hidden md:flex"
+      />
+      {/* deocr */}
+      <FaMicrophoneAlt
+        size={"40px"}
+        color="#fcea10"
+        className="absolute bottom-10 md:bottom-[100px] left-10 md:left-[100px] swing md:hidden"
+      />
     </div>
   );
 };

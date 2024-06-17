@@ -1,3 +1,5 @@
+import { GiSplash } from "react-icons/gi";
+
 const Section1 = () => {
   return (
     <div className="relative">
@@ -11,6 +13,13 @@ const Section1 = () => {
       <div className="w-full absolute bottom-0 left-0">
         <img alt="wave" src="/images/waves2.png" className="w-full h-auto" />
       </div>
+
+      {/* decor */}
+      <GiSplash
+        size={"80px"}
+        color="#481297"
+        className="absolute -bottom-[150px] -left-1 rotate-90"
+      />
     </div>
   );
 };

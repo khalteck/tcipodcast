@@ -1,5 +1,10 @@
 import { FaHeadset, FaMicrophoneAlt } from "react-icons/fa";
 import founders from "../../data/founders.json";
+import { SiInstagram } from "react-icons/si";
+import { FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Section3 = () => {
   return (
@@ -68,6 +73,32 @@ const Section3 = () => {
                   </div>
                   <h3>{item?.name}</h3>
                   <p className="text-[1.1rem] leading-relaxed">{item?.bio}</p>
+                  <div className="flex gap-3 items-center">
+                    {item?.socials?.map((x, ind) => {
+                      return (
+                        <a
+                          href={x?.link}
+                          key={ind}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <div className="w-[50px] h-[50px] rounded-full bg-primary1 center-flex">
+                            {x?.name === "instagram" ? (
+                              <SiInstagram size={"30px"} color="#fcea10" />
+                            ) : x?.name === "tiktok" ? (
+                              <FaTiktok size={"30px"} color="#fcea10" />
+                            ) : x?.name === "twitter" ? (
+                              <FaXTwitter size={"30px"} color="#fcea10" />
+                            ) : x?.name === "facebook" ? (
+                              <FaFacebook size={"30px"} color="#fcea10" />
+                            ) : (
+                              <FaLinkedin size={"30px"} color="#fcea10" />
+                            )}
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </section>

@@ -1,7 +1,36 @@
 import { FaYoutube } from "react-icons/fa";
 import immigrantsCornerData from "../../data/immigrantsCorner.json";
+import ImmigrantsCornerCard from "./ImmigrantsCornerCard";
+import { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
+import { useAppContext } from "../../contexts/AppContext";
 
 const Section2 = () => {
+  const { handleScrollTo } = useAppContext();
+  const [immigrantsCornerDataPag, setimmigrantsCornerDataPag] = useState([]);
+  useEffect(() => {
+    setimmigrantsCornerDataPag(immigrantsCornerData);
+  }, [immigrantsCornerData]);
+
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const rowPerPage = 4;
+  const pagesVisited = pageNumber * rowPerPage;
+
+  const displayImmigrantsCorner = immigrantsCornerDataPag
+    ?.slice(pagesVisited, pagesVisited + rowPerPage)
+    ?.map((item, index) => {
+      const isOdd = (index + 1) % 2 === 1;
+      return <ImmigrantsCornerCard key={index} item={item} isOdd={isOdd} />;
+    });
+
+  const pageCount = Math.ceil(immigrantsCornerDataPag?.length / rowPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+    handleScrollTo("immigrants-container");
+  };
+
   return (
     <div className="w-full bg-secondary2 text-white pb-[80px] pt-10 md:pt-0">
       <section className="w-full">
@@ -14,71 +43,27 @@ const Section2 = () => {
         </p>
       </section>
 
-      <div className="w-full  max-w-[1550px] mx-auto lg:px-14">
-        {immigrantsCornerData?.map((item, index) => {
-          const isOdd = (index + 1) % 2 === 1;
-          return (
-            <div
-              key={index}
-              className={`mt-[100px] flex flex-col center-flex gap-10 ${
-                isOdd ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
-            >
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                className="relative w-full md:w-[60%] h-[350px] md:h-[600px]"
-              >
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={item?.embedLink}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+      <div
+        id="immigrants-container"
+        className="w-full max-w-[1550px] mx-auto lg:px-14"
+      >
+        {displayImmigrantsCorner}
 
-              <div className="w-full md:w-[40%] flex flex-col gap-3 px-3 md:px-0">
-                <h3
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                >
-                  {item?.title}
-                </h3>
-                <p
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                  className=""
-                >
-                  {item?.date}
-                </p>
-                <p
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                  className="w-full text-[1.1rem] mb-2 md:mb-10"
-                >
-                  {item?.body}
-                </p>
-                <a href={item?.youtubeLink} target="_blank" rel="noreferrer">
-                  <button
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
-                    className="btn-custom4 w-fit"
-                  >
-                    View on Youtube <FaYoutube size={"30px"} />
-                  </button>
-                </a>
-              </div>
-            </div>
-          );
-        })}
+        {immigrantsCornerDataPag?.length > rowPerPage && (
+          <div className="w-full flex justify-center mt-10">
+            <ReactPaginate
+              previousLabel={"<"}
+              nextLabel={">"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"pagination"}
+              subContainerClassName={"immigrants corner pagination"}
+              activeClassName={"active"}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
-import { FaPlay } from "react-icons/fa";
+import { FaHeadset, FaMicrophoneAlt, FaPlay } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import SocialsContainer from "../common/header/SocialsContainer";
 import { useAppContext } from "../../contexts/AppContext";
 import { IoPlay } from "react-icons/io5";
+import { GiSplash } from "react-icons/gi";
 
 const Section1 = () => {
   function scrollToEpisodes() {
@@ -22,22 +23,28 @@ const Section1 = () => {
         />
         <div className="w-full text-secondary">
           <div data-aos="fade-down" data-aos-duration="1000">
-            <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] font-gluten">
+            <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-gluten">
               MY DREAMS <span className="hidden md:inline">ARE</span>
+              {/* decor */}
+              <GiSplash
+                size={"75px"}
+                color="#fcea10"
+                className="absolute top-[-80px] lg:top-[-60px] left-[50%] translate-x-[-50%] hidden md:flex"
+              />
             </h1>
           </div>
           <div className="w-full flex md:flex-row flex-col md:gap-[100px] items-center">
             <h1
               data-aos="fade-right"
               data-aos-duration="1000"
-              className="w-full md:w-fit text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] font-gluten"
+              className="w-full md:w-fit text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-gluten"
             >
               <span className="inline md:hidden">ARE</span> VALID
             </h1>
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
-              className="w-full md:w-[500px] md:text-[1.25rem] font-medium"
+              className="w-full md:w-[500px] md:text-[1.25rem] font-medium relative"
             >
               <p className="text-white">
                 Stories That Inspire, Voices That Resonate: Capturing Moments,
@@ -58,6 +65,19 @@ const Section1 = () => {
               <button onClick={scrollToEpisodes} className="btn-custom3 mt-3">
                 Start Listening <IoPlay color="white" />
               </button>
+
+              {/* deocr */}
+              <FaHeadset
+                size={"60px"}
+                color="#fcea10"
+                className="absolute bottom-0 right-0 xl:right-[-40%] swing hidden md:flex"
+              />
+              {/* deocr */}
+              <FaHeadset
+                size={"40px"}
+                color="#fcea10"
+                className="absolute bottom-8 right-0 xl:right-[-40%] swing md:hidden"
+              />
             </div>
           </div>
         </div>
@@ -133,9 +153,16 @@ const Section1 = () => {
         </div>
       </section>
 
+      {/* wave */}
       <div className="w-full absolute bottom-0 left-0">
-        <img alt="wave" src="/images/wave2.png" className="w-full h-auto" />
+        <img alt="wave" src="/images/waves2.png" className="w-full h-auto" />
       </div>
+      {/* deocr */}
+      <FaMicrophoneAlt
+        size={"60px"}
+        color="#fcea10"
+        className="absolute bottom-[100px] right-[100px] swing hidden md:flex"
+      />
     </div>
   );
 };

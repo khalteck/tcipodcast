@@ -8,6 +8,7 @@ import PodcastCard2 from "../../../components/home/PodcastCard2";
 import Section1 from "../../../components/episodes/Section1";
 import Section2 from "../../../components/episodes/Section2";
 import Section3 from "../../../components/episodes/Section3";
+import FixedFloater from "../../../components/common/FixedFloater";
 
 const Episodes = () => {
   const { scrollToTop } = useAppContext();
@@ -51,6 +52,8 @@ const Episodes = () => {
           pageCount={pageCount}
           changePage={changePage}
         />
+
+        <FixedFloater />
       </main>
       <Footer />
 

@@ -7,11 +7,11 @@ import ScrollToTop from "../../../ScrollToTop";
 import { useEffect } from "react";
 import { useAppContext } from "../../../contexts/AppContext";
 import { useLocation } from "react-router-dom";
-import Modal from "../../../components/home/Modal";
 import Section6 from "../../../components/home/Section6";
+import FixedFloater from "../../../components/common/FixedFloater";
 
 const Homepage = () => {
-  const { currentPage, handleToggleModal, podcast } = useAppContext();
+  const { currentPage } = useAppContext();
 
   const location = useLocation();
 
@@ -43,6 +43,9 @@ const Homepage = () => {
 
           <Section6 />
         </div>
+
+        <FixedFloater />
+        <></>
       </main>
       <Footer />
 

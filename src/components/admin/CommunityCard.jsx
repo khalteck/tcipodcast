@@ -8,7 +8,7 @@ const CommunityCard = ({ item }) => {
       </div>
       <div className="w-full flex flex-col gap-1">
         <p className="font-bold leading-tight">
-          {item?.firstname} {item?.lastname}
+          {item?.first_name} {item?.last_name}
         </p>
         <small className="hover:underline">
           <a href={`mailto:${item?.email}`}>{item?.email}</a>

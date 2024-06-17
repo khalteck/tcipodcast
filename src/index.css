@@ -73,10 +73,10 @@ button {
   @apply px-8 py-4 bg-secondary2 rounded-full text-white font-medium text-lg flex gap-2 items-center;
 }
 .btn-custom4 {
-  @apply px-8 py-4 bg-secondary rounded-full text-primary1 font-medium text-sm flex gap-2 items-center;
+  @apply px-8 py-4 bg-secondary rounded-full text-primary1 font-medium flex gap-2 items-center;
 }
 .btn-custom5 {
-  @apply px-8 py-4 bg-primary1 rounded-full text-white font-medium text-sm flex gap-2 items-center;
+  @apply px-8 py-4 bg-primary1 rounded-full text-white font-medium flex gap-2 items-center;
 }
 /* random styles */
 .home {
@@ -135,6 +135,18 @@ button {
     }
   }
 
+  .swing {
+    animation: swing 20s linear infinite;
+  }
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .expand {
     animation: expand 0.6s ease-in-out;
   }
@@ -183,14 +195,15 @@ button {
     border-radius: 5px;
     margin: 0 5px;
     font-weight: bold;
+    background-color: #fcea10;
   }
 
   .pagination a:hover {
-    background-color: #ff4402;
+    color: #ff4402;
   }
 
   .pagination .active a {
-    background-color: #ff4402;
+    background-color: #481297;
     border: 1px solid #2a354e;
     color: white;
   }
