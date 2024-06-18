@@ -31,11 +31,11 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
   return (
     <div className="w-full h-screen bg-black/80 fixed top-0 left-0 z-[999] bgslide blurry">
       {showTray && (
-        <div className="w-[75%] h-screen bg-[#5828a1] text-secondary md:hidden overflow-y-auto px-5 md:px-8 py-8 quickview">
+        <div className="w-[75%] h-screen bg-[#5828a1] text-white md:hidden overflow-y-auto px-5 md:px-8 py-8 quickview">
           <div className="w-full flex justify-between">
             <div className="logo-cont">
-              <FaMicrophoneAlt color="#fcea10" size={"30px"} />
-              <h1 className="text-secondary">TCIPOD</h1>
+              <FaMicrophoneAlt color="#fff" size={"30px"} />
+              <h1 className="text-white">TCIPOD</h1>
             </div>
 
             <div
@@ -45,13 +45,13 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
               }}
               className="flex md:hidden"
             >
-              <IoClose color="#fcea10" size={"40px"} />
+              <IoClose color="#fff" size={"40px"} />
             </div>
           </div>
 
           <ul
             // onClick={handleDropdown}
-            className="flex flex-col gap-8 uppercase mt-10 text-xl font-medium"
+            className="flex flex-col gap-8 mt-10 text-xl font-medium"
           >
             <li
               onClick={() => {
@@ -64,8 +64,8 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
             </li>
             <li
               onClick={() => {
+                navigate("/about");
                 handleDropdown();
-                handleScrollTo("about");
               }}
               className="nav-link-mobile cursor-pointer"
             >
@@ -100,8 +100,8 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
             </li>
             <li
               onClick={() => {
+                navigate("/contact");
                 handleDropdown();
-                handleScrollTo("contact");
               }}
               className="nav-link-mobile cursor-pointer"
             >
@@ -126,7 +126,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
                   rel="noreferrer"
                 >
                   <FaInstagram
-                    color={`#fcea10`}
+                    color={`#fff`}
                     size={"25px"}
                     className="hover:scale-125 cursor-pointer transition-all duration-300"
                   />
@@ -138,7 +138,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
                   rel="noreferrer"
                 >
                   <FaTiktok
-                    color={`#fcea10`}
+                    color={`#fff`}
                     size={"25px"}
                     className="hover:scale-125 cursor-pointer transition-all duration-300"
                   />
@@ -149,7 +149,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
                   rel="noreferrer"
                 >
                   <FaFacebookSquare
-                    color={`#fcea10`}
+                    color={`#fff`}
                     size={"25px"}
                     className="hover:scale-125 cursor-pointer transition-all duration-300"
                   />
@@ -160,7 +160,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
                   rel="noreferrer"
                 >
                   <FaXTwitter
-                    color={`#fcea10`}
+                    color={`#fff`}
                     size={"25px"}
                     className="hover:scale-125 cursor-pointer transition-all duration-300"
                   />
@@ -171,7 +171,7 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
                   rel="noreferrer"
                 >
                   <FaLinkedin
-                    color={`#fcea10`}
+                    color={`#fff`}
                     size={"25px"}
                     className="hover:scale-125 cursor-pointer transition-all duration-300"
                   />

@@ -50,7 +50,7 @@ const Section1 = () => {
                 Stories That Inspire, Voices That Resonate: Capturing Moments,
                 Evoking Emotions.
               </p>
-              <div className="flex gap-2 items-center mt-4">
+              <div className="flex gap-2 text-white items-center mt-4">
                 <div className="bg-secondary w-3 h-4"></div>
                 <Typewriter
                   words={["Hosted by Mo & Produced by Folawe"]}
