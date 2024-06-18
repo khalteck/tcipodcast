@@ -1,4 +1,5 @@
 import { FaUserPlus } from "react-icons/fa";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 
 const CommunityCard = ({ item }) => {
   return (
@@ -8,7 +9,8 @@ const CommunityCard = ({ item }) => {
       </div>
       <div className="w-full flex flex-col gap-1">
         <p className="font-bold leading-tight">
-          {item?.first_name} {item?.last_name}
+          {capitalizeFirstLetter(item?.first_name)}{" "}
+          {capitalizeFirstLetter(item?.last_name)}
         </p>
         <small className="hover:underline">
           <a href={`mailto:${item?.email}`}>{item?.email}</a>

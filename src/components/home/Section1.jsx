@@ -154,7 +154,7 @@ const Section1 = () => {
       </section>
 
       {/* wave */}
-      <div className="w-full absolute bottom-0 left-0">
+      <div className="w-full absolute bottom-[-1px] left-0">
         <img alt="wave" src="/images/waves2.png" className="w-full h-auto" />
       </div>
       {/* deocr */}

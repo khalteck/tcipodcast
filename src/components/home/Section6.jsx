@@ -2,6 +2,7 @@ import { IoPlay } from "react-icons/io5";
 import { BsSendFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { FaMicrophoneAlt } from "react-icons/fa";
+import { GiSplash } from "react-icons/gi";
 
 const Section6 = () => {
   return (
@@ -60,6 +61,13 @@ const Section6 = () => {
           </a>
         </div>
       </section>
+
+      {/* decor */}
+      <GiSplash
+        size={"80px"}
+        color="#481297"
+        className="absolute -bottom-1 left-3 md:left-[40%] md:translate-x-[-50%]"
+      />
     </div>
   );
 };

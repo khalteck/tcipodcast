@@ -8,12 +8,12 @@ import { FaHeadset } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
 
 const Section3 = () => {
-  const { navigate } = useAppContext();
+  const { navigate, handleToggleModal } = useAppContext();
   const latestEpisode = topPodcastData?.[0];
   return (
     <div
       id="episodes"
-      className="relative bg-secondary2 text-white pb-[80px] md:pb-[100px]"
+      className="relative bg-secondary2 text-white pb-[80px] md:pb-[100px] pt-10 md:pt-0"
     >
       {/* deocr */}
       <FaHeadset

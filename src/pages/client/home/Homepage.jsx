@@ -45,7 +45,6 @@ const Homepage = () => {
         </div>
 
         <FixedFloater />
-        <></>
       </main>
       <Footer />
 

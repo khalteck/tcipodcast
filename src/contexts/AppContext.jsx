@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useContext, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
@@ -10,6 +11,7 @@ const AppContextProvider = ({ children }) => {
   let currentPage = location.pathname;
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [loader, setLoader] = useState(false);
 
@@ -55,6 +57,7 @@ const AppContextProvider = ({ children }) => {
         handleScrollTo,
         podcast,
         handleToggleModal,
+        dispatch,
       }}
     >
       {children}

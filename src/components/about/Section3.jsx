@@ -5,10 +5,11 @@ import { FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { GiSplash } from "react-icons/gi";
 
 const Section3 = () => {
   return (
-    <div className="w-full py-[80px] overflow-x-hidden bg-secondary">
+    <div className="w-full py-[80px] bg-secondary relative">
       <h3
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -19,10 +20,9 @@ const Section3 = () => {
       <p
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="w-full md:w-[70%] mx-auto text-[1.1rem] mb-10 text-center"
+        className="w-full md:w-[70%] mx-auto text-[1.1rem] mb-10 text-center font-medium"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        The Heart of Our Podcast
       </p>
 
       <>
@@ -31,7 +31,9 @@ const Section3 = () => {
           return (
             <section
               key={index}
-              className={`mb-10 md:mb-0 ${index !== 0 && "md:mt-[-15px]"}`}
+              className={`mb-10 md:mb-0 overflow-x-hidden ${
+                index !== 0 && "md:mt-[-15px]"
+              }`}
             >
               <div
                 className={`w-full flex items-center flex-col ${
@@ -51,7 +53,7 @@ const Section3 = () => {
                   <img
                     alt="hero"
                     src={item?.image}
-                    className={`w-full h-[300px] md:h-[550px] object-cover ${
+                    className={`w-full h-[300px] md:h-[600px] object-cover ${
                       isOdd
                         ? "md:rounded-r-lg md:rounded-l-full rounded-t-full"
                         : "md:rounded-l-lg md:rounded-r-full rounded-t-full"
@@ -71,8 +73,15 @@ const Section3 = () => {
                       <FaHeadset size={"50px"} color="#fcea10" />
                     )}
                   </div>
-                  <h3>{item?.name}</h3>
-                  <p className="text-[1.1rem] leading-relaxed">{item?.bio}</p>
+                  <div>
+                    <h3>Meet: {item?.name}</h3>
+                    <h4 className="text-[1.5rem] font-bold font-gluten">
+                      {item?.role}
+                    </h4>
+                  </div>
+                  <p className="text-[.95rem] font-medium leading-relaxed">
+                    {item?.bio}
+                  </p>
                   <div className="flex gap-3 items-center">
                     {item?.socials?.map((x, ind) => {
                       return (
@@ -105,6 +114,13 @@ const Section3 = () => {
           );
         })}
       </>
+
+      {/* decor */}
+      <GiSplash
+        size={"100px"}
+        color="#481297"
+        className="absolute -bottom-2 left-10 md:right-[100px]"
+      />
     </div>
   );
 };

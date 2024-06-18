@@ -16,6 +16,8 @@ import {
   limit,
   serverTimestamp,
   startAfter,
+  endBefore,
+  limitToLast,
 } from "firebase/firestore";
 
 // Create an API service
@@ -151,14 +153,14 @@ export const firebaseApi = createApi({
         try {
           let communityData = [];
           const lastVisibleRaw = JSON.parse(
-            localStorage.getItem("lastVisible")
+            localStorage.getItem("lastVisibleCommunity")
           );
 
-          const docRef = doc(db, "community", lastVisibleRaw?.email);
-          const docSnap = await getDoc(docRef);
-          const lastVisible = docSnap.doc;
+          const communityRef = collection(db, "community");
 
-          console.log("lastVisible", lastVisible);
+          const lastVisible = await getDoc(
+            doc(communityRef, lastVisibleRaw?.email)
+          );
 
           const queryRef = query(
             collection(db, "community"),
@@ -185,6 +187,48 @@ export const firebaseApi = createApi({
         }
       },
     }),
+
+    // fetch previous 5 community users
+    fetchPreviousCommunity: builder.mutation({
+      async queryFn() {
+        try {
+          let communityData = [];
+          const firstVisibleRaw = JSON.parse(
+            localStorage.getItem("firstVisibleCommunity")
+          );
+
+          const communityRef = collection(db, "community");
+
+          const firstVisible = await getDoc(
+            doc(communityRef, firstVisibleRaw?.email)
+          );
+
+          const queryRef = query(
+            collection(db, "community"),
+            orderBy("timestamp", "desc"),
+            endBefore(firstVisible),
+            limitToLast(5)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              communityData.push(docData);
+            });
+          }
+
+          // return response
+          return { data: communityData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
   }),
 });
 
@@ -196,4 +240,5 @@ export const {
   useJoinCommunityMutation,
   useFetchInitialCommunityQuery,
   useFetchNextCommunityMutation,
+  useFetchPreviousCommunityMutation,
 } = firebaseApi;
