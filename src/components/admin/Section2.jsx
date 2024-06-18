@@ -3,13 +3,21 @@ import getTimeOfDay from "../../utils/getTimeOfDay";
 import { ClipLoader } from "react-spinners";
 import PaginatedList from "./PaginatedList";
 import topPodcastData from "../../data/topPodcasts.json";
-import communityData from "../../data/community.json";
 import immigrantsCornerData from "../../data/immigrantsCorner.json";
 import { useFetchAdminInfoQuery } from "../../redux/features/firebaseSlice";
 import CommunityList from "./CommunityList";
 import { FaPlus } from "react-icons/fa";
+import { useAppContext } from "../../contexts/AppContext";
 
 const Section2 = () => {
+  const {
+    addpodcast,
+    handleToggleaddPodcast,
+    addImmigrantsCorner,
+    handleToggleaddImmigrantsCorner,
+    handleScrollTo,
+  } = useAppContext();
+
   const { isLoading: loadingInfo, data: infoData } = useFetchAdminInfoQuery();
 
   return (
@@ -28,7 +36,10 @@ const Section2 = () => {
               <p className="text-[2rem] font-bold flex gap-2 items-center">
                 {loadingInfo ? <ClipLoader /> : infoData?.total_podcasts}
                 <FaCaretUp color="green" size={"20px"} />
-                <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
+                <button
+                  onClick={() => handleScrollTo("podcasts-list")}
+                  className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto"
+                >
                   View all
                 </button>
               </p>
@@ -44,7 +55,10 @@ const Section2 = () => {
               <p className="text-[2rem] font-bold flex gap-2 items-center">
                 {loadingInfo ? <ClipLoader /> : infoData?.total_podcasts}
                 <FaCaretUp color="green" size={"20px"} />
-                <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
+                <button
+                  onClick={() => handleScrollTo("immigrants-corner")}
+                  className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto"
+                >
                   View all
                 </button>
               </p>
@@ -65,7 +79,10 @@ const Section2 = () => {
                 )}
 
                 <FaCaretUp color="green" size={"20px"} />
-                <button className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto">
+                <button
+                  onClick={() => handleScrollTo("joined-community")}
+                  className="px-2 py-1 bg-secondary font-bold text-[.75rem] rounded-md ml-auto"
+                >
                   View all
                 </button>
               </p>
@@ -74,20 +91,32 @@ const Section2 = () => {
         </div>
 
         <div className="mt-10 flex gap-5 flex-wrap">
-          <button className="btn-secondary bg-secondary font-bold text-[1rem] rounded-md center-flex">
+          <button
+            onClick={() => handleToggleaddPodcast("create")}
+            className="btn-secondary bg-secondary font-bold text-[1rem] rounded-md center-flex"
+          >
             Add New Podcast <FaPlus size={"20px"} />
           </button>
-          <button className="btn-secondary bg-secondary font-bold text-[1rem] rounded-md center-flex">
+          <button
+            onClick={() => handleToggleaddImmigrantsCorner("create")}
+            className="btn-secondary bg-secondary font-bold text-[1rem] rounded-md center-flex"
+          >
             Add Immigrants Corner <FaPlus size={"20px"} />
           </button>
         </div>
 
         <div className="w-full mt-10 flex flex-col md:flex-row gap-5 md:gap-7">
-          <div className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white">
+          <div
+            id="podcasts-list"
+            className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white"
+          >
             <h4 className="font-bold">Podcasts</h4>
             <PaginatedList data={topPodcastData} type={"podcast"} />
           </div>
-          <div className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white">
+          <div
+            id="immigrants-corner"
+            className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white"
+          >
             <h4 className="font-bold">Immigrants corner</h4>
             <PaginatedList data={immigrantsCornerData} type={"immigrants"} />
           </div>

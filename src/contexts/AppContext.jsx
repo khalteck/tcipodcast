@@ -45,6 +45,19 @@ const AppContextProvider = ({ children }) => {
   function handleToggleModal(item) {
     item ? setPodcast(item) : setPodcast(null);
   }
+
+  //to handle create/edit podcast modal
+  const [addpodcast, setaddPodcast] = useState(null);
+  function handleToggleaddPodcast(item) {
+    item ? setaddPodcast(item) : setaddPodcast(null);
+  }
+
+  //to handle create/edit immigrants corner modal
+  const [addImmigrantsCorner, setaddImmigrantsCorner] = useState(null);
+  function handleToggleaddImmigrantsCorner(item) {
+    item ? setaddImmigrantsCorner(item) : setaddImmigrantsCorner(null);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -58,6 +71,10 @@ const AppContextProvider = ({ children }) => {
         podcast,
         handleToggleModal,
         dispatch,
+        addpodcast,
+        handleToggleaddPodcast,
+        addImmigrantsCorner,
+        handleToggleaddImmigrantsCorner,
       }}
     >
       {children}

@@ -27,7 +27,7 @@ const Section1 = () => {
           <h1 className="mt-5 text-[2.5rem] md:text-[5rem] lg:text-[8rem] text-center font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] font-gluten">
             ADMIN DASHBOARD
           </h1>
-          <div className="center-flex md:block">
+          <div className="center-flex">
             <button
               onClick={() => handleLogout()}
               className="w-fit btn-custom3 text-[.75rem] md:text-[1rem]"
