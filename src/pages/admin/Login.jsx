@@ -64,9 +64,9 @@ const Login = () => {
   useEffect(() => {
     if (isSuccess && data) {
       dispatch(setUser(data));
-      navigate("/admin");
+      window.location.replace("/admin"); // Use window.location.replace
     }
-  }, [data, isSuccess]);
+  }, [data, isSuccess, dispatch]);
 
   return (
     <div className="w-full min-h-screen flex md:flex-row flex-col bg-primary1">

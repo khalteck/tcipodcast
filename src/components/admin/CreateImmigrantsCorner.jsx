@@ -1,20 +1,27 @@
 import { IoClose } from "react-icons/io5";
 import { useAppContext } from "../../contexts/AppContext";
 import { useState } from "react";
-import { serverTimestamp } from "firebase/firestore";
+import {
+  useAddNewImmigrantsCornerMutation,
+  useEditImmigrantsCornerMutation,
+} from "../../redux/features/firebaseSlice";
+import { ClipLoader } from "react-spinners";
 
 const CreateImmigrantsCorner = ({ onClose }) => {
-  const { addImmigrantsCorner } = useAppContext();
-  const mode = typeof addImmigrantsCorner === "string" ? "Add" : "edit";
+  const { addImmigrantsCorner, reRenderApp } = useAppContext();
+  const mode = typeof addImmigrantsCorner === "string" ? "Add" : "Edit";
+
+  const [validationError, setValidationError] = useState(false);
 
   const [formData, setFormData] = useState({
-    title: mode === "edit" ? addImmigrantsCorner?.title : "",
-    body: mode === "edit" ? addImmigrantsCorner?.body : "",
-    timestamp:
-      mode === "edit" ? addImmigrantsCorner?.timestamp : serverTimestamp(),
+    title: mode === "Edit" ? addImmigrantsCorner?.title : "",
+    body: mode === "Edit" ? addImmigrantsCorner?.body : "",
+    embedLink: mode === "Edit" ? addImmigrantsCorner?.embedLink : "",
+    youtubeLink: mode === "Edit" ? addImmigrantsCorner?.youtubeLink : "",
   });
 
   function handleChange(e) {
+    setValidationError(false);
     const { id, value } = e.target;
     setFormData((prev) => {
       return {
@@ -22,6 +29,40 @@ const CreateImmigrantsCorner = ({ onClose }) => {
         [id]: value,
       };
     });
+  }
+
+  const [addNewImmigrantsCorner, { isLoading, isSuccess, isError }] =
+    useAddNewImmigrantsCornerMutation(formData);
+
+  const [
+    editImmigrantsCorner,
+    {
+      isLoading: isLoadingEdit,
+      isSuccess: isSuccessEdit,
+      isError: isErrorEdit,
+    },
+  ] = useEditImmigrantsCornerMutation(formData);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (
+      formData?.title &&
+      formData?.body &&
+      formData?.embedLink &&
+      formData?.youtubeLink
+    ) {
+      mode === "Edit"
+        ? editImmigrantsCorner({ id: addImmigrantsCorner?.id, formData })
+        : await addNewImmigrantsCorner(formData);
+
+      setTimeout(() => {
+        reRenderApp(); //to rerender app to refetch admin info
+
+        onClose();
+      }, 500);
+    } else {
+      setValidationError(true);
+    }
   }
 
   return (
@@ -42,14 +83,67 @@ const CreateImmigrantsCorner = ({ onClose }) => {
             type="text"
             id="title"
             placeholder="Title"
+            value={formData?.title}
+            onChange={handleChange}
+            autoFocus
             className="w-full p-3 border border-primary1 rounded-md text-[.85rem] outline-none bg-transparent"
           />
 
           <textarea
-            id="title"
+            id="body"
             placeholder="Body"
+            value={formData?.body}
+            onChange={handleChange}
             className="w-full h-[150px] p-3 border border-primary1 rounded-md text-[.85rem] outline-none bg-transparent"
           />
+
+          <input
+            type="text"
+            id="embedLink"
+            placeholder="Embed link"
+            value={formData?.embedLink}
+            onChange={handleChange}
+            className="w-full p-3 border border-primary1 rounded-md text-[.85rem] outline-none bg-transparent"
+          />
+
+          <input
+            type="text"
+            id="youtubeLink"
+            placeholder="Youtube link"
+            value={formData?.youtubeLink}
+            onChange={handleChange}
+            className="w-full p-3 border border-primary1 rounded-md text-[.85rem] outline-none bg-transparent"
+          />
+
+          {validationError && (
+            <p className="w-full p-3 bg-red-500/30 font-medium text-[.85rem] rounded-md text-red-500">
+              All fields are required!
+            </p>
+          )}
+
+          {(isError || isErrorEdit) && (
+            <p className="text-red-500 text-sm w-full bg-red-200 p-2 rounded-sm">
+              An error occured!
+            </p>
+          )}
+
+          {(isSuccess || isSuccessEdit) && (
+            <p className="text-green-700 text-sm w-full bg-green-500/30 p-2 rounded-sm">
+              Success!
+            </p>
+          )}
+
+          <button
+            onClick={handleSubmit}
+            disabled={isLoading || isLoadingEdit}
+            className="btn-secondary bg-secondary font-bold text-[1rem] rounded-md center-flex"
+          >
+            {isLoading || isLoadingEdit ? (
+              <ClipLoader size={"20px"} color="black" />
+            ) : (
+              "Submit"
+            )}
+          </button>
         </form>
       </div>
     </div>

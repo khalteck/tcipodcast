@@ -18,7 +18,9 @@ import {
   startAfter,
   endBefore,
   limitToLast,
+  deleteDoc,
 } from "firebase/firestore";
+import generateId from "../../utils/generateId";
 
 // Create an API service
 export const firebaseApi = createApi({
@@ -57,10 +59,13 @@ export const firebaseApi = createApi({
     logoutUser: builder.mutation({
       async queryFn() {
         try {
-          //sign out with firsebase
+          // Sign out with Firebase
           await signOut(auth);
 
-          //return response
+          // Clear everything in local storage
+          localStorage.clear();
+
+          // Return response
           return { data: "success" };
         } catch (e) {
           return { error: e };
@@ -229,6 +234,184 @@ export const firebaseApi = createApi({
         }
       },
     }),
+
+    //to handle immigrants corner videos
+    addNewImmigrantsCorner: builder.mutation({
+      async queryFn(data) {
+        try {
+          const newId = generateId();
+          const docRef = doc(db, "immigrants_corner", newId);
+
+          const infoDocRef = doc(db, "info", "admin");
+          await updateDoc(infoDocRef, {
+            total_immigrants_corner: increment(1),
+          });
+
+          // Add or merge the document
+          await setDoc(docRef, {
+            ...data,
+            timestamp: serverTimestamp(),
+            id: newId,
+          });
+
+          // Return response
+          return { data: "success" };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    editImmigrantsCorner: builder.mutation({
+      async queryFn(data) {
+        try {
+          const docRef = doc(db, "immigrants_corner", data?.id);
+
+          // Add or merge the document
+          await updateDoc(docRef, {
+            ...data?.formData,
+          });
+
+          // Return response
+          return { data: "success" };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    deleteImmigrantsCorner: builder.mutation({
+      async queryFn(id) {
+        try {
+          const docRef = doc(db, "immigrants_corner", id);
+
+          const infoDocRef = doc(db, "info", "admin");
+          await updateDoc(infoDocRef, {
+            total_immigrants_corner: increment(-1),
+          });
+
+          await deleteDoc(docRef);
+
+          // Return response
+          return { data: "success" };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    //get joined community
+    fetchInitialImmigrantsCorner: builder.query({
+      async queryFn() {
+        try {
+          let immigrantsData = [];
+
+          const queryRef = query(
+            collection(db, "immigrants_corner"),
+            orderBy("timestamp", "desc"),
+            limit(5)
+          );
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              immigrantsData.push(docData);
+            });
+          }
+          //return response
+          return { data: immigrantsData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    // fetch next 5 immigrants corner videos
+    fetchNextImmigrantsCorner: builder.mutation({
+      async queryFn() {
+        try {
+          let immigrantsCornerData = [];
+          const lastVisibleRaw = JSON.parse(
+            localStorage.getItem("lastVisibleImmigrants")
+          );
+
+          const immigrantsCornerRef = collection(db, "immigrants_corner");
+
+          const lastVisible = await getDoc(
+            doc(immigrantsCornerRef, lastVisibleRaw?.id)
+          );
+
+          const queryRef = query(
+            collection(db, "immigrants_corner"),
+            orderBy("timestamp", "desc"),
+            startAfter(lastVisible),
+            limit(5)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              immigrantsCornerData.push(docData);
+            });
+          }
+          //return response
+          return { data: immigrantsCornerData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    // fetch previous 5 immigrants corner videos
+    fetchPreviousImmigrantsCorner: builder.mutation({
+      async queryFn() {
+        try {
+          let immigrantsCornerData = [];
+          const firstVisibleRaw = JSON.parse(
+            localStorage.getItem("firstVisibleImmigrants")
+          );
+
+          const immigrantsCornerRef = collection(db, "immigrants_corner");
+
+          const firstVisible = await getDoc(
+            doc(immigrantsCornerRef, firstVisibleRaw?.id)
+          );
+
+          const queryRef = query(
+            collection(db, "immigrants_corner"),
+            orderBy("timestamp", "desc"),
+            endBefore(firstVisible),
+            limitToLast(5)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              immigrantsCornerData.push(docData);
+            });
+          }
+
+          // return response
+          return { data: immigrantsCornerData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
   }),
 });
 
@@ -241,4 +424,10 @@ export const {
   useFetchInitialCommunityQuery,
   useFetchNextCommunityMutation,
   useFetchPreviousCommunityMutation,
+  useAddNewImmigrantsCornerMutation,
+  useFetchInitialImmigrantsCornerQuery,
+  useFetchNextImmigrantsCornerMutation,
+  useFetchPreviousImmigrantsCornerMutation,
+  useDeleteImmigrantsCornerMutation,
+  useEditImmigrantsCornerMutation,
 } = firebaseApi;

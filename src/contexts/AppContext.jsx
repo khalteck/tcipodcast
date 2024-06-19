@@ -7,6 +7,11 @@ export const AppContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 const AppContextProvider = ({ children }) => {
+  const [reRender, setRerender] = useState(false);
+  function reRenderApp() {
+    setRerender((prev) => !prev);
+  }
+
   const location = useLocation();
   let currentPage = location.pathname;
 
@@ -58,6 +63,12 @@ const AppContextProvider = ({ children }) => {
     item ? setaddImmigrantsCorner(item) : setaddImmigrantsCorner(null);
   }
 
+  //to handle create/edit immigrants corner modal
+  const [deleteModal, setdeleteModal] = useState(null);
+  function handleToggledeleteModal(item) {
+    item ? setdeleteModal(item) : setdeleteModal(null);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -75,6 +86,10 @@ const AppContextProvider = ({ children }) => {
         handleToggleaddPodcast,
         addImmigrantsCorner,
         handleToggleaddImmigrantsCorner,
+        deleteModal,
+        handleToggledeleteModal,
+        reRenderApp,
+        reRender,
       }}
     >
       {children}

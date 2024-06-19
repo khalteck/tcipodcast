@@ -11,6 +11,9 @@ import { useSelector } from "react-redux";
 import Modal from "./components/home/Modal";
 import { useAppContext } from "./contexts/AppContext";
 
+// Importing ErrorBoundary
+import ErrorBoundary from "./components/error/ErrorBoundary";
+
 // Code splitting - dynamic import of components
 const Homepage = lazy(() => import("./pages/client/home/Homepage"));
 const Episodes = lazy(() => import("./pages/client/episodes/Episodes"));
@@ -23,15 +26,21 @@ const ImmigrantsCorner = lazy(() =>
 const Login = lazy(() => import("./pages/admin/Login"));
 const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
 
+const ComingSoon = lazy(() => import("./pages/client/comingSoon/ComingSoon"));
+
 function App() {
   const user = useSelector((state) => state.user.user);
   const { podcast, handleToggleModal } = useAppContext();
 
   return (
     <>
+      {/* <ErrorBoundary> */}
       <Suspense fallback={<Loader />}>
         {/* Routes component to define application routes */}
         <Routes>
+          {/* coming soon */}
+          {/* <Route path="/" element={<ComingSoon />} /> */}
+
           {/* client pages */}
           <Route path="/" element={<Homepage />} />
           <Route path="/contact" element={<Contact />} />
@@ -48,6 +57,7 @@ function App() {
           />
         </Routes>
       </Suspense>
+      {/* </ErrorBoundary> */}
 
       {/* //pop up modal */}
       {podcast && (

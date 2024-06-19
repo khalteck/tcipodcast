@@ -8,12 +8,12 @@ import CreatePodcast from "../../components/admin/CreatePodcast";
 import CreateImmigrantsCorner from "../../components/admin/CreateImmigrantsCorner";
 
 const Dashboard = () => {
-  const {
-    addpodcast,
-    handleToggleaddPodcast,
-    addImmigrantsCorner,
-    handleToggleaddImmigrantsCorner,
-  } = useAppContext();
+  // const {
+  //   addpodcast,
+  //   handleToggleaddPodcast,
+  //   addImmigrantsCorner,
+  //   handleToggleaddImmigrantsCorner,
+  // } = useAppContext();
 
   return (
     <>
@@ -23,10 +23,10 @@ const Dashboard = () => {
 
         <Section2 />
 
-        {addpodcast && <CreatePodcast onClose={handleToggleaddPodcast} />}
+        {/* {addpodcast && <CreatePodcast onClose={handleToggleaddPodcast} />}
         {addImmigrantsCorner && (
           <CreateImmigrantsCorner onClose={handleToggleaddImmigrantsCorner} />
-        )}
+        )} */}
       </main>
       <Footer />
 
