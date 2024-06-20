@@ -13,6 +13,7 @@ import CreateImmigrantsCorner from "./CreateImmigrantsCorner";
 import CreatePodcast from "./CreatePodcast";
 import Totals from "./Totals";
 import ImmigrantsCornerList from "./ImmigrantsCornerList";
+import PodcastList from "./PodcastList";
 
 const Section2 = () => {
   const {
@@ -66,8 +67,11 @@ const Section2 = () => {
               id="podcasts-list"
               className="w-full h-fit md:w-1/2 p-4 rounded-md bg-white"
             >
-              <h4 className="font-bold">Podcasts</h4>
-              <PaginatedList data={topPodcastData} type={"podcast"} />
+              <PodcastList
+                infoData={infoData}
+                refetch={refetch}
+                loadingInfo={loadingInfo}
+              />
             </div>
             <div
               id="immigrants-corner"

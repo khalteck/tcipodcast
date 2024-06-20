@@ -1,7 +1,7 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth, db } from "../../firebase/firebase-config";
+import { auth, db, storage } from "../../firebase/firebase-config";
 import {
   collection,
   query,
@@ -21,6 +21,12 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import generateId from "../../utils/generateId";
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytes,
+} from "firebase/storage";
 
 // Create an API service
 export const firebaseApi = createApi({
@@ -93,7 +99,7 @@ export const firebaseApi = createApi({
       },
     }),
 
-    // Join community (users)
+    // ========================================================================================Join community (users)
     joinCommunity: builder.mutation({
       async queryFn(data) {
         try {
@@ -235,7 +241,7 @@ export const firebaseApi = createApi({
       },
     }),
 
-    //to handle immigrants corner videos
+    //=============================================================================to handle immigrants corner videos
     addNewImmigrantsCorner: builder.mutation({
       async queryFn(data) {
         try {
@@ -412,22 +418,250 @@ export const firebaseApi = createApi({
         }
       },
     }),
+
+    //======================================================================================= To handle podcasts
+
+    //to handle podcasts
+    addNewPodcast: builder.mutation({
+      async queryFn(data) {
+        try {
+          const newId = generateId();
+          const docRef = doc(db, "podcasts", newId);
+
+          const fileName = `${newId}.jpeg`;
+
+          //upload thumbnail image to storage
+          const storageRef = ref(storage, `/podcasts/${fileName}`);
+          await uploadBytes(storageRef, data?.thumbnail);
+
+          //get the uploaded image download url
+          const imageUrl = await getDownloadURL(ref(storage, storageRef));
+
+          // create the document in firestor
+          await setDoc(docRef, {
+            ...data,
+            thumbnail: imageUrl,
+            timestamp: serverTimestamp(),
+            id: newId,
+          });
+
+          const infoDocRef = doc(db, "info", "admin");
+          await updateDoc(infoDocRef, {
+            total_podcasts: increment(1),
+          });
+
+          // Return response
+          return { data: "success" };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    editPodcast: builder.mutation({
+      async queryFn(data) {
+        try {
+          const docRef = doc(db, "podcasts", data?.id);
+
+          let imageUrl;
+          const isimageEditted = typeof data?.formData?.thumbnail !== "string";
+
+          if (isimageEditted) {
+            const fileName = `${data?.id}.jpeg`;
+
+            //upload thumbnail image to storage
+            const storageRef = ref(storage, `/podcasts/${fileName}`);
+
+            //first delete existing image
+            await deleteObject(storageRef);
+
+            //upload new image
+            await uploadBytes(storageRef, data?.formData?.thumbnail);
+
+            //get the uploaded image download url
+            const url = await getDownloadURL(ref(storage, storageRef));
+            imageUrl = url;
+          }
+
+          // Add or merge the document
+          await updateDoc(docRef, {
+            ...data?.formData,
+            thumbnail: isimageEditted ? imageUrl : data?.formData?.thumbnail,
+          });
+
+          // Return response
+          return { data: "success" };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    deletePodcast: builder.mutation({
+      async queryFn(id) {
+        try {
+          const docRef = doc(db, "podcasts", id);
+          await deleteDoc(docRef);
+
+          // delete existing image
+          const fileName = `${id}.jpeg`;
+          const storageRef = ref(storage, `/podcasts/${fileName}`);
+          await deleteObject(storageRef);
+
+          const infoDocRef = doc(db, "info", "admin");
+          await updateDoc(infoDocRef, {
+            total_podcasts: increment(-1),
+          });
+
+          // Return response
+          return { data: "success" };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    //get initial podcasts
+    fetchInitialPodcasts: builder.query({
+      async queryFn() {
+        try {
+          let podcastData = [];
+
+          const queryRef = query(
+            collection(db, "podcasts"),
+            orderBy("timestamp", "desc"),
+            limit(4)
+          );
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              podcastData.push(docData);
+            });
+          }
+          //return response
+          return { data: podcastData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    // fetch next 4 podcasts
+    fetchNextPodcasts: builder.mutation({
+      async queryFn() {
+        try {
+          let podcastsData = [];
+          const lastVisibleRaw = JSON.parse(
+            localStorage.getItem("lastVisiblePodcasts")
+          );
+
+          const podcastsRef = collection(db, "podcasts");
+
+          const lastVisible = await getDoc(
+            doc(podcastsRef, lastVisibleRaw?.id)
+          );
+
+          const queryRef = query(
+            podcastsRef,
+            orderBy("timestamp", "desc"),
+            startAfter(lastVisible),
+            limit(4)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              podcastsData.push(docData);
+            });
+          }
+          //return response
+          return { data: podcastsData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    // fetch previous 4 podcasts
+    fetchPreviousPodcasts: builder.mutation({
+      async queryFn() {
+        try {
+          let podcastsData = [];
+          const firstVisibleRaw = JSON.parse(
+            localStorage.getItem("firstVisiblePodcasts")
+          );
+
+          const podcastsRef = collection(db, "podcasts");
+
+          const firstVisible = await getDoc(
+            doc(podcastsRef, firstVisibleRaw?.id)
+          );
+
+          const queryRef = query(
+            podcastsRef,
+            orderBy("timestamp", "desc"),
+            endBefore(firstVisible),
+            limitToLast(5)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              podcastsData.push(docData);
+            });
+          }
+
+          // return response
+          return { data: podcastsData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are auto-generated based on the defined endpoints
 export const {
+  // auth
   useLoginUserMutation,
   useLogoutUserMutation,
   useFetchAdminInfoQuery,
+
+  // community
   useJoinCommunityMutation,
   useFetchInitialCommunityQuery,
   useFetchNextCommunityMutation,
   useFetchPreviousCommunityMutation,
+
+  // immigrants corner
   useAddNewImmigrantsCornerMutation,
   useFetchInitialImmigrantsCornerQuery,
   useFetchNextImmigrantsCornerMutation,
   useFetchPreviousImmigrantsCornerMutation,
   useDeleteImmigrantsCornerMutation,
   useEditImmigrantsCornerMutation,
+
+  // podcasts
+  useAddNewPodcastMutation,
+  useDeletePodcastMutation,
+  useEditPodcastMutation,
+  useFetchInitialPodcastsQuery,
+  useFetchNextPodcastsMutation,
+  useFetchPreviousPodcastsMutation,
 } = firebaseApi;

@@ -134,10 +134,14 @@ const CommunityList = ({ infoData }) => {
     <div>
       <div className="w-full flex justify-between px-2">
         <h4 className="font-bold md:px-0">Joined Community</h4>
-        <p className="font-medium text-[.9rem]">
-          Page <span className="font-bold">{pagDetails?.page}</span> of{" "}
-          <span className="font-bold">{!isNaN(totalPages) && totalPages}</span>
-        </p>
+        {!isLoadingInitial && (
+          <p className="font-medium text-[.9rem]">
+            Page <span className="font-bold">{pagDetails?.page}</span> of{" "}
+            <span className="font-bold">
+              {!isNaN(totalPages) && totalPages}
+            </span>
+          </p>
+        )}
       </div>
       <div className="w-full min-h-[400px] bg-neutral-100 flex flex-col gap-2 md:p-3 py-2">
         {!isLoadingInitial && !isLoadingNext && !isLoadingPrev ? (

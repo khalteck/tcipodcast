@@ -4,37 +4,33 @@ import { BsPlayCircleFill } from "react-icons/bs";
 import { useAppContext } from "../../contexts/AppContext";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import DeleteModal from "./DeleteModal";
 
 const PodcastCardAdmin = ({ item }) => {
-  const { handleToggleModal, podcast } = useAppContext();
-  const [hover, setHover] = useState(null);
+  const {
+    handleToggleModal,
+    deleteModal,
+    handleToggledeleteModal,
+    handleToggleaddPodcast,
+  } = useAppContext();
+
   return (
     <>
       <div
-        onMouseOver={() => setHover(item)}
-        onMouseOut={() => setHover(null)}
-        className={`w-full p-2 md:p-3 rounded-lg flex gap-3 border transition-all duration-300 text-[.75rem] ${
-          hover?.id === item?.id ? "bg-secondary" : "bg-white"
-        }`}
+        className={`w-full p-2 md:p-3 rounded-lg flex gap-3 border transition-all duration-300 text-[.75rem] bg-white`}
       >
         <img
           alt="podcast-thumbnail"
           src={item?.thumbnail}
-          className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] object-cover rounded-lg"
+          className="w-[100px] h-[100px] object-cover rounded-lg"
         />
         <div className="w-full flex flex-col gap-1 md:gap-3">
           <div>
-            <p className="font-bold text-[.9rem]">{item?.title}</p>
+            <p className="font-bold text-[.9rem]">
+              {capitalizeFirstLetter(item?.title)}
+            </p>
           </div>
-          <p className="">
-            By{" "}
-            <span className="uppdercase font-medium">
-              {item?.authors?.map(
-                (x, ind, arr) =>
-                  `${x}${arr?.length === 2 && ind === 0 ? " & " : ""}`
-              )}
-            </span>
-          </p>
           <div className="w-full flex justify-between items-baseline mt-auto">
             <p className="text-[.75rem] font-medium opacity-80">
               {item?.duration}
@@ -51,7 +47,7 @@ const PodcastCardAdmin = ({ item }) => {
                   color={"white"}
                   size={"17px"}
                   className="cursor-pointer"
-                  // onClick={() => handleToggleModal(item)}
+                  onClick={() => handleToggleaddPodcast(item)}
                 />
               </div>
               <div className="w-fit h-fit p-1 rounded-full bg-red-500 hover:scale-125">
@@ -59,7 +55,9 @@ const PodcastCardAdmin = ({ item }) => {
                   color={"white"}
                   size={"17px"}
                   className="cursor-pointer"
-                  // onClick={() => handleToggleModal(item)}
+                  onClick={() =>
+                    handleToggledeleteModal({ ...item, type: "podcast" })
+                  }
                 />
               </div>
             </div>
@@ -67,10 +65,9 @@ const PodcastCardAdmin = ({ item }) => {
         </div>
       </div>
 
-      {/* //pop up modal */}
-      {/* {podcast && (
-        <Modal onClose={handleToggleModal} action={() => console.log("play")} />
-      )} */}
+      {deleteModal && (
+        <DeleteModal onClose={handleToggledeleteModal} item={deleteModal} />
+      )}
     </>
   );
 };

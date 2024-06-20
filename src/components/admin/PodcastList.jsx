@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../contexts/AppContext";
 import {
-  useFetchInitialImmigrantsCornerQuery,
-  useFetchNextImmigrantsCornerMutation,
-  useFetchPreviousImmigrantsCornerMutation,
+  useFetchInitialPodcastsQuery,
+  useFetchNextPodcastsMutation,
+  useFetchPreviousPodcastsMutation,
 } from "../../redux/features/firebaseSlice";
 import { ClipLoader } from "react-spinners";
 import ImmigrantsCornerCard from "./ImmigrantsCornerCard";
+import PodcastCardAdmin from "./PodcastCardAdmin";
 
-const ImmigrantsCornerList = ({ infoData, refetch }) => {
+const PodcastList = ({ infoData, refetch }) => {
   const { handleScrollTo, reRender } = useAppContext();
 
   // to fetch data
@@ -17,7 +18,7 @@ const ImmigrantsCornerList = ({ infoData, refetch }) => {
     data: dataInitial,
     isSuccess: isSuccessInitial,
     refetch: refetchInitial,
-  } = useFetchInitialImmigrantsCornerQuery();
+  } = useFetchInitialPodcastsQuery();
 
   function refetchAll() {
     refetch();
@@ -32,53 +33,53 @@ const ImmigrantsCornerList = ({ infoData, refetch }) => {
 
   //to get next 5 data
   const [
-    fetchNextImmigrantsCorner,
+    fetchNextPodcasts,
     { isLoading: isLoadingNext, isSuccess: isSuccessNext, data: dataNext },
-  ] = useFetchNextImmigrantsCornerMutation();
+  ] = useFetchNextPodcastsMutation();
 
   //to get prev 5 data
   const [
-    fetchPreviousImmigrantsCorner,
+    fetchPreviousPodcasts,
     { isLoading: isLoadingPrev, isSuccess: isSuccessPrev, data: dataPrev },
-  ] = useFetchPreviousImmigrantsCornerMutation();
+  ] = useFetchPreviousPodcastsMutation();
 
-  const [immigrantsData, setimmigrantsData] = useState([]);
+  const [podcastsData, setpodcastsData] = useState([]);
 
-  // console.log("immigrantsData", immigrantsData);
+  // console.log("podcastsData", podcastsData);
 
   const pagDetails =
-    JSON.parse(localStorage.getItem("pagDetailsImmigrants")) || null;
-  const dataEnd = infoData?.total_immigrants_corner === pagDetails?.displayed;
+    JSON.parse(localStorage.getItem("pagDetailsPodcasts")) || null;
+  const dataEnd = infoData?.total_podcasts === pagDetails?.displayed;
   const dataStart = pagDetails?.page === 1;
 
-  const totalPages = Math.ceil(infoData?.total_immigrants_corner / 5);
+  const totalPages = Math.ceil(infoData?.total_podcasts / 4);
 
   useEffect(() => {
     if (isSuccessInitial && dataInitial && pagDetails?.page === 1) {
-      setimmigrantsData(dataInitial);
+      setpodcastsData(dataInitial);
       localStorage.setItem(
-        "lastVisibleImmigrants",
+        "lastVisiblePodcasts",
         JSON.stringify(dataInitial?.[dataInitial?.length - 1])
       );
     }
     if (isSuccessNext && dataNext) {
       localStorage.setItem(
-        "lastVisibleImmigrants",
-        JSON.stringify(immigrantsData?.[immigrantsData?.length - 1])
+        "lastVisiblePodcasts",
+        JSON.stringify(podcastsData?.[podcastsData?.length - 1])
       );
       localStorage.setItem(
-        "firstVisibleImmigrants",
-        JSON.stringify(immigrantsData?.[0])
+        "firstVisiblePodcasts",
+        JSON.stringify(podcastsData?.[0])
       );
     }
     if (isSuccessPrev && dataPrev) {
       localStorage.setItem(
-        "lastVisibleImmigrants",
-        JSON.stringify(immigrantsData?.[immigrantsData?.length - 1])
+        "lastVisiblePodcasts",
+        JSON.stringify(podcastsData?.[podcastsData?.length - 1])
       );
       localStorage.setItem(
-        "firstVisibleImmigrants",
-        JSON.stringify(immigrantsData?.[0])
+        "firstVisiblePodcasts",
+        JSON.stringify(podcastsData?.[0])
       );
     }
   }, [
@@ -97,55 +98,52 @@ const ImmigrantsCornerList = ({ infoData, refetch }) => {
         page: 1,
         displayed: dataInitial?.length,
       };
-      localStorage.setItem(
-        "pagDetailsImmigrants",
-        JSON.stringify(newPagDetails)
-      );
-      localStorage.removeItem("firstVisibleImmigrants");
+      localStorage.setItem("pagDetailsPodcasts", JSON.stringify(newPagDetails));
+      localStorage.removeItem("firstVisiblePodcasts");
     }
   }, [dataInitial, isSuccessInitial]);
 
-  const displayItems = immigrantsData?.map((item, index) => {
-    return <ImmigrantsCornerCard key={index} item={item} />;
+  const displayItems = podcastsData?.map((item, index) => {
+    return <PodcastCardAdmin key={index} item={item} />;
   });
 
   async function handleNext() {
-    const response = await fetchNextImmigrantsCorner();
-    setimmigrantsData(response?.data);
+    const response = await fetchNextPodcasts();
+    setpodcastsData(response?.data);
 
     const oldPagDetails =
-      JSON.parse(localStorage.getItem("pagDetailsImmigrants")) || null;
+      JSON.parse(localStorage.getItem("pagDetailsPodcasts")) || null;
 
     const newPagDetails = {
       page: oldPagDetails?.page + 1,
       displayed: oldPagDetails?.displayed + response?.data?.length,
     };
 
-    localStorage.setItem("pagDetailsImmigrants", JSON.stringify(newPagDetails));
+    localStorage.setItem("pagDetailsPodcasts", JSON.stringify(newPagDetails));
 
-    handleScrollTo("immigrants-corner");
+    handleScrollTo("podcasts-list");
   }
 
   async function handlePrev() {
-    const response = await fetchPreviousImmigrantsCorner();
-    setimmigrantsData(response?.data);
+    const response = await fetchPreviousPodcasts();
+    setpodcastsData(response?.data);
 
     const oldPagDetails =
-      JSON.parse(localStorage.getItem("pagDetailsImmigrants")) || null;
+      JSON.parse(localStorage.getItem("pagDetailsPodcasts")) || null;
 
     const newPagDetails = {
       page: oldPagDetails?.page - 1,
-      displayed: oldPagDetails?.displayed - immigrantsData?.length,
+      displayed: oldPagDetails?.displayed - podcastsData?.length,
     };
-    localStorage.setItem("pagDetailsImmigrants", JSON.stringify(newPagDetails));
+    localStorage.setItem("pagDetailsPodcasts", JSON.stringify(newPagDetails));
 
-    handleScrollTo("immigrants-corner");
+    handleScrollTo("podcasts-list");
   }
 
   return (
     <div>
       <div className="w-full flex justify-between px-2">
-        <h4 className="font-bold md:px-0">Immigrants Corner</h4>
+        <h4 className="font-bold md:px-0">Podcasts</h4>
         {!isLoadingInitial && (
           <p className="font-medium text-[.9rem]">
             Page <span className="font-bold">{pagDetails?.page}</span> of{" "}
@@ -192,4 +190,4 @@ const ImmigrantsCornerList = ({ infoData, refetch }) => {
   );
 };
 
-export default ImmigrantsCornerList;
+export default PodcastList;

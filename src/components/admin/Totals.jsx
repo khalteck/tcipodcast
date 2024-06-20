@@ -16,7 +16,11 @@ const Totals = ({ loadingInfo }) => {
         <div className="w-full">
           <p>Total Podcasts</p>
           <p className="text-[2rem] font-bold flex gap-2 items-center">
-            {loadingInfo ? <ClipLoader /> : infoData?.total_podcasts}
+            {loadingInfo ? (
+              <ClipLoader size={"20px"} />
+            ) : (
+              infoData?.total_podcasts
+            )}
             <FaCaretUp color="green" size={"20px"} />
             <button
               onClick={() => handleScrollTo("podcasts-list")}
@@ -35,7 +39,11 @@ const Totals = ({ loadingInfo }) => {
         <div className="w-full">
           <p>Immigrants corner</p>
           <p className="text-[2rem] font-bold flex gap-2 items-center">
-            {loadingInfo ? <ClipLoader /> : infoData?.total_immigrants_corner}
+            {loadingInfo ? (
+              <ClipLoader size={"20px"} />
+            ) : (
+              infoData?.total_immigrants_corner
+            )}
             <FaCaretUp color="green" size={"20px"} />
             <button
               onClick={() => handleScrollTo("immigrants-corner")}
@@ -54,7 +62,11 @@ const Totals = ({ loadingInfo }) => {
         <div className="w-full">
           <p>Total Joined Community</p>
           <p className="text-[2rem] font-bold flex gap-2 items-center">
-            {loadingInfo ? <ClipLoader /> : infoData?.total_joined_community}
+            {loadingInfo ? (
+              <ClipLoader size={"20px"} />
+            ) : (
+              infoData?.total_joined_community
+            )}
 
             <FaCaretUp color="green" size={"20px"} />
             <button

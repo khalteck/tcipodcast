@@ -41,7 +41,9 @@ const ImmigrantsCornerCard = ({ item }) => {
                 color={"white"}
                 size={"17px"}
                 className="cursor-pointer"
-                onClick={() => handleToggledeleteModal(item)}
+                onClick={() =>
+                  handleToggledeleteModal({ ...item, type: "immigrants" })
+                }
               />
             </div>
           </div>
@@ -49,11 +51,7 @@ const ImmigrantsCornerCard = ({ item }) => {
       </div>
 
       {deleteModal && (
-        <DeleteModal
-          onClose={handleToggledeleteModal}
-          item={deleteModal}
-          type="immigrants"
-        />
+        <DeleteModal onClose={handleToggledeleteModal} item={deleteModal} />
       )}
     </>
   );
