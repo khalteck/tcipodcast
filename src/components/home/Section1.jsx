@@ -1,10 +1,6 @@
-import { FaHeadset, FaMicrophoneAlt, FaPlay } from "react-icons/fa";
-import { FaHeadset, FaMicrophoneAlt, FaPlay } from "react-icons/fa";
+import { FaHeadset, FaMicrophoneAlt } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import SocialsContainer from "../common/header/SocialsContainer";
-import { useAppContext } from "../../contexts/AppContext";
-import { IoPlay } from "react-icons/io5";
-import { GiSplash } from "react-icons/gi";
 import { IoPlay } from "react-icons/io5";
 import { GiSplash } from "react-icons/gi";
 

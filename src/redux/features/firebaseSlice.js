@@ -2,7 +2,6 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth, db, storage } from "../../firebase/firebase-config";
-import { auth, db, storage } from "../../firebase/firebase-config";
 import {
   collection,
   query,

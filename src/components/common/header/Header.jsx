@@ -1,17 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import Dropdown from "./Dropdown";
-import SocialsContainer from "./SocialsContainer";
-import { FaMicrophoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../../contexts/AppContext";
 import Logo from "../Logo";
 import { useSelector } from "react-redux";
-import { MdEmail } from "react-icons/md";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { IoShareSocial } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { IoShareSocial } from "react-icons/io5";
 
 const Header = () => {
