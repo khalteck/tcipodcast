@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
-import PodcastCard from "../../../components/home/PodcastCard";
 import topPodcastData from "../../../data/topPodcasts.json";
-import ReactPaginate from "react-paginate";
 import { useAppContext } from "../../../contexts/AppContext";
 import ScrollToTop from "../../../ScrollToTop";
+import PodcastCard2 from "../../../components/home/PodcastCard2";
+import Section1 from "../../../components/episodes/Section1";
+import Section2 from "../../../components/episodes/Section2";
+import Section3 from "../../../components/episodes/Section3";
+import FixedFloater from "../../../components/common/FixedFloater";
 
 const Episodes = () => {
   const { scrollToTop } = useAppContext();
@@ -16,13 +19,13 @@ const Episodes = () => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const rowPerPage = 9;
+  const rowPerPage = 5;
   const pagesVisited = pageNumber * rowPerPage;
 
   const displayPodcasts = podcastDataPag
     ?.slice(pagesVisited, pagesVisited + rowPerPage)
     ?.map((item, index) => {
-      return <PodcastCard key={index} item={item} index={index} />;
+      return <PodcastCard2 key={index} item={item} index={index} />;
     });
 
   const pageCount = Math.ceil(podcastDataPag?.length / rowPerPage);
@@ -32,33 +35,25 @@ const Episodes = () => {
     scrollToTop();
   };
 
+  const latestEpisode = podcastDataPag?.slice(1)?.[0];
+
   return (
     <>
       <Header />
       <main>
-        <div className="w-full h-[200px] bg-primary1/90 center-flex">
-          <h2 className="text-white">All Episodes</h2>
-        </div>
-        <section className="pb-[100px] min-h-screen ">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-14 gap-5">
-            {displayPodcasts}
-          </div>
-          {podcastDataPag?.length > 9 && (
-            <div className="w-full flex justify-center mt-10">
-              <ReactPaginate
-                previousLabel={"<"}
-                nextLabel={">"}
-                breakLabel={"..."}
-                breakClassName={"break-me"}
-                pageCount={pageCount}
-                onPageChange={changePage}
-                containerClassName={"pagination"}
-                subContainerClassName={"podcast pagination"}
-                activeClassName={"active"}
-              />
-            </div>
-          )}
-        </section>
+        <Section1 />
+
+        <Section2 latestEpisode={latestEpisode} />
+
+        <Section3
+          displayPodcasts={displayPodcasts}
+          podcastDataPag={podcastDataPag}
+          rowPerPage={rowPerPage}
+          pageCount={pageCount}
+          changePage={changePage}
+        />
+
+        <FixedFloater />
       </main>
       <Footer />
 

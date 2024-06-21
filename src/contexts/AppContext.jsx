@@ -1,15 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useContext, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 const AppContextProvider = ({ children }) => {
+  const [reRender, setRerender] = useState(false);
+  function reRenderApp() {
+    setRerender((prev) => !prev);
+  }
+
   const location = useLocation();
   let currentPage = location.pathname;
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [loader, setLoader] = useState(false);
 
@@ -43,6 +50,25 @@ const AppContextProvider = ({ children }) => {
   function handleToggleModal(item) {
     item ? setPodcast(item) : setPodcast(null);
   }
+
+  //to handle create/edit podcast modal
+  const [addpodcast, setaddPodcast] = useState(null);
+  function handleToggleaddPodcast(item) {
+    item ? setaddPodcast(item) : setaddPodcast(null);
+  }
+
+  //to handle create/edit immigrants corner modal
+  const [addImmigrantsCorner, setaddImmigrantsCorner] = useState(null);
+  function handleToggleaddImmigrantsCorner(item) {
+    item ? setaddImmigrantsCorner(item) : setaddImmigrantsCorner(null);
+  }
+
+  //to handle create/edit immigrants corner modal
+  const [deleteModal, setdeleteModal] = useState(null);
+  function handleToggledeleteModal(item) {
+    item ? setdeleteModal(item) : setdeleteModal(null);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -55,6 +81,15 @@ const AppContextProvider = ({ children }) => {
         handleScrollTo,
         podcast,
         handleToggleModal,
+        dispatch,
+        addpodcast,
+        handleToggleaddPodcast,
+        addImmigrantsCorner,
+        handleToggleaddImmigrantsCorner,
+        deleteModal,
+        handleToggledeleteModal,
+        reRenderApp,
+        reRender,
       }}
     >
       {children}

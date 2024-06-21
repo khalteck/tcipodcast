@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Lemonada:wght@300..700&family=Sriracha&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
 
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -9,23 +8,22 @@
 /* base styles */
 body {
   /* background: #171a1f; */
-  background: #f5f5f5;
-  @apply text-primary font-poppins;
+  @apply text-primary font-poppins bg-primary1;
 }
 h1 {
-  @apply font-bold text-primary text-2xl md:text-3xl;
+  @apply font-bold text-2xl md:text-3xl;
 }
 
 h2 {
-  @apply font-bold text-primary text-[2rem] md:text-[2.25rem] lg:text-[3.5rem] leading-tight;
+  @apply font-bold text-[2rem] md:text-[2.25rem] lg:text-[4rem] leading-tight;
 }
 
 h3 {
-  @apply font-bold text-primary text-3xl lg:text-4xl;
+  @apply font-bold text-3xl lg:text-5xl font-gluten;
 }
 
 section {
-  @apply w-full max-w-[1550px] mx-auto px-5 md:px-8 lg:px-14;
+  @apply w-full max-w-[1550px] mx-auto px-3 md:px-8 lg:px-14;
 }
 /* header {
   @apply w-full pt-5 md:pt-8 px-5 md:px-8 lg:px-14 mx-auto;
@@ -52,11 +50,9 @@ header > div {
 }
 /* button styles */
 button {
-  @apply flex gap-2 items-center uppercase rounded-sm transition-all duration-300;
+  @apply flex gap-2 items-center rounded-sm transition-all duration-300;
 }
-/* button:hover {
-  @apply border-secondary;
-} */
+
 .btn-primary {
   @apply text-sm pb-2 px-1 border-b-2 border-primary/60;
 }
@@ -73,6 +69,15 @@ button {
   @apply w-full center-flex px-4 py-2 flex items-center border border-secondary/50 shadow-custom bg-secondary font-medium hover:shadow-clicked;
 }
 
+.btn-custom3 {
+  @apply px-8 py-4 bg-secondary2 rounded-full text-white font-medium text-lg flex gap-2 items-center;
+}
+.btn-custom4 {
+  @apply px-8 py-4 bg-secondary rounded-full text-primary1 font-medium flex gap-2 items-center;
+}
+.btn-custom5 {
+  @apply px-8 py-4 bg-primary1 rounded-full text-white font-medium flex gap-2 items-center;
+}
 /* random styles */
 .home {
   @apply relative bg-no-repeat bg-[right_top_6rem] md:bg-[right_top_9rem] bg-[length:250px_auto] md:bg-[length:500px_auto];
@@ -130,6 +135,18 @@ button {
     }
   }
 
+  .swing {
+    animation: swing 20s linear infinite;
+  }
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .expand {
     animation: expand 0.6s ease-in-out;
   }
@@ -169,23 +186,26 @@ button {
   }
 
   .pagination a {
-    color: #333;
+    color: #2a354e;
     font-size: 15px;
     line-height: 15px;
-    padding: 7px 12px;
+    padding: 7px 20px;
     text-decoration: none;
-    border: 1px solid rgb(172, 168, 168);
+    border: 1px solid #2a354e;
     border-radius: 5px;
     margin: 0 5px;
+    font-weight: bold;
+    background-color: #fcea10;
   }
 
   .pagination a:hover {
-    background-color: #f2f2f2;
+    color: #ff4402;
   }
 
   .pagination .active a {
-    background-color: #fcea10;
-    border: 1px solid rgb(172, 168, 168);
+    background-color: #481297;
+    border: 1px solid #2a354e;
+    color: white;
   }
 
   .pagination .break-me {

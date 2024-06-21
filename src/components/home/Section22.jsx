@@ -42,7 +42,7 @@ const Section22 = () => {
           <a
             data-aos="fade-up"
             data-aos-duration="1000"
-            href="mailto:tcipod1@gmail.com"
+            href="mailto:hello@tcipod.com"
             target="_blank"
             rel="noreferrer"
           >

@@ -6,18 +6,20 @@ export default {
       flare: "url('/images/flare2.png')",
       flare2: "url('/images/flare.png')",
       hero: "url('/images/pod3.jpg')",
+      hero2: "url('/images/podcast.jpg')",
+      hero3: "url('/images/pod3.jpg')",
     },
     fontFamily: {
-      quicksand: ["Quicksand", "sans-serif"],
+      gluten: ["Gluten", "sans-serif"],
       poppins: ["Poppins", "sans-serif"],
-      sevillana: ["Sevillana", "cursive"],
     },
     extend: {
       colors: {
         primary: "#2a354e",
         primary1: "#481297",
-        primary2: "#01ffff",
+        primary2: "#370680",
         secondary: "#fcea10",
+        secondary2: "#ff4402",
       },
       boxShadow: {
         custom: "7px 7px rgba(42, 53, 78, 0.8)",

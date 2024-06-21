@@ -1,26 +1,44 @@
 [
   {
     "id": 1,
-    "name": "Moyeni Mebude",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/tci.jpg"
+    "role": "The Host",
+    "name": "Mo Mebude",
+    "bio": "Welcome to the migrant community. I’m Omoyeni Mebude, known to most as Mo, a vibrant infusion of Nigerian and British cultures. My migration journey started in January 2021 and, like most immigrants, it has had its fair share of challenges and rejections, but also beautiful milestones. In this journey, we noticed something was missing: access to information, community, and support. So, in a quest to make the journey easier for migrants after me and even before me, we’ve started The Chronicles of an Immigrant. Through the power of a microphone, we aim to build a global community where all immigrants feel heard, supported, inspired, and valued. Some might say it’s a mission impossible, but in our community, anything is possible and everyone’s dreams are valid.",
+    "image": "/images/pod.jpg",
+    "socials": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/tcipod"
+      },
+      {
+        "name": "tiktok",
+        "link": "https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+      },
+      {
+        "name": "twitter",
+        "link": "https://x.com/_tcipod"
+      }
+    ]
   },
   {
     "id": 2,
+    "role": "Podcast Producer",
     "name": "Folawe Marquis",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/host.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Noreen Obasoyo",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/pod.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Daniel Mgbolu",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "image": "/images/hero1.jpg"
+    "bio": "Hi everyone, great to have you here! Moving to the UK during the height of the pandemic was a true eye-opener, reshaping my expectations and reality as an international student. My immigration journey has been filled with highs and lows, and I’ve heard incredible, joyous, and heartbreaking stories from fellow immigrants. I’m excited to be part of TCI, working behind the scenes to enhance the creative process and build a platform where your voices can be heard and global immigrants can share their experiences. I hope these stories inspire someone or offer valuable lessons from others’ journeys.",
+    "image": "/images/host.jpg",
+    "socials": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/tcipod"
+      },
+      {
+        "name": "tiktok",
+        "link": "https://www.tiktok.com/@tcipod?_t=8mvJLhhpwm5&_r=1"
+      },
+      {
+        "name": "twitter",
+        "link": "https://x.com/_tcipod"
+      }
+    ]
   }
 ]

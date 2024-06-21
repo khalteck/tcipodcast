@@ -1,6 +1,5 @@
 import { FaUserPlus } from "react-icons/fa";
-import { timeAgo } from "../../utils/timeAgo";
-import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 
 const CommunityCard = ({ item }) => {
   return (
@@ -17,9 +16,6 @@ const CommunityCard = ({ item }) => {
           <a href={`mailto:${item?.email}`}>{item?.email}</a>
         </small>
       </div>
-      <p className="whitespace-nowrap text-[.75em] opacity-70">
-        {timeAgo(item?.timestamp)}
-      </p>
     </div>
   );
 };

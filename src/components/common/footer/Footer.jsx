@@ -16,9 +16,9 @@ const Footer = () => {
             </div>
             <p className="mb-5">TCI: The Chronicles of an Immigrant</p>
             <p className="flex gap-2 items-center">
-              <MdEmail color="white" size="20px" />
-              <a href="mailto:tcipod1@gmail.com" className="cursor-pointer">
-                tcipod1@gmail.com
+              <MdEmail color="#fff" size="20px" />
+              <a href="mailto:hello@tcipod.com" className="cursor-pointer">
+                hello@tcipod.com
               </a>
             </p>
           </div>
@@ -48,6 +48,11 @@ const Footer = () => {
               className="mb-4 cursor-pointer"
             >
               Community
+            </p>
+            <p className="mb-4">
+              <Link to="/immigrants-corner" className="">
+                Immigrants Corner
+              </Link>
             </p>
             <p
               onClick={() => handleScrollTo("contact")}
@@ -106,7 +111,7 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div className="flex h-[80px] mt-5 justify-center items-center text-[.75rem] opacity-70 border-t border-t-white/20">
+      <div className="flex h-[80px] mt-5 justify-center items-center text-[.75rem] border-t border-t-white/20">
         <p>© 2024 Tcipod. All Rights Reserved</p>
       </div>
     </footer>

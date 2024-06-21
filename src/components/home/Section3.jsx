@@ -1,57 +1,91 @@
 import topPodcastData from "../../data/topPodcasts.json";
 import PodcastCard from "./PodcastCard";
 import { useAppContext } from "../../contexts/AppContext";
+import PodcastCard2 from "./PodcastCard2";
+import { IoPlay } from "react-icons/io5";
+import { BsPlayCircleFill } from "react-icons/bs";
+import { FaHeadset } from "react-icons/fa";
+import { GiSplash } from "react-icons/gi";
+import { useSelector } from "react-redux";
 
 const Section3 = () => {
-  const { navigate } = useAppContext();
-  return (
-    <div className="relative">
-      <section
-        id="episodes"
-        className="pt-[50px] pb-[150px] md:pt-[120px] sm:pb-[200px] md:pb-[300px] lg:pb-[500px] xxl:pb-[700px]"
-      >
-        <h3 className="text-center">Top Episodes For You</h3>
+  const { latestEpisode } = useSelector((state) => state.dataManagement);
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-5">
-          {topPodcastData?.slice(0, 6)?.map((item, index) => {
-            return <PodcastCard key={index} item={item} index={index} />;
-          })}
+  const { navigate, handleToggleModal } = useAppContext();
+  // const latestEpisode = topPodcastData?.[0];
+
+  return (
+    <div
+      id="episodes"
+      className="relative bg-secondary2 text-white pb-[80px] md:pb-[100px] pt-10 md:pt-0"
+    >
+      {/* deocr */}
+      <FaHeadset
+        size={"60px"}
+        color="#fcea10"
+        className="absolute top-10 md:top-[100px] left-2 md:left-[100px] swing hidden md:flex"
+      />
+      <FaHeadset
+        size={"30px"}
+        color="#fcea10"
+        className="absolute top-3 left-2 md:left-[100px] swing md:hidden"
+      />
+      <h3 data-aos="fade-up" data-aos-duration="1000" className="text-center">
+        Latest Episode
+      </h3>
+      <p
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        className="text-center md:text-[1.25rem] mt-4"
+      >
+        Sharing untold migration stories from around the world
+      </p>
+      <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
+        <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 md:p-5">
+          <h3 className="font-bold">{latestEpisode?.title}</h3>
+          <p className="font-bold">{latestEpisode?.date}</p>
+          <p className="text-[1.1rem]">{latestEpisode?.description}</p>
+          <div className="w-full flex justify-between mt-auto">
+            <p className="font-bold">{latestEpisode?.duration}</p>
+            <BsPlayCircleFill
+              color={"#fcea10"}
+              size={"60px"}
+              className="cursor-pointer hover:scale-125"
+              onClick={() => handleToggleModal(latestEpisode)}
+            />
+          </div>
         </div>
-        <div className="center-flex mt-14 md:mt-[100px]">
-          <button
-            onClick={() => navigate("/episodes")}
-            className="btn-secondary w-full md:w-1/3 center-flex"
-          >
-            View all
-          </button>
+        <div className="w-full md:w-1/2">
+          <img
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            alt="hero"
+            src={latestEpisode?.thumbnail}
+            className="w-full h-auto object-cover rounded-[50px]"
+          />
         </div>
       </section>
-
-      {/* sharp edge bottom */}
-      <svg
-        className="w-full absolute bottom-[-0.5px] xxl:bottom-[-1px] left-0 z-0 hidden md:block"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        className="mt-14 center-flex"
       >
-        <path
-          fill="#5828a1"
-          fillOpacity="1"
-          d="M0,192L288,288L576,128L864,288L1152,0L1440,160L1440,320L1152,320L864,320L576,320L288,320L0,320Z"
-        ></path>
-      </svg>
+        <button
+          onClick={() => navigate("/episodes")}
+          className="btn-custom4 text-[1.2rem]"
+        >
+          More Episodes <IoPlay color="black" />
+        </button>
+      </div>
 
-      {/* mobile wave */}
-      <svg
-        className="w-full absolute bottom-[-1px] left-0 z-0 block md:hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill="#5828a1"
-          fillOpacity="1"
-          d="M0,192L288,288L576,128L864,288L1152,0L1440,160L1440,320L1152,320L864,320L576,320L288,320L0,320Z"
-        ></path>
-      </svg>
+      {/* decor */}
+      <GiSplash
+        size={"80px"}
+        color="#481297"
+        className="absolute -bottom-2 right-10 md:right-[100px]"
+      />
     </div>
   );
 };
