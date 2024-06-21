@@ -34,30 +34,30 @@ function App() {
 
   return (
     <>
-      {/* <ErrorBoundary> */}
-      <Suspense fallback={<Loader />}>
-        {/* Routes component to define application routes */}
-        <Routes>
-          {/* coming soon */}
-          {/* <Route path="/" element={<ComingSoon />} /> */}
+      <ErrorBoundary>
+        <Suspense fallback={<Loader />}>
+          {/* Routes component to define application routes */}
+          <Routes>
+            {/* coming soon */}
+            {/* <Route path="/" element={<ComingSoon />} /> */}
 
-          {/* client pages */}
-          <Route path="/" element={<Homepage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/episodes" element={<Episodes />} />
-          <Route path="/immigrants-corner" element={<ImmigrantsCorner />} />
+            {/* client pages */}
+            <Route path="/" element={<Homepage />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/episodes" element={<Episodes />} />
+            <Route path="/immigrants-corner" element={<ImmigrantsCorner />} />
 
-          <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
 
-          {/* admin pages */}
-          <Route
-            path="/admin"
-            element={user ? <Dashboard /> : <Navigate to="/login" />}
-          />
-        </Routes>
-      </Suspense>
-      {/* </ErrorBoundary> */}
+            {/* admin pages */}
+            <Route
+              path="/admin"
+              element={user ? <Dashboard /> : <Navigate to="/login" />}
+            />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
 
       {/* //pop up modal */}
       {podcast && (

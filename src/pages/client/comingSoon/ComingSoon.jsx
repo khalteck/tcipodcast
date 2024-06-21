@@ -5,7 +5,7 @@ const ComingSoon = () => {
         <img
           alt="illustration"
           src="/images/coming-soon.png"
-          className="w-full md:w-[400px] h-auto"
+          className="w-[200px] md:w-[300px] h-auto"
         />
         <p className="text-secondary font-sfpro text-center text-[2rem] font-bold">
           Site is Under Construction
