@@ -1,35 +1,72 @@
-import { FaYoutube } from "react-icons/fa";
-import immigrantsCornerData from "../../data/immigrantsCorner.json";
-import ImmigrantsCornerCard from "./ImmigrantsCornerCard";
 import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import { useAppContext } from "../../contexts/AppContext";
+import { useFetchNextImmigrantsClientQuery } from "../../redux/features/firebaseSlice";
+import ImmigrantsCornerCard from "./ImmigrantsCornerCard";
+import { useSelector } from "react-redux";
+import { ClipLoader } from "react-spinners";
+import { setNextImmigrantsCorner } from "../../redux/features/dataManagementSlice";
 
 const Section2 = () => {
-  const { handleScrollTo } = useAppContext();
-  const [immigrantsCornerDataPag, setimmigrantsCornerDataPag] = useState([]);
+  const { dispatch } = useAppContext();
+  const { allImmigrantsCorner, infoData } = useSelector(
+    (state) => state.dataManagement
+  );
+
+  // State to control when to trigger the query
+  const [shouldFetch, setShouldFetch] = useState(false);
+
+  // Conditionally fetch data using the skip option
+  const { data, isLoading, isSuccess } = useFetchNextImmigrantsClientQuery(
+    undefined,
+    {
+      skip: !shouldFetch,
+    }
+  );
+
   useEffect(() => {
-    setimmigrantsCornerDataPag(immigrantsCornerData);
-  }, [immigrantsCornerData]);
+    if (data && isSuccess) {
+      dispatch(setNextImmigrantsCorner(data));
+      localStorage.setItem(
+        "lastVisibleImmigrantsClient",
+        JSON.stringify(data?.slice(-1)[0])
+      );
+    }
+    if (!isLoading && data) {
+      setShouldFetch(false);
+    }
+  }, [data, isSuccess, isLoading]);
 
-  const [pageNumber, setPageNumber] = useState(0);
+  useEffect(() => {
+    const dataEnd =
+      infoData?.total_immigrants_corner === allImmigrantsCorner?.length;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !dataEnd) {
+            setShouldFetch(true);
+          }
+        });
+      },
+      {
+        root: null, // use the viewport as the container
+        rootMargin: "0px",
+        threshold: 0.8, // trigger when 80% of the target is visible
+      }
+    );
 
-  const rowPerPage = 4;
-  const pagesVisited = pageNumber * rowPerPage;
+    const lastItemId = allImmigrantsCorner?.slice(-1)?.[0]?.id;
+    const lastCardElement = document.getElementById(lastItemId);
 
-  const displayImmigrantsCorner = immigrantsCornerDataPag
-    ?.slice(pagesVisited, pagesVisited + rowPerPage)
-    ?.map((item, index) => {
-      const isOdd = (index + 1) % 2 === 1;
-      return <ImmigrantsCornerCard key={index} item={item} isOdd={isOdd} />;
-    });
+    if (lastCardElement) {
+      observer.observe(lastCardElement);
+    }
 
-  const pageCount = Math.ceil(immigrantsCornerDataPag?.length / rowPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-    handleScrollTo("immigrants-container");
-  };
+    return () => {
+      if (lastCardElement) {
+        observer.unobserve(lastCardElement);
+      }
+    };
+  }, [infoData, allImmigrantsCorner]);
 
   return (
     <div className="w-full bg-secondary2 text-white pb-[80px] pt-10 md:pt-0">
@@ -47,21 +84,16 @@ const Section2 = () => {
         id="immigrants-container"
         className="w-full max-w-[1550px] mx-auto lg:px-14"
       >
-        {displayImmigrantsCorner}
+        {allImmigrantsCorner?.map((item, index) => {
+          const isOdd = (index + 1) % 2 === 1;
+          return <ImmigrantsCornerCard key={index} item={item} isOdd={isOdd} />;
+        })}
 
-        {immigrantsCornerDataPag?.length > rowPerPage && (
-          <div className="w-full flex justify-center mt-10">
-            <ReactPaginate
-              previousLabel={"<"}
-              nextLabel={">"}
-              breakLabel={"..."}
-              breakClassName={"break-me"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"pagination"}
-              subContainerClassName={"immigrants corner pagination"}
-              activeClassName={"active"}
-            />
+        {isLoading && (
+          <div className="mt-14 center-flex font-bold text-[1.5rem] pt-5 border-t border-white/50">
+            <div className="flex flex-col items-center gap-3">
+              Loading more... <ClipLoader size={"50px"} color="white" />
+            </div>
           </div>
         )}
       </div>

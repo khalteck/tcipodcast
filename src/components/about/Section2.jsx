@@ -8,7 +8,7 @@ const Section2 = () => {
           data-aos="zoom-in"
           data-aos-duration="1000"
           alt="hero"
-          src="/images/podcast.jpg"
+          src="/images/About us first pic.jpg"
           className="w-full md:w-[60%] h-[300px] sm:h-[400px] md:h-[700px] mx-auto object-cover rounded-[50px]"
         />
 

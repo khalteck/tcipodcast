@@ -16,11 +16,20 @@ export const dataManagementSlice = createSlice({
     setInfoData: (state, action) => {
       state.infoData = action.payload;
     },
-    setAllPodcasts: (state, action) => {
+    setInitialImmigrantsCorner: (state, action) => {
+      state.allImmigrantsCorner = action.payload;
+    },
+    setNextImmigrantsCorner: (state, action) => {
+      state.allImmigrantsCorner = [
+        ...state.allImmigrantsCorner,
+        ...action.payload,
+      ];
+    },
+    setInitialPodcasts: (state, action) => {
       state.allPodcasts = action.payload;
     },
-    setAllImmigrantsCorner: (state, action) => {
-      state.allImmigrantsCorner = action.payload;
+    setNextPodcasts: (state, action) => {
+      state.allPodcasts = [...state.allPodcasts, ...action.payload];
     },
     setLatestEpisode: (state, action) => {
       state.latestEpisode = action.payload;
@@ -29,7 +38,14 @@ export const dataManagementSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setInfoData, setLatestEpisode } = dataManagementSlice.actions;
+export const {
+  setInfoData,
+  setLatestEpisode,
+  setInitialImmigrantsCorner,
+  setNextImmigrantsCorner,
+  setInitialPodcasts,
+  setNextPodcasts,
+} = dataManagementSlice.actions;
 
 // Exporting the reducer to be used in the store configuration
 export default dataManagementSlice.reducer;

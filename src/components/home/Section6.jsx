@@ -23,7 +23,7 @@ const Section6 = () => {
             data-aos="zoom-in"
             data-aos-duration="1000"
             alt="hero"
-            src="/images/pod.jpg"
+            src="/images/Contact us pic.jpg"
             className="w-full h-[300px] md:h-[500px] lg:h-[700px] object-cover rounded-[50px]"
           />
         </div>
@@ -46,17 +46,19 @@ const Section6 = () => {
             exciting news we want to hear it.
           </p>
 
-          <Link to="/contact" className="underline text-secondary">
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="200"
-              className="w-[200px] md:w-[300px] bg-primary1 text-secondary shadow-lg cursor-pointer rounded-xl mx-auto p-5 flex flex-col justify-center items-center gap-3"
-            >
-              <h3 className="text-center">Reach out</h3>
-              {/* <IoMdMail size={"50px"} /> */}
-            </div>
-          </Link>
+          <div className="center-flex">
+            <Link to="/contact">
+              <button
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+                className={`btn-custom5 min-w-[150px] text-[1.1rem]`}
+              >
+                Reach Out
+                <IoMdMail size={"20px"} />
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
 

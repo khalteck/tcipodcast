@@ -1,4 +1,3 @@
-import { IoPlay } from "react-icons/io5";
 import { BsSendFill } from "react-icons/bs";
 import Divider from "./Divider";
 import { useState } from "react";
@@ -69,7 +68,7 @@ const Section5 = () => {
             data-aos="zoom-in"
             data-aos-duration="1000"
             alt="hero"
-            src="/images/pod2.jpg"
+            src="/images/YouTube Thumbnail.jpg"
             className="w-full h-[300px] md:h-[500px] lg:h-[700px] object-cover rounded-[50px]"
           />
         </div>

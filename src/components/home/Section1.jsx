@@ -17,7 +17,7 @@ const Section1 = () => {
       <section className="pt-10 md:pt-[50px]">
         <img
           alt="hero"
-          src="/images/podcast.jpg"
+          src="/images/Landing page first pic.jpg"
           className="w-full md:w-[60%] h-[300px] md:h-[500px] xl:h-[700px] object-cover rounded-[50px] md:hidden flex mb-10"
         />
         <div className="w-full text-white">
@@ -86,7 +86,7 @@ const Section1 = () => {
             data-aos="zoom-in"
             data-aos-duration="1000"
             alt="hero"
-            src="/images/podcast.jpg"
+            src="/images/Landing page first pic.jpg"
             className="w-full md:w-[60%] h-[300px] md:h-[500px] xl:h-[700px] object-cover rounded-[50px] hidden md:flex"
           />
           <div

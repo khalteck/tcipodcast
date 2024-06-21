@@ -25,10 +25,13 @@ const PodcastCardAdmin = ({ item }) => {
           src={item?.thumbnail}
           className="w-[100px] h-[100px] object-cover rounded-lg"
         />
-        <div className="w-full flex flex-col gap-1 md:gap-3">
+        <div className="w-[80%] flex flex-col gap-1 md:gap-3">
           <div>
             <p className="font-bold text-[.9rem]">
               {capitalizeFirstLetter(item?.title)}
+            </p>
+            <p className="font-normal text-[.9rem]">
+              {capitalizeFirstLetter(item?.description?.slice(0, 100))}...
             </p>
           </div>
           <div className="w-full flex justify-between items-baseline mt-auto">

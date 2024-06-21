@@ -73,7 +73,7 @@ const CreatePodcasts = ({ onClose }) => {
         reRenderApp(); //to rerender app to refetch admin info
 
         onClose();
-      }, 500);
+      }, 800);
     } else {
       setValidationError(true);
     }

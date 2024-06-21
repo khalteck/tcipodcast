@@ -7,6 +7,7 @@ import { BsPlayCircleFill } from "react-icons/bs";
 import { FaHeadset } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
 import { useSelector } from "react-redux";
+import formatTimestamp from "../../utils/formatTimestamp";
 
 const Section3 = () => {
   const { latestEpisode } = useSelector((state) => state.dataManagement);
@@ -44,7 +45,9 @@ const Section3 = () => {
       <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
         <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 md:p-5">
           <h3 className="font-bold">{latestEpisode?.title}</h3>
-          <p className="font-bold">{latestEpisode?.date}</p>
+          <p className="font-bold">
+            {formatTimestamp(latestEpisode?.timestamp)}
+          </p>
           <p className="text-[1.1rem]">{latestEpisode?.description}</p>
           <div className="w-full flex justify-between mt-auto">
             <p className="font-bold">{latestEpisode?.duration}</p>

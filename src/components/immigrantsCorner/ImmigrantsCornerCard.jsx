@@ -1,8 +1,11 @@
 import { FaYoutube } from "react-icons/fa";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import formatTimestamp from "../../utils/formatTimestamp";
 
 const ImmigrantsCornerCard = ({ isOdd, item }) => {
   return (
     <div
+      id={item?.id}
       className={`mt-[100px] flex flex-col center-flex gap-10 ${
         isOdd ? "md:flex-row" : "md:flex-row-reverse"
       }`}
@@ -26,16 +29,16 @@ const ImmigrantsCornerCard = ({ isOdd, item }) => {
 
       <div className="w-full md:w-[40%] flex flex-col gap-3 px-3 md:px-0">
         <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          {item?.title}
+          {capitalizeFirstLetter(item?.title)}
         </h3>
-        <p
+        <small
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
-          className=""
+          className="font-bold"
         >
-          {item?.date}
-        </p>
+          {formatTimestamp(item?.timestamp)}
+        </small>
         <p
           data-aos="fade-up"
           data-aos-duration="1000"

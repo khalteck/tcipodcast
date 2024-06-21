@@ -24,6 +24,7 @@ import generateId from "../../utils/generateId";
 import {
   deleteObject,
   getDownloadURL,
+  getMetadata,
   ref,
   uploadBytes,
 } from "firebase/storage";
@@ -469,16 +470,28 @@ export const firebaseApi = createApi({
           if (isimageEditted) {
             const fileName = `${data?.id}.jpeg`;
 
-            //upload thumbnail image to storage
+            // Reference to the storage location
             const storageRef = ref(storage, `/podcasts/${fileName}`);
 
-            //first delete existing image
-            await deleteObject(storageRef);
+            try {
+              // Attempt to get the metadata of the existing image
+              await getMetadata(storageRef);
 
-            //upload new image
+              // If metadata retrieval is successful, delete the existing image
+              await deleteObject(storageRef);
+            } catch (error) {
+              if (error.code === "storage/object-not-found") {
+                console.log("Object not found, no need to delete.");
+              } else {
+                // Handle other errors
+                throw error;
+              }
+            }
+
+            // Upload new image
             await uploadBytes(storageRef, data?.formData?.thumbnail);
 
-            //get the uploaded image download url
+            // Get the uploaded image download URL
             const url = await getDownloadURL(ref(storage, storageRef));
             imageUrl = url;
           }
@@ -667,6 +680,148 @@ export const firebaseApi = createApi({
         }
       },
     }),
+
+    //get initial immigrants corner
+    fetchInitialImmigrantsClient: builder.query({
+      async queryFn() {
+        try {
+          let data = [];
+
+          const queryRef = query(
+            collection(db, "immigrants_corner"),
+            orderBy("timestamp", "desc"),
+            limit(4)
+          );
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              data.push(docData);
+            });
+          }
+          //return response
+          return { data: data };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    // fetch next 4 immigrants corner
+    fetchNextImmigrantsClient: builder.query({
+      async queryFn() {
+        try {
+          let data = [];
+          const lastVisibleRaw = JSON.parse(
+            localStorage.getItem("lastVisibleImmigrantsClient")
+          );
+
+          const immigrantsRef = collection(db, "immigrants_corner");
+
+          const lastVisible = await getDoc(
+            doc(immigrantsRef, lastVisibleRaw?.id)
+          );
+
+          const queryRef = query(
+            immigrantsRef,
+            orderBy("timestamp", "desc"),
+            startAfter(lastVisible),
+            limit(4)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              data.push(docData);
+            });
+          }
+          //return response
+          return { data: data };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    //get initial podcasts client
+    fetchInitialPodcastsClient: builder.query({
+      async queryFn() {
+        try {
+          let data = [];
+
+          const queryRef = query(
+            collection(db, "podcasts"),
+            orderBy("timestamp", "desc"),
+            limit(4)
+          );
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              data.push(docData);
+            });
+          }
+          //return response
+          return { data: data };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
+
+    // fetch next 4 podcasts client
+    fetchNextPodcastsClient: builder.query({
+      async queryFn() {
+        try {
+          let data = [];
+          const lastVisibleRaw = JSON.parse(
+            localStorage.getItem("lastVisiblePodcastClient")
+          );
+
+          const podcastsRef = collection(db, "podcasts");
+
+          const lastVisible = await getDoc(
+            doc(podcastsRef, lastVisibleRaw?.id)
+          );
+
+          const queryRef = query(
+            podcastsRef,
+            orderBy("timestamp", "desc"),
+            startAfter(lastVisible),
+            limit(4)
+          );
+
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              data.push(docData);
+            });
+          }
+          //return response
+          return { data: data };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
   }),
 });
 
@@ -701,4 +856,10 @@ export const {
 
   // podcasts - CLIENT
   useFetchLatestEpisodeQuery,
+  useFetchInitialPodcastsClientQuery,
+  useFetchNextPodcastsClientQuery,
+
+  // immigrants corner - CLIENT
+  useFetchInitialImmigrantsClientQuery,
+  useFetchNextImmigrantsClientQuery,
 } = firebaseApi;

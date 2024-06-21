@@ -1,57 +1,60 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
-import topPodcastData from "../../../data/topPodcasts.json";
 import { useAppContext } from "../../../contexts/AppContext";
 import ScrollToTop from "../../../ScrollToTop";
-import PodcastCard2 from "../../../components/home/PodcastCard2";
 import Section1 from "../../../components/episodes/Section1";
 import Section2 from "../../../components/episodes/Section2";
 import Section3 from "../../../components/episodes/Section3";
 import FixedFloater from "../../../components/common/FixedFloater";
+import {
+  useFetchAdminInfoQuery,
+  useFetchInitialPodcastsClientQuery,
+} from "../../../redux/features/firebaseSlice";
+import {
+  setInfoData,
+  setInitialPodcasts,
+} from "../../../redux/features/dataManagementSlice";
+import Loader from "../../../components/common/Loader";
 
 const Episodes = () => {
-  const { scrollToTop } = useAppContext();
-  const [podcastDataPag, setpodcastDataPag] = useState([]);
+  const { dispatch } = useAppContext();
+
+  const {
+    isLoading: loadingInfo,
+    isSuccess: isSuccessInfo,
+    data: infoDataRaw,
+  } = useFetchAdminInfoQuery();
+
   useEffect(() => {
-    setpodcastDataPag(topPodcastData);
-  }, [topPodcastData]);
+    if (infoDataRaw && isSuccessInfo) {
+      dispatch(setInfoData(infoDataRaw));
+    }
+  }, [infoDataRaw, isSuccessInfo]);
 
-  const [pageNumber, setPageNumber] = useState(0);
+  const { data, isLoading, isSuccess } = useFetchInitialPodcastsClientQuery();
 
-  const rowPerPage = 5;
-  const pagesVisited = pageNumber * rowPerPage;
-
-  const displayPodcasts = podcastDataPag
-    ?.slice(pagesVisited, pagesVisited + rowPerPage)
-    ?.map((item, index) => {
-      return <PodcastCard2 key={index} item={item} index={index} />;
-    });
-
-  const pageCount = Math.ceil(podcastDataPag?.length / rowPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-    scrollToTop();
-  };
-
-  const latestEpisode = podcastDataPag?.slice(1)?.[0];
+  useEffect(() => {
+    if (data && isSuccess) {
+      dispatch(setInitialPodcasts(data));
+      localStorage.setItem(
+        "lastVisiblePodcastClient",
+        JSON.stringify(data?.slice(-1)[0])
+      );
+    }
+  }, [isLoading, data, isSuccess]);
 
   return (
     <>
+      {(isLoading || loadingInfo) && <Loader />}
+
       <Header />
       <main>
         <Section1 />
 
-        <Section2 latestEpisode={latestEpisode} />
+        <Section2 />
 
-        <Section3
-          displayPodcasts={displayPodcasts}
-          podcastDataPag={podcastDataPag}
-          rowPerPage={rowPerPage}
-          pageCount={pageCount}
-          changePage={changePage}
-        />
+        <Section3 />
 
         <FixedFloater />
       </main>
