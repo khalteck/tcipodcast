@@ -66,7 +66,13 @@ const Section6 = () => {
       <GiSplash
         size={"80px"}
         color="#481297"
-        className="absolute -bottom-1 left-3 md:left-[40%] md:translate-x-[-50%]"
+        className="absolute -bottom-1 left-3 md:left-[40%] md:translate-x-[-50%] md:hidden flex"
+      />
+      {/* decor */}
+      <GiSplash
+        size={"100px"}
+        color="#481297"
+        className="absolute -bottom-2 left-3 md:left-[40%] md:translate-x-[-50%] hidden md:flex"
       />
     </div>
   );
