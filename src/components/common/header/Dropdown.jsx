@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../../../contexts/AppContext";
 import { useSelector } from "react-redux";
 import { FaXTwitter } from "react-icons/fa6";
+import Logo from "../Logo";
 
 const Dropdown = ({ handleDropdown, showDropdown }) => {
   const { navigate, handleScrollTo, isScrolled } = useAppContext();
@@ -33,10 +34,16 @@ const Dropdown = ({ handleDropdown, showDropdown }) => {
       {showTray && (
         <div className="w-[75%] h-screen bg-[#5828a1] text-white md:hidden overflow-y-auto px-5 md:px-8 py-8 quickview">
           <div className="w-full flex justify-between">
-            <div className="logo-cont">
+            <div
+              onClick={() => navigate("/")}
+              className="logo-cont flex items-center cursor-pointer"
+            >
+              <Logo type={"secondary"} />
+            </div>
+            {/* <div className="logo-cont">
               <FaMicrophoneAlt color="#fff" size={"30px"} />
               <h1 className="text-white">TCIPOD</h1>
-            </div>
+            </div> */}
 
             <div
               onClick={() => {

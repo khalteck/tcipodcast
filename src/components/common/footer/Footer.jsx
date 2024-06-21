@@ -2,20 +2,23 @@ import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { useAppContext } from "../../../contexts/AppContext";
+import Logo from "../Logo";
 
 const Footer = () => {
-  const { handleScrollTo } = useAppContext();
+  const { handleScrollTo, navigate } = useAppContext();
   return (
     <footer className="text-center bg-primary1 text-white lg:text-left">
       <div className="pt-[60px] text-left px-5 lg:px-[100px]">
         <section className="w-full lg:w-[70%] flex md:flex-row flex-col gap-10 justify-between">
           <div className="w-full md:w-1/3">
-            <div className="logo-cont mb-4">
-              <FaMicrophoneAlt color="#fff" size={"50px"} />
-              <h1 className="text-white">TCIPOD</h1>
+            <div
+              onClick={() => navigate("/")}
+              className="logo-cont flex items-center cursor-pointer"
+            >
+              <Logo type={"secondary"} />
             </div>
-            <p className="mb-5">TCI: The Chronicles of an Immigrant</p>
-            <p className="flex gap-2 items-center">
+            {/* <p className="my-5">TCI: The Chronicles of an Immigrant</p> */}
+            <p className="flex gap-2 items-center mt-5">
               <MdEmail color="#fff" size="20px" />
               <a href="mailto:hello@tcipod.com" className="cursor-pointer">
                 hello@tcipod.com

@@ -6,6 +6,9 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
+import Slider from "./Slider";
+import moyeniImages from "../../data/moyeni.json";
+import folaweImages from "../../data/folawe.json";
 
 const Section3 = () => {
   return (
@@ -28,6 +31,7 @@ const Section3 = () => {
       <>
         {founders?.map((item, index) => {
           const isOdd = (index + 1) % 2 === 1;
+          const slides = index === 0 ? moyeniImages : folaweImages;
           return (
             <section
               key={index}
@@ -40,25 +44,8 @@ const Section3 = () => {
                   isOdd ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                <div
-                  data-aos={`${isOdd ? "fade-right" : "fade-left"}`}
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                  className={`w-full md:w-1/2 border-x-[15px] md:border-y-[15px] px-2 pt-2 pb-0 md:p-2 border-primary1 ${
-                    isOdd
-                      ? "md:rounded-l-full md:border-l-[15px] md:rounded-r-none md:border-r-0 rounded-t-full border-t-[15px]"
-                      : "md:rounded-r-full md:border-r-[15px] md:rounded-l-none md:border-l-0 rounded-t-full border-t-[15px]"
-                  }`}
-                >
-                  <img
-                    alt="hero"
-                    src={item?.image}
-                    className={`w-full h-[300px] md:h-[600px] object-cover ${
-                      isOdd
-                        ? "md:rounded-r-lg md:rounded-l-full rounded-t-full"
-                        : "md:rounded-l-lg md:rounded-r-full rounded-t-full"
-                    }`}
-                  />
+                <div className="w-full md:w-1/2">
+                  <Slider slides={slides} isOdd={isOdd} />
                 </div>
                 <div
                   data-aos={`${isOdd ? "fade-left" : "fade-right"}`}
