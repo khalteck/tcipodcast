@@ -75,7 +75,7 @@ const Section3 = () => {
                   </div>
                   <div>
                     <h3>Meet: {item?.name}</h3>
-                    <h4 className="text-[1.5rem] font-bold font-gluten">
+                    <h4 className="text-[1.5rem] font-bold font-sfpro">
                       {item?.role}
                     </h4>
                   </div>

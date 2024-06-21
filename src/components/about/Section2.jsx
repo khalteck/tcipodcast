@@ -40,7 +40,7 @@ const Section2 = () => {
           <div>
             <h3 className="mb-5">Our Values</h3>
             <p className="w-full mb-10">
-              We’re Bold, We’re Resilient & We’re Different
+              We are Bold, We are Resilient & We are Different
             </p>
           </div>
         </div>

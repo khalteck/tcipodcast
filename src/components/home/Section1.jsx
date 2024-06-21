@@ -22,7 +22,7 @@ const Section1 = () => {
         />
         <div className="w-full text-white">
           <div data-aos="fade-down" data-aos-duration="1000">
-            <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-gluten">
+            <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-sfpro">
               MY DREAMS <span className="hidden md:inline">ARE</span>
               {/* decor */}
               <GiSplash
@@ -36,7 +36,7 @@ const Section1 = () => {
             <h1
               data-aos="fade-right"
               data-aos-duration="1000"
-              className="w-full md:w-fit text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-gluten"
+              className="w-full md:w-fit text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-sfpro"
             >
               <span className="inline md:hidden">ARE</span> VALID
             </h1>

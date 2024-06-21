@@ -7,7 +7,7 @@ const ComingSoon = () => {
           src="/images/coming-soon.png"
           className="w-full md:w-[400px] h-auto"
         />
-        <p className="text-secondary font-gluten text-center text-[2rem] font-bold">
+        <p className="text-secondary font-sfpro text-center text-[2rem] font-bold">
           Site is Under Construction
         </p>
       </section>

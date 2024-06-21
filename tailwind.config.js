@@ -10,8 +10,7 @@ export default {
       hero3: "url('/images/pod3.jpg')",
     },
     fontFamily: {
-      gluten: ["Gluten", "sans-serif"],
-      poppins: ["Poppins", "sans-serif"],
+      sfpro: ["sfpro", "sans-serif"],
     },
     extend: {
       colors: {

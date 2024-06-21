@@ -3,6 +3,7 @@ import { BsSendFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Section6 = () => {
   return (
@@ -45,10 +46,7 @@ const Section6 = () => {
             exciting news we want to hear it.
           </p>
 
-          <a
-            href="mailto:hello@tcipod.com"
-            className="underline text-secondary"
-          >
+          <Link to="/contact" className="underline text-secondary">
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
@@ -56,9 +54,9 @@ const Section6 = () => {
               className="w-[200px] md:w-[300px] bg-primary1 text-secondary shadow-lg cursor-pointer rounded-xl mx-auto p-5 flex flex-col justify-center items-center gap-3"
             >
               <h3 className="text-center">Reach out</h3>
-              <IoMdMail size={"50px"} />
+              {/* <IoMdMail size={"50px"} /> */}
             </div>
-          </a>
+          </Link>
         </div>
       </section>
 

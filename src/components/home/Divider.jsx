@@ -6,7 +6,7 @@ const Divider = () => {
     paragraphs.push(
       <h3
         key={i}
-        className="text-[#01ffff] text-[1.25rem] md:text-[2rem] mr-[80px]"
+        className="text-secondary text-[1.25rem] md:text-[2rem] mr-[80px]"
       >
         New episodes every friday...{" "}
       </h3>

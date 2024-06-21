@@ -26,13 +26,6 @@ const Modal = ({ onClose, action }) => {
             <h4 className="font-bold text-[1.25rem] md:text-[2rem]">
               {capitalizeFirstLetter(podcast?.title)}
             </h4>
-            {/* <small>
-              By{" "}
-              {podcast?.authors?.map(
-                (x, ind, arr) =>
-                  `${x}${arr?.length === 2 && ind === 0 ? " & " : ""}`
-              )}
-            </small> */}
             <small className="font-medium">{podcast?.duration}</small>
             <p className="leading-relaxed text-[.9rem] md:text-[1rem]">
               {capitalizeFirstLetter(podcast?.description)}...
@@ -42,7 +35,7 @@ const Modal = ({ onClose, action }) => {
         <div className="flex flex-col gap-3 mt-5">
           <p className="font-bold">Listen on:</p>
           <div className="flex gap-4 items-center">
-            <a href="" target="_blank" rel="noreferrer">
+            <a href={podcast?.spotifyLink} target="_blank" rel="noreferrer">
               <button className="btn-custom4 w-fit">
                 Spotify{" "}
                 <img
@@ -52,7 +45,7 @@ const Modal = ({ onClose, action }) => {
                 />
               </button>
             </a>
-            <a href="" target="_blank" rel="noreferrer">
+            <a href={podcast?.appleLink} target="_blank" rel="noreferrer">
               <button className="btn-custom4 w-fit">
                 Apple{" "}
                 <img

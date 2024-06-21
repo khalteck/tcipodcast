@@ -6,13 +6,13 @@ import { useAppContext } from "../../../contexts/AppContext";
 const Footer = () => {
   const { handleScrollTo } = useAppContext();
   return (
-    <footer className="text-center bg-primary1 text-secondary lg:text-left">
+    <footer className="text-center bg-primary1 text-white lg:text-left">
       <div className="pt-[60px] text-left px-5 lg:px-[100px]">
         <section className="w-full lg:w-[70%] flex md:flex-row flex-col gap-10 justify-between">
           <div className="w-full md:w-1/3">
             <div className="logo-cont mb-4">
-              <FaMicrophoneAlt color="#fcea10" size={"50px"} />
-              <h1 className="text-secondary">TCIPOD</h1>
+              <FaMicrophoneAlt color="#fff" size={"50px"} />
+              <h1 className="text-white">TCIPOD</h1>
             </div>
             <p className="mb-5">TCI: The Chronicles of an Immigrant</p>
             <p className="flex gap-2 items-center">

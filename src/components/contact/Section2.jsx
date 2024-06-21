@@ -29,7 +29,29 @@ const Section2 = () => {
           data-aos-delay="200"
           className=""
         >
-          <h4 className="font-medium font-gluten text-[1.25rem] uppercase">
+          <h4 className="font-medium font-sfpro text-[1.25rem] uppercase">
+            Join our video segments
+          </h4>
+          <p>
+            We feature businesses of immigrants across the world, don't worry
+            whether you're the UK or not - you never know we might be in your
+            city next.
+          </p>
+          <a
+            href="mailto:hello@tcipod.com"
+            className="underline text-secondary2"
+          >
+            hello@tcipod.com
+          </a>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+          className="mt-10"
+        >
+          <h4 className="font-medium font-sfpro text-[1.25rem] uppercase">
             Sponsorship and Partnership
           </h4>
           <a
@@ -46,7 +68,7 @@ const Section2 = () => {
           data-aos-delay="200"
           className="mt-10"
         >
-          <h4 className="font-medium font-gluten text-[1.25rem] uppercase">
+          <h4 className="font-medium font-sfpro text-[1.25rem] uppercase">
             Donations
           </h4>
           <p>
@@ -59,28 +81,6 @@ const Section2 = () => {
             className="underline text-secondary2"
           >
             payment@tcipod.com
-          </a>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-          className="mt-10"
-        >
-          <h4 className="font-medium font-gluten text-[1.25rem] uppercase">
-            Join our video segments
-          </h4>
-          <p>
-            We feature businesses of immigrants across the world, don't worry
-            whether you're the UK or not - you never know we might be in your
-            city next.
-          </p>
-          <a
-            href="mailto:hello@tcipod.com"
-            className="underline text-secondary2"
-          >
-            hello@tcipod.com
           </a>
         </div>
       </div>{" "}
