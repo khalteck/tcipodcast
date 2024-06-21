@@ -1,7 +1,4 @@
 import getTimeOfDay from "../../utils/getTimeOfDay";
-import PaginatedList from "./PaginatedList";
-import topPodcastData from "../../data/topPodcasts.json";
-import immigrantsCornerData from "../../data/immigrantsCorner.json";
 import { useFetchAdminInfoQuery } from "../../redux/features/firebaseSlice";
 import CommunityList from "./CommunityList";
 import { FaPlus } from "react-icons/fa";

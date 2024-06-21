@@ -16,9 +16,9 @@ const Footer = () => {
             </div>
             <p className="mb-5">TCI: The Chronicles of an Immigrant</p>
             <p className="flex gap-2 items-center">
-              <MdEmail color="#fcea10" size="20px" />
-              <a href="mailto:tcipod1@gmail.com" className="cursor-pointer">
-                tcipod1@gmail.com
+              <MdEmail color="#fff" size="20px" />
+              <a href="mailto:hello@tcipod.com" className="cursor-pointer">
+                hello@tcipod.com
               </a>
             </p>
           </div>

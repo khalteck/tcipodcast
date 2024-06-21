@@ -15,7 +15,7 @@ const Section3 = () => {
         data-aos-duration="1000"
         className="text-center mb-5"
       >
-        Meet The Brainbox
+        Meet The Brainboxes
       </h3>
       <p
         data-aos="fade-up"

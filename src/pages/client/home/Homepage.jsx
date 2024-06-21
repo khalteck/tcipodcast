@@ -9,9 +9,15 @@ import { useAppContext } from "../../../contexts/AppContext";
 import { useLocation } from "react-router-dom";
 import Section6 from "../../../components/home/Section6";
 import FixedFloater from "../../../components/common/FixedFloater";
+import Loader from "../../../components/common/Loader";
+import { useFetchLatestEpisodeQuery } from "../../../redux/features/firebaseSlice";
+import { setLatestEpisode } from "../../../redux/features/dataManagementSlice";
+import { useSelector } from "react-redux";
 
 const Homepage = () => {
-  const { currentPage } = useAppContext();
+  const { latestEpisode } = useSelector((state) => state.dataManagement);
+
+  const { currentPage, dispatch } = useAppContext();
 
   const location = useLocation();
 
@@ -29,8 +35,17 @@ const Homepage = () => {
     }
   }, [currentPage]);
 
+  const { data, isLoading, isSuccess } = useFetchLatestEpisodeQuery();
+
+  useEffect(() => {
+    if (data && isSuccess) {
+      dispatch(setLatestEpisode(data?.[0]));
+    }
+  }, [isLoading, data, isSuccess]);
+
   return (
     <>
+      {isLoading && <Loader />}
       <Header />
 
       <main className="home">

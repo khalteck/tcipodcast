@@ -2,6 +2,7 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth, db, storage } from "../../firebase/firebase-config";
+import { auth, db, storage } from "../../firebase/firebase-config";
 import {
   collection,
   query,
@@ -633,6 +634,40 @@ export const firebaseApi = createApi({
         }
       },
     }),
+
+    //===================================================================== client area requests
+    //===================================================================== client area requests
+    //===================================================================== client area requests
+
+    //get latest podcast episode
+    fetchLatestEpisode: builder.query({
+      async queryFn() {
+        try {
+          let podcastData = [];
+
+          const queryRef = query(
+            collection(db, "podcasts"),
+            orderBy("timestamp", "desc"),
+            limit(1)
+          );
+          const querySnapshot = await getDocs(queryRef);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const docData = doc.data();
+              // Convert Firestore Timestamp to a serializable format (ISO string)
+              if (docData.timestamp) {
+                docData.timestamp = docData.timestamp.toDate().toISOString();
+              }
+              podcastData.push(docData);
+            });
+          }
+          //return response
+          return { data: podcastData };
+        } catch (e) {
+          return { error: e };
+        }
+      },
+    }),
   }),
 });
 
@@ -643,13 +678,13 @@ export const {
   useLogoutUserMutation,
   useFetchAdminInfoQuery,
 
-  // community
+  // community - ADMIN
   useJoinCommunityMutation,
   useFetchInitialCommunityQuery,
   useFetchNextCommunityMutation,
   useFetchPreviousCommunityMutation,
 
-  // immigrants corner
+  // immigrants corner - ADMIN
   useAddNewImmigrantsCornerMutation,
   useFetchInitialImmigrantsCornerQuery,
   useFetchNextImmigrantsCornerMutation,
@@ -657,11 +692,14 @@ export const {
   useDeleteImmigrantsCornerMutation,
   useEditImmigrantsCornerMutation,
 
-  // podcasts
+  // podcasts - ADMIN
   useAddNewPodcastMutation,
   useDeletePodcastMutation,
   useEditPodcastMutation,
   useFetchInitialPodcastsQuery,
   useFetchNextPodcastsMutation,
   useFetchPreviousPodcastsMutation,
+
+  // podcasts - CLIENT
+  useFetchLatestEpisodeQuery,
 } = firebaseApi;

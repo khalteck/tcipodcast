@@ -11,7 +11,7 @@ const FixedFloater = () => {
     });
   }
   return (
-    <div className="flex flex-col center-flex gap-2 fixed bottom-5 right-2 z-[200]">
+    <div className="flex flex-col center-flex gap-2 fixed bottom-5 right-2 z-[100]">
       <div className="md:flex flex-col gap-3 hidden">
         <a
           href="https://www.instagram.com/tcipod?igsh=MnFoaHNncjlqZXgz"

@@ -6,10 +6,14 @@ import { IoPlay } from "react-icons/io5";
 import { BsPlayCircleFill } from "react-icons/bs";
 import { FaHeadset } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
+import { useSelector } from "react-redux";
 
 const Section3 = () => {
+  const { latestEpisode } = useSelector((state) => state.dataManagement);
+
   const { navigate, handleToggleModal } = useAppContext();
-  const latestEpisode = topPodcastData?.[0];
+  // const latestEpisode = topPodcastData?.[0];
+
   return (
     <div
       id="episodes"
@@ -38,11 +42,7 @@ const Section3 = () => {
         Sharing untold migration stories from around the world
       </p>
       <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
-        <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 p-5">
-          {/* <div className="w-full flex justify-between">
-            <p className="font-bold">TCI PODCAST</p>
-            <small>{latestEpisode?.date}</small>
-          </div> */}
+        <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 md:p-5">
           <h3 className="font-bold">{latestEpisode?.title}</h3>
           <p className="font-bold">{latestEpisode?.date}</p>
           <p className="text-[1.1rem]">{latestEpisode?.description}</p>
@@ -55,24 +55,14 @@ const Section3 = () => {
               onClick={() => handleToggleModal(latestEpisode)}
             />
           </div>
-          {/* <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-            className="w-full mt-10 "
-          >
-            {topPodcastData?.slice(0, 1)?.map((item, index) => {
-              return <PodcastCard2 key={index} item={item} index={index} />;
-            })}
-          </div> */}
         </div>
         <div className="w-full md:w-1/2">
           <img
             data-aos="zoom-in"
             data-aos-duration="1000"
             alt="hero"
-            src="/images/pod3.jpg"
-            className="w-full h-[300px] md:h-[500px] lg:h-[700px] object-cover rounded-[50px]"
+            src={latestEpisode?.thumbnail}
+            className="w-full h-auto object-cover rounded-[50px]"
           />
         </div>
       </section>

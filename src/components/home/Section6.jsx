@@ -46,7 +46,7 @@ const Section6 = () => {
           </p>
 
           <a
-            href="mailto:tcipod1@gmail.com"
+            href="mailto:hello@tcipod.com"
             className="underline text-secondary"
           >
             <div

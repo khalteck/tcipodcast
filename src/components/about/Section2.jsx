@@ -9,10 +9,10 @@ const Section2 = () => {
           data-aos-duration="1000"
           alt="hero"
           src="/images/podcast.jpg"
-          className="w-full md:w-[60%] lg:w-[70%] h-[300px] sm:h-[400px] md:h-[700px] mx-auto object-cover rounded-[50px]"
+          className="w-full md:w-[60%] h-[300px] sm:h-[400px] md:h-[700px] mx-auto object-cover rounded-[50px]"
         />
 
-        <div className="w-full md:w-[40%] lg:w-[30%] flex flex-col">
+        <div className="w-full md:w-[40%] flex flex-col">
           <div>
             <h3 className="mb-5">Our Mission</h3>
             <p className="w-full mb-10">

@@ -22,8 +22,6 @@ const CreatePodcasts = ({ onClose }) => {
     thumbnail: mode === "Edit" ? addpodcast?.thumbnail || "" : "",
   });
 
-  console.log("formData", formData);
-
   function handleChange(e) {
     setValidationError(false);
     const { id, value, files } = e.target;

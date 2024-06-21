@@ -33,10 +33,10 @@ const Section2 = () => {
             Sponsorship and Partnership
           </h4>
           <a
-            href="mailto:johndoe@tcipod.com"
+            href="mailto:payment@tcipod.com"
             className="underline text-secondary2"
           >
-            johndoe@tcipod.com
+            payment@tcipod.com
           </a>
         </div>
 
@@ -55,10 +55,10 @@ const Section2 = () => {
             journey.
           </p>
           <a
-            href="mailto:johndoe@tcipod.com"
+            href="mailto:payment@tcipod.com"
             className="underline text-secondary2"
           >
-            johndoe@tcipod.com
+            payment@tcipod.com
           </a>
         </div>
 
@@ -77,10 +77,10 @@ const Section2 = () => {
             city next.
           </p>
           <a
-            href="mailto:johndoe@tcipod.com"
+            href="mailto:hello@tcipod.com"
             className="underline text-secondary2"
           >
-            johndoe@tcipod.com
+            hello@tcipod.com
           </a>
         </div>
       </div>{" "}

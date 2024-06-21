@@ -1,7 +1,10 @@
 import { FaHeadset, FaMicrophoneAlt, FaPlay } from "react-icons/fa";
+import { FaHeadset, FaMicrophoneAlt, FaPlay } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import SocialsContainer from "../common/header/SocialsContainer";
 import { useAppContext } from "../../contexts/AppContext";
+import { IoPlay } from "react-icons/io5";
+import { GiSplash } from "react-icons/gi";
 import { IoPlay } from "react-icons/io5";
 import { GiSplash } from "react-icons/gi";
 
@@ -21,14 +24,14 @@ const Section1 = () => {
           src="/images/podcast.jpg"
           className="w-full md:w-[60%] h-[300px] md:h-[500px] xl:h-[700px] object-cover rounded-[50px] md:hidden flex mb-10"
         />
-        <div className="w-full text-secondary">
+        <div className="w-full text-white">
           <div data-aos="fade-down" data-aos-duration="1000">
             <h1 className="text-[3rem] md:text-[5rem] lg:text-[9rem] font-bold leading-[3rem] md:leading-[5rem] lg:leading-[10rem] relative font-gluten">
               MY DREAMS <span className="hidden md:inline">ARE</span>
               {/* decor */}
               <GiSplash
                 size={"75px"}
-                color="#fcea10"
+                color="#fff"
                 className="absolute top-[-80px] lg:top-[-60px] left-[50%] translate-x-[-50%] hidden md:flex"
               />
             </h1>
@@ -51,7 +54,7 @@ const Section1 = () => {
                 Evoking Emotions.
               </p>
               <div className="flex gap-2 text-white items-center mt-4">
-                <div className="bg-secondary w-3 h-4"></div>
+                <div className="bg-white w-3 h-4"></div>
                 <Typewriter
                   words={["Hosted by Mo & Produced by Folawe"]}
                   loop={true}

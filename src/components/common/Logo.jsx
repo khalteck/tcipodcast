@@ -6,11 +6,7 @@ const Logo = ({ type }) => {
     <div>
       <img
         alt="logo"
-        src={
-          !isScrolled
-            ? `/images/logo-${type}.png`
-            : `/images/logo-${"primary"}.png`
-        }
+        src={`/images/logo-${"white"}.png`}
         className="w-[200px] md:w-[250px] h-auto"
       />
     </div>

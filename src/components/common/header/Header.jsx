@@ -10,6 +10,9 @@ import { useSelector } from "react-redux";
 import { MdEmail } from "react-icons/md";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { IoShareSocial } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { IoShareSocial } from "react-icons/io5";
 
 const Header = () => {
   const { isScrolled, setIsScrolled, navigate, handleScrollTo } =
@@ -32,7 +35,7 @@ const Header = () => {
           <div className="w-full flex justify-between items-center">
             <div className="w-full flex justify-between items-center">
               <div onClick={handleDropdown} className="flex md:hidden mr-auto">
-                <IoShareSocial color={"#fcea10"} size={"30px"} />
+                <IoShareSocial color={"#fff"} size={"30px"} />
               </div>
 
               <div
@@ -79,17 +82,9 @@ const Header = () => {
                 >
                   <Link to={"/immigrants-corner"}>Immigrants Corner</Link>
                 </li>
-                {/* <li
-                onClick={() => handleScrollTo("contact")}
-                className={`nav-link cursor-pointer ${
-                  isScrolled ? "hover:text-primary1" : "hover:text-secondary"
-                }`}
-              >
-                Contact
-              </li> */}
                 {user && (
                   <li
-                    onClick={() => navigate("/admin")}
+                    onClick={() => window.location.replace("/admin")}
                     className={`nav-link cursor-pointer px-2 rounded-sm ${
                       isScrolled
                         ? "bg-primary1 text-white"
@@ -111,7 +106,7 @@ const Header = () => {
               </div>
 
               <div onClick={handleDropdown} className="flex md:hidden ml-auto">
-                <HiOutlineMenuAlt3 color={"#fcea10"} size={"35px"} />
+                <HiOutlineMenuAlt3 color={"#fff"} size={"35px"} />
               </div>
 
               {showDropdown && (
