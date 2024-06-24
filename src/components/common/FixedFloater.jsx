@@ -59,7 +59,7 @@ const FixedFloater = () => {
           </div>
         </a>
       </div>
-      <div className="w-1 h-[200px] bg-primary1 border border-secondary/30 hidden md:flex"></div>
+      <div className="w-1 h-[100px] bg-primary1 border border-secondary/30 hidden md:flex"></div>
       <div
         onClick={scrollToTop}
         className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] rounded-full shadow-xl center-flex bg-primary1 border border-secondary/30 cursor-pointer"

@@ -7,7 +7,7 @@ const Logo = ({ type }) => {
       <img
         alt="logo"
         src={`/images/logo-icon-1.jpg`}
-        className="w-[90px] md:w-[150px] h-auto rounded-b-xl"
+        className="w-[90px] h-auto rounded-b-xl"
       />
     </div>
   );
