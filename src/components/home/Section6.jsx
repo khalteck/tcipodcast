@@ -41,7 +41,7 @@ const Section6 = () => {
             data-aos-delay="200"
             className="mt-5 mb-10 text-center text-[1.25rem] font-medium"
           >
-            Send your migration dilemmas- you don't have to go through your
+            Send your migration dilemmas--you don't have to go through your
             migration journey alone. If you have a challenge, question or some
             exciting news we want to hear it.
           </p>

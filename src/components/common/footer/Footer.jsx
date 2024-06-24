@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer className="text-center bg-primary1 text-white lg:text-left">
       <div className="pt-[60px] text-left px-5 lg:px-[100px]">
-        <section className="w-full lg:w-[70%] flex md:flex-row flex-col gap-10 justify-between">
-          <div className="w-full md:w-1/3">
+        <section className="w-full lg:w-[70%] flex md:flex-row flex-col gap-10 justify-between text-center md:text-start">
+          <div className="w-full md:w-1/3 flex flex-col items-center md:items-start">
             <div
               onClick={() => navigate("/")}
               className="logo-cont flex items-center cursor-pointer"
@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="w-full md:w-1/3 flex flex-col">
-            <h6 className="mb-4 flex font-semibold uppercase justify-start">
+            <h6 className="mb-4 flex font-semibold uppercase justify-center md:justify-start">
               INFO
             </h6>
 
@@ -65,7 +65,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="w-full md:w-1/3 flex flex-col">
-            <h6 className="mb-4 flex font-semibold uppercase">Socials</h6>
+            <h6 className="mb-4 flex font-semibold uppercase justify-center md:justify-start">
+              Socials
+            </h6>
             <p className="mb-4">
               <a
                 href="https://www.instagram.com/tcipod?igsh=MnFoaHNncjlqZXgz"

@@ -20,13 +20,20 @@ const Section3 = () => {
       >
         Meet The Brainboxes
       </h3>
-      <p
+      <img
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="w-full md:w-[70%] mx-auto text-[1.1rem] mb-10 text-center font-medium"
+        alt="image"
+        src="/images/Pic before meet the brainboxes .jpg"
+        className="w-full md:w-[70%] md:max-w-[1000px] mx-auto mb-10] rounded-[50px] mt-10"
+      />
+      <h3
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="w-full md:w-[70%] md:max-w-[1000px] mx-auto mb-10 text-center mt-[100px]"
       >
         The Heart of Our Podcast
-      </p>
+      </h3>
 
       <>
         {founders?.map((item, index) => {

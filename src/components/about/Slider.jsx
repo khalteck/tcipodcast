@@ -59,9 +59,9 @@ const Slider = ({ slides, isOdd }) => {
               <img
                 alt="hero"
                 src={item}
-                className={`w-full h-[300px] md:h-[600px] object-cover ${
+                className={`w-full h-[300px] md:h-[605px] object-cover object-top-center ${
                   isOdd
-                    ? "md:rounded-r-lg md:rounded-l-full rounded-t-full"
+                    ? "md:rounded-r-lg md:rounded-l-full rounded-t-full "
                     : "md:rounded-l-lg md:rounded-r-full rounded-t-full"
                 }`}
               />

@@ -8,6 +8,7 @@ export default {
       hero: "url('/images/pod3.jpg')",
       hero2: "url('/images/podcast.jpg')",
       hero3: "url('/images/pod3.jpg')",
+      hero4: "url('/images/Landing page first pic.jpg')",
     },
     fontFamily: {
       sfpro: ["sfpro", "sans-serif"],
@@ -18,7 +19,7 @@ export default {
         primary1: "#481297",
         primary2: "#370680",
         secondary: "#fcea10",
-        secondary2: "#ff4402",
+        secondary2: "#ff5f33",
       },
       boxShadow: {
         custom: "7px 7px rgba(42, 53, 78, 0.8)",

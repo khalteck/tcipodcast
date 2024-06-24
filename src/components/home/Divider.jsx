@@ -8,7 +8,7 @@ const Divider = () => {
         key={i}
         className="text-secondary text-[1.25rem] md:text-[2rem] mr-[80px]"
       >
-        New episodes every friday...{" "}
+        New episodes every thursday...{" "}
       </h3>
     );
   }

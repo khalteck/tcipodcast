@@ -2,7 +2,7 @@ import { GiSplash } from "react-icons/gi";
 
 const Section2 = () => {
   return (
-    <div className="w-full bg-secondary2 text-white pb-[80px] px-3 pt-10 md:pt-[80px] relative">
+    <div className="w-full bg-[#ff5f33] text-white pb-[80px] px-3 pt-10 md:pt-[80px] relative">
       <section className="w-full flex md:flex-row flex-col gap-5 md:gap-10">
         <img
           data-aos="zoom-in"

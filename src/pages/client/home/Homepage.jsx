@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable react-hooks/exhaustive-deps */
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
 import Section1 from "../../../components/home/Section1";
@@ -12,10 +14,11 @@ import FixedFloater from "../../../components/common/FixedFloater";
 import Loader from "../../../components/common/Loader";
 import { useFetchLatestEpisodeQuery } from "../../../redux/features/firebaseSlice";
 import { setLatestEpisode } from "../../../redux/features/dataManagementSlice";
-import { useSelector } from "react-redux";
+import HeroSection from "../../../components/home/HeroSection";
+// import { useSelector } from "react-redux";
 
 const Homepage = () => {
-  const { latestEpisode } = useSelector((state) => state.dataManagement);
+  // const { latestEpisode } = useSelector((state) => state.dataManagement);
 
   const { currentPage, dispatch } = useAppContext();
 
@@ -50,7 +53,8 @@ const Homepage = () => {
 
       <main className="home">
         <div className="w-full h-full bg-[#f5f5f5]/50">
-          <Section1 />
+          {/* <Section1 /> */}
+          <HeroSection />
 
           <Section3 />
 

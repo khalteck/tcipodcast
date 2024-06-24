@@ -140,6 +140,22 @@ button {
     }
   }
 
+  .quickview2 {
+    animation: quickview2 0.6s ease;
+  }
+  @keyframes quickview2 {
+    0% {
+      transform: translateX(100px);
+      -webkit-transform: translateX(100px); /* Safari and Chrome */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px);
+      -webkit-transform: translateX(0px); /* Safari and Chrome */
+      opacity: 1;
+    }
+  }
+
   .blink {
     animation: blink 1s ease infinite;
   }
@@ -253,5 +269,16 @@ button {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(10, 10, 10, 0.7);
+  }
+
+  .black {
+    background: black;
+    color: white;
+    mix-blend-mode: multiply;
+  }
+  .white {
+    background: white;
+    color: black;
+    mix-blend-mode: screen;
   }
 }

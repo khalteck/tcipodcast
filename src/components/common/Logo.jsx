@@ -6,8 +6,8 @@ const Logo = ({ type }) => {
     <div>
       <img
         alt="logo"
-        src={`/images/logo-${"white"}.png`}
-        className="w-[200px] md:w-[250px] h-auto"
+        src={`/images/logo-icon-1.jpg`}
+        className="w-[90px] md:w-[150px] h-auto rounded-b-xl"
       />
     </div>
   );

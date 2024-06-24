@@ -18,7 +18,7 @@ const Section3 = () => {
   return (
     <div
       id="episodes"
-      className="relative bg-secondary2 text-white pb-[80px] md:pb-[100px] pt-10 md:pt-0"
+      className="relative bg-[#ff5f33] text-white pb-[80px] md:pb-[100px] pt-10 md:pt-[100px]"
     >
       {/* deocr */}
       <FaHeadset
@@ -43,7 +43,7 @@ const Section3 = () => {
         Sharing untold migration stories from around the world
       </p>
       <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
-        <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 md:p-5">
+        <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 md:p-5 text-center">
           <h3 className="font-bold">{latestEpisode?.title}</h3>
           <p className="font-bold">
             {formatTimestamp(latestEpisode?.timestamp)}
