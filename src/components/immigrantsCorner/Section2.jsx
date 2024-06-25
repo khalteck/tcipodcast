@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../contexts/AppContext";
 import { useFetchNextImmigrantsClientQuery } from "../../redux/features/firebaseSlice";
@@ -71,12 +72,23 @@ const Section2 = () => {
   return (
     <div className="w-full bg-secondary2 text-white pb-[80px] pt-10 md:pt-0">
       <section className="w-full">
-        <h3 className="text-center mb-5">Catch The Latest</h3>
+        <h3 className="text-center mb-5">
+          Share Your Journey in the
+          <br /> Immigrants Corner
+        </h3>
         <p className="w-full mx-auto text-[1.1rem] mb-10 text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Get featured in our Immigrants Corner! We’re highlighting the diverse
+          stories and incredible journeys of immigrants from every corner of the
+          globe. Whether you’re in the UK or anywhere else around the world,
+          reach out to us! You never know, we might be visiting your city next,
+          and we’d love to share your unique story.
+          <br />
+          <p className="flex gap-2 center-flex text-center underline mt-5">
+            {/* <MdEmaill color="#fff" size="20px" /> */}
+            <a href="mailto:hello@tcipod.com" className="cursor-pointer">
+              hello@tcipod.com
+            </a>
+          </p>
         </p>
       </section>
 
@@ -84,6 +96,12 @@ const Section2 = () => {
         id="immigrants-container"
         className="w-full max-w-[1550px] mx-auto lg:px-14"
       >
+        {!allImmigrantsCorner?.length === 0 && (
+          <section className="w-full h-[300px] mt-10 center-flex border-white/30 border rounded-md gap-10 md:gap-[80px]">
+            Nothing to see here...
+          </section>
+        )}
+
         {allImmigrantsCorner?.map((item, index) => {
           const isOdd = (index + 1) % 2 === 1;
           return <ImmigrantsCornerCard key={index} item={item} isOdd={isOdd} />;

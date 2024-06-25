@@ -5,7 +5,7 @@ const Section1 = () => {
     <div className="relative">
       <section className="w-full relative bg-primary1 py-[100px] md:pb-[200px] lg:pb-[300px] text-white">
         <div data-aos="fade-down" data-aos-duration="1000">
-          <h1 className="mt-5 text-[2.5rem] md:text-[5rem] text-center font-bold leading-tight font-sfpro relative">
+          <h1 className="mt-5 text-[2rem] md:text-[4rem] text-center font-bold leading-tight font-sfpro relative">
             EPISODES
             {/* deocr */}
             <FaHeadset

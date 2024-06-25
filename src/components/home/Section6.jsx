@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { IoPlay } from "react-icons/io5";
 import { BsSendFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
@@ -33,7 +34,7 @@ const Section6 = () => {
             data-aos-duration="1000"
             className="text-center"
           >
-            Help us Help You
+            Be Our Next Podcast Guest
           </h3>
           <p
             data-aos="fade-up"
@@ -41,17 +42,19 @@ const Section6 = () => {
             data-aos-delay="200"
             className="mt-5 mb-10 text-center text-[1.25rem] font-medium"
           >
-            Send your migration dilemmas--you don't have to go through your
-            migration journey alone. If you have a challenge, question or some
-            exciting news we want to hear it.
+            Ever wanted to share your immigration journey? Now's your chance!
+            Join us on The Chronicles of an Immigrant Podcast and let your story
+            inspire our global community. It doesn't matter where you are in the
+            UK – if you're an immigrant, we want to hear from you!
+            <br />
           </p>
 
           <div className="center-flex">
             <Link to="/contact">
               <button
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="200"
+                // data-aos="fade-up"
+                // data-aos-duration="1000"
+                // data-aos-delay="200"
                 className={`btn-custom5 min-w-[150px] text-[1.1rem]`}
               >
                 Reach Out

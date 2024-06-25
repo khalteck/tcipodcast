@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { BsSendFill } from "react-icons/bs";
 import Divider from "./Divider";
 import { useState } from "react";
@@ -51,6 +52,12 @@ const Section5 = () => {
         phone: "",
         email: "",
       });
+      setTimeout(() => {
+        window.open(
+          "https://chat.whatsapp.com/HoGWSQpPNMq5I57VjtwbZb",
+          "_blank"
+        );
+      }, 1000);
     } else {
       setvalidationError(true);
     }
@@ -78,7 +85,7 @@ const Section5 = () => {
             data-aos-duration="1000"
             className="text-center"
           >
-            Join The Community
+            Join Our Global Community
           </h3>
           <p
             data-aos="fade-up"
@@ -86,8 +93,9 @@ const Section5 = () => {
             data-aos-delay="200"
             className="mt-5 mb-7 text-center"
           >
-            Join the Tcipod community and never miss out on new and exciting
-            episodes!
+            No matter where you're from or where you are, you are welcome here.
+            Connect with fellow immigrants, share your experiences, and be part
+            of a supportive and inspiring network.
           </p>
 
           <form

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";

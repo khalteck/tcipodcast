@@ -28,7 +28,7 @@ function ErrorBoundary({ children }) {
     // Log the error to an error reporting service or handle it appropriately
     console.error("ErrorBoundary caught an error", error);
     // Redirect to the homepage on error
-    window.location.replace("/");
+    window.location.replace("/not-found");
   }
 
   return children;

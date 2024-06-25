@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import FixedFloater from "../../../components/common/FixedFloater";
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
@@ -15,6 +16,7 @@ import {
   useFetchInitialImmigrantsClientQuery,
 } from "../../../redux/features/firebaseSlice";
 import ScrollToTop from "../../../ScrollToTop";
+import Popup from "../../../components/immigrantsCorner/Popup";
 
 const ImmigrantsCorner = () => {
   const { dispatch } = useAppContext();
@@ -44,6 +46,11 @@ const ImmigrantsCorner = () => {
     }
   }, [isLoading, data, isSuccess]);
 
+  const [showPopup, setShowPopup] = useState(true);
+  function togglePopup() {
+    setShowPopup((prev) => !prev);
+  }
+
   return (
     <>
       {(isLoading || loadingInfo) && <Loader />}
@@ -56,6 +63,7 @@ const ImmigrantsCorner = () => {
         <Section2 />
 
         <FixedFloater />
+        {showPopup && <Popup onClose={togglePopup} />}
       </main>
 
       <Footer />

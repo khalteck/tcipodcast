@@ -1,4 +1,4 @@
-import ReactPaginate from "react-paginate";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useSelector } from "react-redux";
 import PodcastCard from "../home/PodcastCard";
 import { useAppContext } from "../../contexts/AppContext";
@@ -7,7 +7,7 @@ import { setNextPodcasts } from "../../redux/features/dataManagementSlice";
 import { useFetchNextPodcastsClientQuery } from "../../redux/features/firebaseSlice";
 import { ClipLoader } from "react-spinners";
 
-const Section3 = ({}) => {
+const Section3 = () => {
   const { allPodcasts, infoData } = useSelector(
     (state) => state.dataManagement
   );
@@ -76,6 +76,12 @@ const Section3 = ({}) => {
         <h3 className="text-center mb-[100px] text-primary">Other Episodes</h3>
 
         <div className="flex flex-col gap-[80px] md:gap-[100px]">
+          {!otherEpisodes?.length === 0 && (
+            <section className="w-full h-[300px] mt-10 center-flex border-white/30 border rounded-md gap-10 md:gap-[80px]">
+              Nothing to see here...
+            </section>
+          )}
+
           {otherEpisodes?.map((item, index) => {
             const isOdd = (index + 1) % 2 === 1;
             return <PodcastCard key={index} item={item} isOdd={isOdd} />;

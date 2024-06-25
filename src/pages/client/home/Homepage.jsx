@@ -2,7 +2,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
-import Section1 from "../../../components/home/Section1";
 import Section3 from "../../../components/home/Section3";
 import Section5 from "../../../components/home/Section5";
 import ScrollToTop from "../../../ScrollToTop";

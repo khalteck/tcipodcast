@@ -19,10 +19,11 @@ const Section2 = () => {
               <span className="font-bold">Mo and Folawe</span> met as students
               at Lancaster University, and their friendship has flourished ever
               since. Their shared passion for community impact led to the
-              creation of "The Chronicles of an Immigrant" media production.
+              creation of “The Chronicles of an Immigrant” media production.
               Together, they aim to build a supportive community for immigrants,
-              fostering connections in business, friendship, and career, and
-              significantly contributing to the global migrant community.
+              fostering connections in business, friendship, and career
+              development, while significantly contributing to the global
+              migrant community.
             </p>
           </div>
 

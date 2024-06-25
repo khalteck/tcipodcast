@@ -1,7 +1,4 @@
-import topPodcastData from "../../data/topPodcasts.json";
-import PodcastCard from "./PodcastCard";
 import { useAppContext } from "../../contexts/AppContext";
-import PodcastCard2 from "./PodcastCard2";
 import { IoPlay } from "react-icons/io5";
 import { BsPlayCircleFill } from "react-icons/bs";
 import { FaHeadset } from "react-icons/fa";
@@ -31,7 +28,11 @@ const Section3 = () => {
         color="#fcea10"
         className="absolute top-3 left-2 md:left-[100px] swing md:hidden"
       />
-      <h3 data-aos="fade-up" data-aos-duration="1000" className="text-center">
+      <h3
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="text-center font-bold"
+      >
         Latest Episode
       </h3>
       <p
@@ -42,46 +43,55 @@ const Section3 = () => {
       >
         Sharing untold migration stories from around the world
       </p>
-      <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
-        <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 md:p-5 text-center">
-          <h3 className="font-bold">{latestEpisode?.title}</h3>
-          <p className="font-bold">
-            {formatTimestamp(latestEpisode?.timestamp)}
-          </p>
-          <p className="text-[1.1rem]">{latestEpisode?.description}</p>
-          <div className="w-full flex justify-between mt-auto">
-            <p className="font-bold">{latestEpisode?.duration}</p>
-            <BsPlayCircleFill
-              color={"#fcea10"}
-              size={"60px"}
-              className="cursor-pointer hover:scale-125"
-              onClick={() => handleToggleModal(latestEpisode)}
-            />
+      {!latestEpisode && (
+        <section className="w-full h-[300px] mt-10 center-flex border-white/30 border rounded-md gap-10 md:gap-[80px]">
+          Nothing to see here...
+        </section>
+      )}
+      {latestEpisode && (
+        <>
+          <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
+            <div className="w-full md:w-[45%] flex flex-col gap-3 md:gap-5 md:p-5 text-center">
+              <h3 className="font-bold">{latestEpisode?.title}</h3>
+              <p className="font-bold">
+                {formatTimestamp(latestEpisode?.timestamp)}
+              </p>
+              <p className="">{latestEpisode?.description}</p>
+              <div className="w-full flex justify-between mt-auto">
+                <p className="font-bold">{latestEpisode?.duration}</p>
+                <BsPlayCircleFill
+                  color={"#fcea10"}
+                  size={"60px"}
+                  className="cursor-pointer hover:scale-125"
+                  onClick={() => handleToggleModal(latestEpisode)}
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-[55%]">
+              <img
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                alt="hero"
+                src={latestEpisode?.thumbnail}
+                className="w-full h-auto object-cover rounded-[50px]"
+              />
+            </div>
+          </section>
+          <div
+            // data-aos="fade-up"
+            // data-aos-duration="1000"
+            // data-aos-delay="200"
+            className="mt-14 center-flex"
+          >
+            <button
+              onClick={() => navigate("/episodes")}
+              className="btn-custom4 text-[1.2rem]"
+            >
+              More Episodes <IoPlay color="black" />
+            </button>
           </div>
-        </div>
-        <div className="w-full md:w-1/2">
-          <img
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-            alt="hero"
-            src={latestEpisode?.thumbnail}
-            className="w-full h-auto object-cover rounded-[50px]"
-          />
-        </div>
-      </section>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="200"
-        className="mt-14 center-flex"
-      >
-        <button
-          onClick={() => navigate("/episodes")}
-          className="btn-custom4 text-[1.2rem]"
-        >
-          More Episodes <IoPlay color="black" />
-        </button>
-      </div>
+        </>
+      )}
 
       {/* decor */}
       <GiSplash

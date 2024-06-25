@@ -13,6 +13,7 @@ import { useAppContext } from "./contexts/AppContext";
 
 // Importing ErrorBoundary
 import ErrorBoundary from "./components/error/ErrorBoundary";
+import OfflineRedirect from "./pages/client/404/OfflineRedirect";
 
 // Code splitting - dynamic import of components
 const Homepage = lazy(() => import("./pages/client/home/Homepage"));
@@ -26,7 +27,9 @@ const ImmigrantsCorner = lazy(() =>
 const Login = lazy(() => import("./pages/admin/Login"));
 const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
 
-const ComingSoon = lazy(() => import("./pages/client/comingSoon/ComingSoon"));
+// const ComingSoon = lazy(() => import("./pages/client/comingSoon/ComingSoon"));
+const NotFound = lazy(() => import("./pages/client/404/NotFound"));
+const Offline = lazy(() => import("./pages/client/404/Offline"));
 
 function App() {
   const user = useSelector((state) => state.user.user);
@@ -35,12 +38,11 @@ function App() {
   return (
     <>
       <ErrorBoundary>
+        <OfflineRedirect />
+
         <Suspense fallback={<Loader />}>
           {/* Routes component to define application routes */}
           <Routes>
-            {/* coming soon */}
-            {/* <Route path="/" element={<ComingSoon />} /> */}
-
             {/* client pages */}
             <Route path="/" element={<Homepage />} />
             <Route path="/contact" element={<Contact />} />
@@ -50,11 +52,18 @@ function App() {
 
             <Route path="/login" element={<Login />} />
 
+            <Route path="*" element={<NotFound />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="/offline" element={<Offline />} />
+
             {/* admin pages */}
             <Route
               path="/admin"
               element={user ? <Dashboard /> : <Navigate to="/login" />}
             />
+
+            {/* coming soon */}
+            {/* <Route path="/" element={<ComingSoon />} /> */}
           </Routes>
         </Suspense>
       </ErrorBoundary>

@@ -18,7 +18,7 @@ const FixedFloater = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="w-[50px] h-[50px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
+          <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
             <SiInstagram size={"20px"} color="#fff" />
           </div>
         </a>
@@ -27,7 +27,7 @@ const FixedFloater = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="w-[50px] h-[50px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
+          <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
             <FaTiktok size={"20px"} color="#fff" />
           </div>
         </a>
@@ -36,7 +36,7 @@ const FixedFloater = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="w-[50px] h-[50px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
+          <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
             <FaXTwitter size={"20px"} color="#fff" />
           </div>
         </a>
@@ -45,7 +45,7 @@ const FixedFloater = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="w-[50px] h-[50px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
+          <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
             <FaFacebook size={"20px"} color="#fff" />
           </div>
         </a>
@@ -54,15 +54,15 @@ const FixedFloater = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="w-[50px] h-[50px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
+          <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
             <FaLinkedin size={"20px"} color="#fff" />
           </div>
         </a>
       </div>
-      <div className="w-1 h-[100px] bg-primary1 border border-secondary/30 hidden md:flex"></div>
+      <div className="w-1 h-[30px] lg:h-[100px] bg-primary1 border border-secondary/30 hidden md:flex"></div>
       <div
         onClick={scrollToTop}
-        className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] rounded-full shadow-xl center-flex bg-primary1 border border-secondary/30 cursor-pointer"
+        className="lg:w-[80px] lg:h-[80px] w-[60px] h-[60px] rounded-full shadow-xl center-flex bg-primary1 border border-secondary/30 cursor-pointer"
       >
         <MdKeyboardDoubleArrowUp size={"30px"} color="#fff" />
       </div>
