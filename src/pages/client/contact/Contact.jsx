@@ -26,13 +26,6 @@ const Contact = () => {
         </div>
 
         <div className="w-full bg-slate-50/90">
-          {/* <h3
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            className="w-full cebter-flex mb-10 text-center flex md:hidden"
-          >
-            REACH OUT TO US
-          </h3> */}
           <Section2 />
         </div>
 

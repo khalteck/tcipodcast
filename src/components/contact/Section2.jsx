@@ -12,7 +12,7 @@ const Section2 = () => {
             className="w-full h-auto md:h-[700px] object-cover"
           />
         </div>
-        <div className="w-full md:w-1/2 text-center p-3 md:p-[50px] xl:md:p-[80px]">
+        <div className="w-full md:w-1/2 text-center px-3 pb-[80px] md:p-[50px] xl:md:p-[80px]">
           <h4
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -93,7 +93,7 @@ const Section2 = () => {
             className="w-full h-auto md:h-[700px] object-cover"
           />
         </div>
-        <div className="w-full md:w-1/2 text-center p-3 md:p-[50px] xl:md:p-[80px]">
+        <div className="w-full md:w-1/2 text-center px-3 pb-[80px] md:p-[50px] xl:md:p-[80px]">
           <div
             data-aos="fade-up"
             data-aos-duration="1000"

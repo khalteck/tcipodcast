@@ -6,7 +6,7 @@ const Notfound = () => {
         src="/images/not-found.png"
         className="w-[200px] md:w-[400px] h-auto"
       />
-      <p className="text-secondary font-sfpro text-center text-[1.1rem] font-bold mt-10">
+      <p className="text-secondary font-sfpro text-center text-[1.1rem] font-medium mt-10">
         Oops! Page not found! <br />
         <span
           className="underline cursor-pointer"
