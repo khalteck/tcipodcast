@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`text-white bg-primary1/20 h-[80px] md:h-[100px] px-3 w-full flex flex-col justify-start md:justify-center items-center absolute top-0 left-0 transition-all duration-500 z-[100]`}
+        className={`text-white bg-primary1/20 h-[80px] px-3 w-full flex flex-col justify-start md:justify-center items-center absolute top-0 left-0 transition-all duration-500 z-[100]`}
       >
         <div className="w-full max-w-[1500px] md:px-7 mx-auto flex flex-col">
           <div className="w-full flex justify-between items-center">
