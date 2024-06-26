@@ -15,7 +15,7 @@ const Section3 = () => {
   return (
     <div
       id="episodes"
-      className="relative bg-[#ff5f33] text-white pb-[80px] md:pb-[100px] pt-10 md:pt-[100px]"
+      className="relative bg-[#ffa88c] text-primary1 pb-[80px] md:pb-[100px]"
     >
       {/* deocr */}
       <FaHeadset
@@ -50,7 +50,7 @@ const Section3 = () => {
       )}
       {latestEpisode && (
         <>
-          <section className="pt-[50px] md:pt-[120px] flex flex-col md:flex-row md:items-center gap-10 md:gap-[80px]">
+          <section className="pt-[50px] md:pt-[120px] flex flex-col-reverse md:flex-row md:items-center gap-10 md:gap-[80px]">
             <div className="w-full md:w-[45%] flex flex-col gap-3 md:gap-5 md:p-5 text-center">
               <h3 className="font-bold">{latestEpisode?.title}</h3>
               <p className="font-bold">

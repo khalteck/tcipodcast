@@ -11,7 +11,7 @@ const Section2 = ({}) => {
   const latestEpisode = allPodcasts?.[0];
 
   return (
-    <div className="w-full bg-secondary2 text-white pb-[80px] px-3 pt-10 md:pt-0 relative">
+    <div className="w-full bg-[#ffa88c] text-primary1 pb-[80px] px-3 pt-10 md:pt-0 relative">
       <div className="w-full">
         <h3 className="text-center mb-10 md:mb-5">Latest Episode</h3>
 
@@ -51,7 +51,7 @@ const Section2 = ({}) => {
               <p
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="my-5 md:mb-10 text-start text-[1.25rem] font-medium"
+                className="my-5 md:mb-10 text-start font-medium"
               >
                 {latestEpisode?.description}
               </p>
@@ -76,7 +76,7 @@ const Section2 = ({}) => {
       {/* decor */}
       <GiSplash
         size={"100px"}
-        color="#fcea10"
+        color="#fde68a"
         className="absolute -bottom-2 right-10 md:right-[100px]"
       />
     </div>

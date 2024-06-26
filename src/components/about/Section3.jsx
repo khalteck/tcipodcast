@@ -25,7 +25,7 @@ const Section3 = () => {
         data-aos-duration="1000"
         alt="image"
         src="/images/Pic before meet the brainboxes .jpg"
-        className="w-full md:w-[70%] md:max-w-[1000px] mx-auto mb-10] rounded-[50px] mt-10"
+        className="w-full md:w-[70%] md:max-w-[1000px] mx-auto mb-10 rounded-[50px] mt-10"
       />
       <h3
         data-aos="fade-up"

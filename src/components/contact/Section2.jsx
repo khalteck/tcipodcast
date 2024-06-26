@@ -3,13 +3,13 @@ const Section2 = () => {
   return (
     <>
       <div className="w-full flex md:flex-row flex-col gap-10 md:gap-0">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 p-3 md:px-0">
           <img
             data-aos="zoom-in"
             data-aos-duration="1000"
             alt="hero"
             src="/images/Contact us pic.jpg"
-            className="w-full h-auto md:h-[700px] object-cover"
+            className="w-full h-auto md:h-[700px] object-cover rounded-[50px] md:rounded-none"
           />
         </div>
         <div className="w-full md:w-1/2 text-center px-3 pb-[80px] md:p-[50px] xl:md:p-[80px]">
@@ -18,17 +18,8 @@ const Section2 = () => {
             data-aos-duration="1000"
             className="text-center font-bold text-[1.5rem]"
           >
-            Reach Out To Us--We Would Love To Hear From You!
+            Reach Out To Us—We Would Love To Hear From You!
           </h4>
-          {/* <p
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-            className="mt-5 mb-7 text-center"
-          >
-            We would love to hear from you!
-          </p> */}
-
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -44,12 +35,6 @@ const Section2 = () => {
               passionate volunteers, including a dedicated Community Manager, to
               help us grow and connect our audience worldwide.
             </p>
-            {/* <a
-            href="mailto:hello@tcipod.com"
-            className="underline text-secondary2"
-          >
-            hello@tcipod.com
-          </a> */}
           </div>
 
           <div
@@ -84,13 +69,13 @@ const Section2 = () => {
         </div>{" "}
       </div>
       <div className="w-full flex md:flex-row-reverse flex-col gap-10 md:gap-0">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 p-3 md:px-0">
           <img
             data-aos="zoom-in"
             data-aos-duration="1000"
             alt="hero"
-            src="/images/Pic before meet the brainboxes .jpg"
-            className="w-full h-auto md:h-[700px] object-cover"
+            src="/images/Contact 2.jpg"
+            className="w-full h-auto md:h-[700px] object-cover rounded-[50px] md:rounded-none"
           />
         </div>
         <div className="w-full md:w-1/2 text-center px-3 pb-[80px] md:p-[50px] xl:md:p-[80px]">

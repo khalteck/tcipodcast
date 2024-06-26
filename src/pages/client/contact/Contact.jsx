@@ -2,6 +2,7 @@ import FixedFloater from "../../../components/common/FixedFloater";
 import Footer from "../../../components/common/footer/Footer";
 import Header from "../../../components/common/header/Header";
 import Section2 from "../../../components/contact/Section2";
+import ScrollToTop from "../../../ScrollToTop";
 
 const Contact = () => {
   return (
@@ -32,6 +33,7 @@ const Contact = () => {
         <FixedFloater />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 };

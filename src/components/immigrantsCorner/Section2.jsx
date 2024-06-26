@@ -40,6 +40,7 @@ const Section2 = () => {
   useEffect(() => {
     const dataEnd =
       infoData?.total_immigrants_corner === allImmigrantsCorner?.length;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -56,6 +57,8 @@ const Section2 = () => {
     );
 
     const lastItemId = allImmigrantsCorner?.slice(-1)?.[0]?.id;
+    console.log("lastItemId", lastItemId);
+
     const lastCardElement = document.getElementById(lastItemId);
 
     if (lastCardElement) {
@@ -70,13 +73,13 @@ const Section2 = () => {
   }, [infoData, allImmigrantsCorner]);
 
   return (
-    <div className="w-full bg-secondary2 text-white pb-[80px] pt-10 md:pt-0">
+    <div className="w-full bg-[#ffa88c] text-white pb-[80px] pt-10 md:pt-0">
       <section className="w-full">
         <h3 className="text-center mb-5">
           Share Your Journey in the
           <br /> Immigrants Corner
         </h3>
-        <p className="w-full mx-auto text-[1.1rem] mb-10 text-center">
+        <div className="w-full mx-auto text-[1.1rem] mb-10 text-center">
           Get featured in our Immigrants Corner! We’re highlighting the diverse
           stories and incredible journeys of immigrants from every corner of the
           globe. Whether you’re in the UK or anywhere else around the world,
@@ -89,7 +92,7 @@ const Section2 = () => {
               hello@tcipod.com
             </a>
           </p>
-        </p>
+        </div>
       </section>
 
       <div

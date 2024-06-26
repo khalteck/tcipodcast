@@ -93,7 +93,7 @@ const Section5 = () => {
             data-aos-delay="200"
             className="mt-5 mb-7 text-center"
           >
-            No matter where you're from or where you are, you are welcome here.
+            No matter where you are from or where you are, you are welcome here.
             Connect with fellow immigrants, share your experiences, and be part
             of a supportive and inspiring network.
           </p>

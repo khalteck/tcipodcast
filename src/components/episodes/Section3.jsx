@@ -40,7 +40,8 @@ const Section3 = () => {
   }, [data, isSuccess, isLoading]);
 
   useEffect(() => {
-    const dataEnd = infoData?.total_immigrants_corner === allPodcasts?.length;
+    const dataEnd = infoData?.total_podcasts === allPodcasts?.length;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -57,6 +58,8 @@ const Section3 = () => {
     );
 
     const lastItemId = allPodcasts?.slice(-1)?.[0]?.id;
+
+    // console.log("lastItemId", lastItemId);
     const lastCardElement = document.getElementById(lastItemId);
 
     if (lastCardElement) {
@@ -71,7 +74,7 @@ const Section3 = () => {
   }, [infoData, allPodcasts]);
 
   return (
-    <div className="w-full bg-secondary py-[80px] md:pt-[100px]">
+    <div className="w-full bg-[#fde68a] py-[80px] md:pt-[100px]">
       <section className="pb-[100px]">
         <h3 className="text-center mb-[100px] text-primary">Other Episodes</h3>
 

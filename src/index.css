@@ -161,7 +161,7 @@ button {
   }
 
   .blink {
-    animation: blink 1s ease infinite;
+    animation: blink 2s ease infinite;
   }
   @keyframes blink {
     0%,

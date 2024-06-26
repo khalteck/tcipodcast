@@ -70,7 +70,7 @@ const Header = () => {
                     className={`nav-link cursor-pointer px-2 rounded-sm ${
                       isScrolled
                         ? "bg-primary1 text-white"
-                        : "bg-secondary2 text-white"
+                        : "bg-secondary text-black"
                     }`}
                   >
                     ADMIN
