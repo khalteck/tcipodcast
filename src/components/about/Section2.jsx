@@ -50,7 +50,7 @@ const Section2 = () => {
       {/* decor */}
       <GiSplash
         size={"100px"}
-        color="#fde68a"
+        color="#fcea10"
         className="absolute -bottom-2 right-10 md:right-[100px]"
       />
     </div>

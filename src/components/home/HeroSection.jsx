@@ -40,11 +40,11 @@ const HeroSection = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button className="btn-custom6 font-bold">
+                <button className="btn-custom4 font-bold">
                   <img
                     alt="icon"
                     src="/images/icons8-podcast-96.png"
-                    className="w-8 h-8 bg-white rounded-full"
+                    className="w-8 h-8 rounded-full"
                   />
                   Apple
                 </button>

@@ -74,7 +74,7 @@ const Section3 = () => {
   }, [infoData, allPodcasts]);
 
   return (
-    <div className="w-full bg-[#fde68a] text-primary1 py-[80px] md:pt-[100px]">
+    <div className="w-full bg-secondary text-primary1 py-[80px] md:pt-[100px]">
       <section className="pb-[100px]">
         <h3 className="text-center mb-[100px]">Other Episodes</h3>
 

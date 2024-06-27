@@ -14,17 +14,17 @@ const Slider = ({ slides, isOdd }) => {
     setCurrentSlide(swiper.activeIndex);
   };
 
-  const slideNext = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
+  // const slideNext = () => {
+  //   if (swiperRef.current && swiperRef.current.swiper) {
+  //     swiperRef.current.swiper.slideNext();
+  //   }
+  // };
 
-  const slidePrev = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
+  // const slidePrev = () => {
+  //   if (swiperRef.current && swiperRef.current.swiper) {
+  //     swiperRef.current.swiper.slidePrev();
+  //   }
+  // };
 
   return (
     <>

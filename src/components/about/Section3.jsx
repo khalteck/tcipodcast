@@ -1,10 +1,5 @@
 import { FaHeadset, FaMicrophoneAlt } from "react-icons/fa";
 import founders from "../../data/founders.json";
-import { SiInstagram } from "react-icons/si";
-import { FaTiktok } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
 import Slider from "./Slider";
 import moyeniImages from "../../data/moyeni.json";
@@ -12,7 +7,7 @@ import folaweImages from "../../data/folawe.json";
 
 const Section3 = () => {
   return (
-    <div className="w-full py-[80px] bg-[#fde68a] text-primary relative">
+    <div className="w-full py-[80px] bg-secondary text-primary relative">
       <h3
         data-aos="fade-up"
         data-aos-duration="1000"

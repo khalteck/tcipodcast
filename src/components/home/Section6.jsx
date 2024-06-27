@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Section6 = () => {
   return (
-    <div className="w-full bg-[#fde68a] text-primary relative">
+    <div className="w-full bg-secondary text-primary relative">
       {/* deocr */}
       <FaMicrophoneAlt
         size={"60px"}
@@ -37,10 +37,11 @@ const Section6 = () => {
             data-aos-delay="200"
             className="mt-5 mb-10 text-center font-medium"
           >
-            Ever wanted to share your immigration journey? Now's your chance!
-            Join us on The Chronicles of an Immigrant Podcast and let your story
-            inspire our global community. It doesn't matter where you are in the
-            UK – if you're an immigrant, we want to hear from you!
+            Have you ever wanted to share your immigration journey? Now is your
+            chance! Join us on The Chronicles of an Immigrant Podcast and let
+            your story inspire our global community. It does not matter where
+            you are in the UK – if you are an immigrant, we want to hear from
+            you!
             <br />
           </p>
 

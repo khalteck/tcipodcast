@@ -12,6 +12,8 @@ export default {
     },
     fontFamily: {
       sfpro: ["sfpro", "sans-serif"],
+      open: ["Open Sans", "sans-serif"],
+      cursive: ["Cedarville Cursive", "cursive"],
     },
     extend: {
       colors: {
