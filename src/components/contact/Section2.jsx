@@ -45,7 +45,7 @@ const Section2 = () => {
             className="mt-10"
           >
             <h4 className="text-center font-bold text-[1.5rem] mb-3">
-              Sponsorships and Partnership
+              Sponsorships and Partnerships
             </h4>
             <p>
               Hey there! Do you believe in the power of sharing immigrant
