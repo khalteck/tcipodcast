@@ -32,7 +32,7 @@ const Section2 = () => {
             </h4>
             <p className="">
               Are you someone who loves building communities and is fascinated
-              by the stories of global migration? We're on the lookout for
+              by the stories of global migration? We are on the lookout for
               passionate volunteers, including a dedicated Community Manager, to
               help us grow and connect our audience worldwide.
             </p>
@@ -45,7 +45,7 @@ const Section2 = () => {
             className="mt-10"
           >
             <h4 className="text-center font-bold text-[1.5rem] mb-3">
-              Sponsoships and Partnership
+              Sponsorships and Partnership
             </h4>
             <p>
               Hey there! Do you believe in the power of sharing immigrant
