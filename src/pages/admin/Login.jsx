@@ -205,7 +205,7 @@ const Login = () => {
                 <div className="flex items-center gap-3 border-secondary/50 border rounded-lg p-3">
                   <img
                     alt="icon"
-                    src="/images/icons8-podcast-96.png"
+                    src="/images/apple-podcast.png"
                     className="w-8 md:w-12 h-auto"
                   />
                   <div>

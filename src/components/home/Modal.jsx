@@ -49,7 +49,7 @@ const Modal = ({ onClose, action }) => {
                 Apple{" "}
                 <img
                   alt="icon"
-                  src="/images/icons8-podcast-96.png"
+                  src="/images/apple-podcast.png"
                   className="w-7 h-auto"
                 />
               </button>

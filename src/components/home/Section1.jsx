@@ -133,7 +133,7 @@ const Section1 = () => {
                   <div className="w-full p-5 rounded-[30px] bg-secondary2/90 flex gap-3 text-white font-bold">
                     <img
                       alt="icon"
-                      src="/images/icons8-podcast-96.png"
+                      src="/images/apple-podcast.png"
                       className="w-10 md:w-14 h-auto"
                     />
                     <div>

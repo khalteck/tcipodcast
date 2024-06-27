@@ -79,7 +79,7 @@ const Section2 = () => {
               <div className="flex items-center gap-3">
                 <img
                   alt="icon"
-                  src="/images/icons8-podcast-96.png"
+                  src="/images/apple-podcast.png"
                   className="w-10 md:w-14 h-auto"
                 />
                 <div>

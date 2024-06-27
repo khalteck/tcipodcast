@@ -43,8 +43,8 @@ const HeroSection = () => {
                 <button className="btn-custom4 font-bold">
                   <img
                     alt="icon"
-                    src="/images/icons8-podcast-96.png"
-                    className="w-8 h-8 rounded-full"
+                    src="/images/apple-podcast.png"
+                    className="w-8 h-8"
                   />
                   Apple
                 </button>
@@ -121,8 +121,8 @@ const HeroSection = () => {
               <button className="btn-custom4 font-bold">
                 <img
                   alt="icon"
-                  src="/images/icons8-podcast-96.png"
-                  className="w-8 h-8 bg-white rounded-full"
+                  src="/images/apple-podcast.png"
+                  className="w-8 h-8"
                 />
                 Apple
               </button>
