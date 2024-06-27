@@ -117,7 +117,7 @@ const Footer = () => {
         </section>
       </div>
       <div className="flex h-[80px] mt-5 justify-center items-center text-[.75rem] border-t border-t-white/20">
-        <p>© 2024 Tcipod. All Rights Reserved</p>
+        <p>© 2024 TCI. All Rights Reserved</p>
       </div>
     </footer>
   );
