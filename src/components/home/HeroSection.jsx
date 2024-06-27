@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div className="w-full relative">
       <div className="w-full flex flex-col md:flex-row bg-primary1">
-        <div className="w-full h-[300px] md:min-h-screen lg:min-h-[110vh] bg-primary1 text-white flex center-flex flex-col relative">
+        <div className="w-full h-[300px] md:min-h-screen lg:min-h-[110vh] lg:pb-[150px] bg-primary1 text-white flex center-flex flex-col relative">
           <div className="w-full h-[100px] md:mb-auto"></div>
           <div className="w-full font-bold md:mt-auto text-center text-[2rem] md:text-[3rem] lg:text-[4rem] leading-tight">
             <img
