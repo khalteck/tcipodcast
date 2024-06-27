@@ -14,12 +14,9 @@ import Loader from "../../../components/common/Loader";
 import { useFetchLatestEpisodeQuery } from "../../../redux/features/firebaseSlice";
 import { setLatestEpisode } from "../../../redux/features/dataManagementSlice";
 import HeroSection from "../../../components/home/HeroSection";
-// import { useSelector } from "react-redux";
 
 const Homepage = () => {
-  // const { latestEpisode } = useSelector((state) => state.dataManagement);
-
-  const { currentPage, dispatch } = useAppContext();
+  const { currentPage, dispatch, commCicked } = useAppContext();
 
   const location = useLocation();
 
@@ -35,7 +32,7 @@ const Homepage = () => {
         behavior: "smooth",
       });
     }
-  }, [currentPage]);
+  }, [currentPage, commCicked]);
 
   const { data, isLoading, isSuccess } = useFetchLatestEpisodeQuery();
 
@@ -51,7 +48,7 @@ const Homepage = () => {
       <Header />
 
       <main className="home">
-        <div className="w-full h-full bg-[#f5f5f5]/50">
+        <div className="w-full h-full bg-white">
           {/* <Section1 /> */}
           <HeroSection />
 

@@ -60,7 +60,9 @@ const ImmigrantsCorner = () => {
       <main>
         <Section1 />
 
-        <Section2 />
+        <div className="bg-white">
+          <Section2 />
+        </div>
 
         <FixedFloater />
         {showPopup && <Popup onClose={togglePopup} />}

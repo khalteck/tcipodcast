@@ -2,14 +2,14 @@ import { GiSplash } from "react-icons/gi";
 
 const Section2 = () => {
   return (
-    <div className="w-full bg-[#ffa88c] text-primary1 pb-[80px] px-3 pt-10 md:pt-[80px] relative">
-      <section className="w-full flex lg:flex-row flex-col gap-5 md:gap-10">
+    <div className="w-full bg-[#ff4402]/70 text-white pb-[80px] px-3 pt-10 md:pt-[80px] relative">
+      <section className="w-full flex lg:flex-row lg:items-start flex-col gap-5 md:gap-10">
         <img
           data-aos="zoom-in"
           data-aos-duration="1000"
           alt="hero"
           src="/images/About us first pic.jpg"
-          className="w-full md:w-[70%] md:max-w-[1000px] mx-auto mb-10 rounded-[50px] mt-10"
+          className="w-full md:w-[70%] md:max-w-[1000px] max-h-[700px] mx-auto mb-10 rounded-[50px] mt-10 lg:mt-0"
         />
 
         <div className="w-full lg:w-[40%] flex flex-col">
@@ -50,7 +50,7 @@ const Section2 = () => {
       {/* decor */}
       <GiSplash
         size={"100px"}
-        color="#fcea10"
+        color="#fde68a"
         className="absolute -bottom-2 right-10 md:right-[100px]"
       />
     </div>

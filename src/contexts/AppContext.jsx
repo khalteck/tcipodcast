@@ -33,10 +33,10 @@ const AppContextProvider = ({ children }) => {
   function handleScrollTo(param) {
     const element = document.getElementById(param);
     if (element) {
-      const offsetTop =
-        element.getBoundingClientRect().top + window.scrollY - 150;
+      // const offsetTop =
+      //   element.getBoundingClientRect().top + window.scrollY - 150;
       window.scrollTo({
-        top: offsetTop,
+        // top: offsetTop,
         behavior: "smooth",
       });
     } else {
@@ -69,6 +69,11 @@ const AppContextProvider = ({ children }) => {
     item ? setdeleteModal(item) : setdeleteModal(null);
   }
 
+  const [commCicked, setcommCicked] = useState(false);
+  function toggleComm() {
+    setcommCicked((prev) => !prev);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -90,6 +95,8 @@ const AppContextProvider = ({ children }) => {
         handleToggledeleteModal,
         reRenderApp,
         reRender,
+        commCicked,
+        toggleComm,
       }}
     >
       {children}

@@ -18,6 +18,7 @@ const CreatePodcasts = ({ onClose }) => {
     description: mode === "Edit" ? addpodcast?.description : "",
     spotifyLink: mode === "Edit" ? addpodcast?.spotifyLink : "",
     appleLink: mode === "Edit" ? addpodcast?.appleLink : "",
+    youtubeLink: mode === "Edit" ? addpodcast?.youtubeLink : "",
     duration: mode === "Edit" ? addpodcast?.duration : "",
     thumbnail: mode === "Edit" ? addpodcast?.thumbnail || "" : "",
   });
@@ -62,6 +63,7 @@ const CreatePodcasts = ({ onClose }) => {
       formData?.description &&
       formData?.spotifyLink &&
       formData?.appleLink &&
+      formData?.youtubeLink &&
       formData?.duration &&
       formData?.thumbnail
     ) {
@@ -132,6 +134,15 @@ const CreatePodcasts = ({ onClose }) => {
             id="appleLink"
             placeholder="Apple link"
             value={formData?.appleLink}
+            onChange={handleChange}
+            className="w-full p-3 border border-primary1 rounded-md text-[.85rem] outline-none bg-transparent"
+          />
+
+          <input
+            type="text"
+            id="youtubeLink"
+            placeholder="Youtube link"
+            value={formData?.youtubeLink}
             onChange={handleChange}
             className="w-full p-3 border border-primary1 rounded-md text-[.85rem] outline-none bg-transparent"
           />

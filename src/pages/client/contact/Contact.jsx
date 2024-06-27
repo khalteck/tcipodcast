@@ -10,14 +10,14 @@ const Contact = () => {
       <Header />
       <main>
         <div className="relative">
-          <section className="w-full relative bg-primary1 py-[80px] md:py-[100px] text-white">
+          <section className="w-full relative bg-primary1 py-[80px] md:pb-[200px] lg:pb-[300px] text-white">
             <div data-aos="fade-down" data-aos-duration="1000">
-              <h1 className="mt-5 text-[2rem] md:text-[4rem] text-center font-bold leading-tight font-sfpro">
+              <h1 className="text-[2rem] md:text-[4rem] text-center font-bold leading-tight font-sfpro mt-10">
                 GET IN TOUCH
               </h1>
             </div>
           </section>
-          <div className="w-full absolute bottom-[-1px] left-0 hidden">
+          <div className="w-full absolute bottom-[-1px] left-0">
             <img
               alt="wave"
               src="/images/wavey2.png"

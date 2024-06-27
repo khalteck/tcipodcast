@@ -20,7 +20,7 @@ const HeroSection = () => {
           </div>
           <div className="w-fit m-auto md:mx-0 py-3 px-5 md:p-10 hidden md:flex flex-col items-center gap-3 bg-primary1/50 rounded-xl">
             <p className="font-bold">Listen to us on:</p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap justify-center w-[400px] gap-3">
               <a
                 href="https://open.spotify.com/show/2AlbaXLHC7EW1IFvsGGlcF?si=1dQ_vKAdTQaUjOMBha7OCw"
                 target="_blank"
@@ -47,6 +47,20 @@ const HeroSection = () => {
                     className="w-8 h-8 bg-white rounded-full"
                   />
                   Apple
+                </button>
+              </a>
+              <a
+                href="https://youtube.com/@tcipod?si=3XspzJg1QUfr5Qsr"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="btn-custom4 font-bold">
+                  <img
+                    alt="icon"
+                    src="/images/icons8-youtube-music-48.png"
+                    className="w-8 h-8 rounded-full"
+                  />
+                  Youtube
                 </button>
               </a>
             </div>
@@ -81,10 +95,10 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="w-full h-[200px] sm:h-[300px] pb-10 sm:pb-[100px] bg-primary1 text-white flex md:hidden center-flex">
+      <div className="w-full h-[300px] sm:h-[350px] pb-10 sm:pb-[100px] bg-primary1 text-white flex md:hidden center-flex">
         <div className="w-fit mx-auto md:mx-0 py-3 px-5 md:p-10 flex flex-col items-center md:items-start gap-3 bg-primary1/50 rounded-xl">
           <p className="font-bold">Listen to us on:</p>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             <a
               href="https://open.spotify.com/show/2AlbaXLHC7EW1IFvsGGlcF?si=1dQ_vKAdTQaUjOMBha7OCw"
               target="_blank"
@@ -113,12 +127,26 @@ const HeroSection = () => {
                 Apple
               </button>
             </a>
+            <a
+              href="https://youtube.com/@tcipod?si=3XspzJg1QUfr5Qsr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className="btn-custom4 font-bold">
+                <img
+                  alt="icon"
+                  src="/images/icons8-youtube-music-48.png"
+                  className="w-8 h-8 rounded-full"
+                />
+                Youtube
+              </button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* wave */}
-      <div className="w-full absolute bottom-[-1px] left-0">
+      <div className="w-full absolute bottom-[-0px] left-0">
         <img alt="wave" src="/images/waves2.png" className="w-full h-auto" />
       </div>
     </div>

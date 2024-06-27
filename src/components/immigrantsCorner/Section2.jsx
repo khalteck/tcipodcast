@@ -57,7 +57,6 @@ const Section2 = () => {
     );
 
     const lastItemId = allImmigrantsCorner?.slice(-1)?.[0]?.id;
-    console.log("lastItemId", lastItemId);
 
     const lastCardElement = document.getElementById(lastItemId);
 
@@ -73,7 +72,7 @@ const Section2 = () => {
   }, [infoData, allImmigrantsCorner]);
 
   return (
-    <div className="w-full bg-[#ffa88c] text-white pb-[80px] pt-10 md:pt-0">
+    <div className="w-full bg-[#ff4402]/70 text-white pb-[80px] pt-10 md:pt-0">
       <section className="w-full">
         <h3 className="text-center mb-5">
           Share Your Journey in the

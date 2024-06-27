@@ -1,12 +1,11 @@
 import { IoClose } from "react-icons/io5";
 import { useAppContext } from "../../contexts/AppContext";
-import { FaPlay } from "react-icons/fa";
 import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 
 const Modal = ({ onClose, action }) => {
   const { podcast } = useAppContext();
   return (
-    <div className="w-full h-screen fixed top-0 left-0 blurry expand bg-black/80 py-[80px] flex flex-col items-center z-[999]">
+    <div className="w-full h-screen fixed top-0 left-0 blurry expand bg-black/80 py-[80px] overflow-y-auto flex flex-col items-center z-[999]">
       {/* Close button */}
       <div
         onClick={() => onClose()}
@@ -15,12 +14,12 @@ const Modal = ({ onClose, action }) => {
         {/* Close icon */}
         <IoClose size={"20px"} color="#fff" />
       </div>
-      <div className="w-[90%] md:w-[600px] h-fit relative bg-primary1 text-white p-3 pb-5 lg:px-5 lg:py-7 border border-neutral-500/40 rounded-lg overflow-y-auto">
-        <div className="flex gap-3">
+      <div className="w-[90%] md:w-[600px] h-fit relative bg-primary1 text-white p-3 pb-5 lg:px-5 lg:py-7 border border-neutral-500/40 rounded-lg">
+        <div className="flex md:flex-row flex-col gap-3">
           <img
             alt={`image-${podcast?.id}`}
             src={podcast?.thumbnail}
-            className="w-[100px] md:w-[200px] h-[100px] md:h-[200px] rounded-md object-cover border"
+            className="w-[200px] h-[200px] rounded-md object-cover border"
           />
           <div className="flex flex-col gap-3">
             <h4 className="font-bold text-[1.25rem] md:text-[2rem]">
@@ -34,7 +33,7 @@ const Modal = ({ onClose, action }) => {
         </div>
         <div className="flex flex-col gap-3 mt-5">
           <p className="font-bold">Listen on:</p>
-          <div className="flex gap-4 items-center">
+          <div className="flex flex-wrap justify-center gap-4 items-center">
             <a href={podcast?.spotifyLink} target="_blank" rel="noreferrer">
               <button className="btn-custom4 w-fit">
                 Spotify{" "}
@@ -51,6 +50,16 @@ const Modal = ({ onClose, action }) => {
                 <img
                   alt="icon"
                   src="/images/icons8-podcast-96.png"
+                  className="w-7 h-auto"
+                />
+              </button>
+            </a>
+            <a href={podcast?.youtubeLink} target="_blank" rel="noreferrer">
+              <button className="btn-custom4 w-fit">
+                Youtube{" "}
+                <img
+                  alt="icon"
+                  src="/images/icons8-youtube-music-48.png"
                   className="w-7 h-auto"
                 />
               </button>

@@ -12,7 +12,7 @@ import folaweImages from "../../data/folawe.json";
 
 const Section3 = () => {
   return (
-    <div className="w-full py-[80px] bg-secondary relative">
+    <div className="w-full py-[80px] bg-[#fde68a] text-primary relative">
       <h3
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -76,7 +76,7 @@ const Section3 = () => {
                   <p className="text-[.95rem] font-medium leading-relaxed">
                     {item?.bio}
                   </p>
-                  <div className="flex gap-3 items-center">
+                  {/* <div className="flex gap-3 items-center">
                     {item?.socials?.map((x, ind) => {
                       return (
                         <a
@@ -101,7 +101,7 @@ const Section3 = () => {
                         </a>
                       );
                     })}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>

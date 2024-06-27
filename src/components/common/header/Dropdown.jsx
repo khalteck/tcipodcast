@@ -1,14 +1,6 @@
 import { IoClose } from "react-icons/io5";
-import SocialsContainer from "./SocialsContainer";
-import { Link } from "react-router-dom";
-import {
-  FaFacebook,
-  FaFacebookSquare,
-  FaInstagram,
-  FaLinkedin,
-  FaMicrophoneAlt,
-  FaTiktok,
-} from "react-icons/fa";
+
+import { FaFacebook, FaLinkedin, FaTiktok } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../../contexts/AppContext";
 import { useSelector } from "react-redux";
@@ -17,7 +9,7 @@ import Logo from "../Logo";
 import { SiInstagram } from "react-icons/si";
 
 const Dropdown = ({ handleDropdown, showDropdown, showShare }) => {
-  const { navigate, handleScrollTo, isScrolled } = useAppContext();
+  const { navigate, handleScrollTo, toggleComm } = useAppContext();
 
   const user = useSelector((state) => state.user.user);
 
@@ -143,6 +135,7 @@ const Dropdown = ({ handleDropdown, showDropdown, showShare }) => {
                 onClick={() => {
                   handleDropdown();
                   handleScrollTo("community");
+                  toggleComm();
                 }}
                 className="w-full h-[50px] px-4 flex gap-3 items-center rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex"
               >

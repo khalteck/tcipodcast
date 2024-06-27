@@ -70,8 +70,8 @@ const Login = () => {
 
   return (
     <div className="w-full min-h-screen flex md:flex-row flex-col bg-primary1">
-      <div className="w-full h-[250px] md:h-screen bg-hero bg-no-repeat bg-cover relative">
-        <div className="w-full h-full absolute top-0 left-0 p-5 md:p-10 bg-primary1/50 flex flex-col">
+      <div className="w-full h-[250px] md:h-screen bg-hero4 bg-no-repeat bg-center bg-cover relative">
+        <div className="w-full h-full absolute top-0 left-0 p-5 md:p-10 flex flex-col">
           <Link to="/">
             <img
               alt=""

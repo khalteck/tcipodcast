@@ -9,13 +9,13 @@ const About = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="">
         <Section1 />
 
-        <Section2 />
-
-        <Section3 />
-
+        <div className="bg-white">
+          <Section2 />
+          <Section3 />
+        </div>
         <FixedFloater />
       </main>
       <Footer />

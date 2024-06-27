@@ -1,6 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import { IoPlay } from "react-icons/io5";
-import { BsSendFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
@@ -15,10 +13,7 @@ const Section6 = () => {
         color="#481297"
         className="absolute top-0 md:top-[100px] left-10 swing"
       />
-      <section
-        id="community"
-        className="py-[80px] md:pb-[80px] flex flex-col md:flex-row-reverse md:items-center gap-10"
-      >
+      <section className="py-[80px] md:pb-[80px] flex flex-col md:flex-row-reverse md:items-center gap-10">
         <div className="w-full md:w-1/2">
           <img
             data-aos="zoom-in"

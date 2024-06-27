@@ -5,6 +5,8 @@ import { FaHeadset } from "react-icons/fa";
 import { GiSplash } from "react-icons/gi";
 import { useSelector } from "react-redux";
 import formatTimestamp from "../../utils/formatTimestamp";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import Divider from "./Divider";
 
 const Section3 = () => {
   const { latestEpisode } = useSelector((state) => state.dataManagement);
@@ -14,8 +16,8 @@ const Section3 = () => {
 
   return (
     <div
-      id="episodes"
-      className="relative bg-[#ffa88c] text-primary1 pb-[80px] md:pb-[100px]"
+      // id="episodes"
+      className="relative bg-[#ff4402]/70 text-white pt-[50px]"
     >
       {/* deocr */}
       <FaHeadset
@@ -51,8 +53,10 @@ const Section3 = () => {
       {latestEpisode && (
         <>
           <section className="pt-[50px] md:pt-[120px] flex flex-col-reverse md:flex-row md:items-center gap-10 md:gap-[80px]">
-            <div className="w-full md:w-[45%] flex flex-col gap-3 md:gap-5 md:p-5 text-center">
-              <h3 className="font-bold">{latestEpisode?.title}</h3>
+            <div className="w-full md:w-[45%] flex flex-col gap-3 md:gap-5 md:p-5 text-center md:text-start">
+              <h3 className="font-bold">
+                {capitalizeFirstLetter(latestEpisode?.title)}
+              </h3>
               <p className="font-bold">
                 {formatTimestamp(latestEpisode?.timestamp)}
               </p>
@@ -73,7 +77,7 @@ const Section3 = () => {
                 data-aos-duration="1000"
                 alt="hero"
                 src={latestEpisode?.thumbnail}
-                className="w-full h-auto object-cover rounded-[50px]"
+                className="w-full h-auto md:max-h-[700px] object-cover rounded-[50px]"
               />
             </div>
           </section>
@@ -81,7 +85,7 @@ const Section3 = () => {
             // data-aos="fade-up"
             // data-aos-duration="1000"
             // data-aos-delay="200"
-            className="mt-14 center-flex"
+            className="mt-14 mb-[100px] center-flex"
           >
             <button
               onClick={() => navigate("/episodes")}
@@ -92,12 +96,13 @@ const Section3 = () => {
           </div>
         </>
       )}
+      <Divider />
 
       {/* decor */}
       <GiSplash
         size={"80px"}
         color="#481297"
-        className="absolute -bottom-2 right-10 md:right-[100px]"
+        className="absolute bottom-[90px] right-10 md:right-[100px]"
       />
     </div>
   );

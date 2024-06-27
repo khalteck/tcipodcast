@@ -19,11 +19,7 @@ const FixedFloater = () => {
           rel="noreferrer"
         >
           <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
-            <img
-              alt="icon"
-              src="/images/icons8-instagram-48.png"
-              className="w-[30px] h-[30px]"
-            />
+            <SiInstagram size={"20px"} color="#fff" />
           </div>
         </a>
         <a
@@ -32,11 +28,7 @@ const FixedFloater = () => {
           rel="noreferrer"
         >
           <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
-            <img
-              alt="icon"
-              src="/images/icons8-tiktok-48.png"
-              className="w-[30px] h-[30px]"
-            />
+            <FaTiktok size={"20px"} color="#fff" />
           </div>
         </a>
         <a
@@ -45,11 +37,7 @@ const FixedFloater = () => {
           rel="noreferrer"
         >
           <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
-            <img
-              alt="icon"
-              src="/images/icons8-twitter-30.png"
-              className="w-[25px] h-[25px]"
-            />
+            <FaXTwitter size={"20px"} color="#fff" />
           </div>
         </a>
         <a
@@ -58,11 +46,7 @@ const FixedFloater = () => {
           rel="noreferrer"
         >
           <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
-            <img
-              alt="icon"
-              src="/images/icons8-facebook-48.png"
-              className="w-[30px] h-[30px]"
-            />
+            <FaFacebook size={"20px"} color="#fff" />
           </div>
         </a>
         <a
@@ -71,11 +55,7 @@ const FixedFloater = () => {
           rel="noreferrer"
         >
           <div className="lg:w-[50px] lg:h-[50px] w-[35px] h-[35px] rounded-full bg-primary1 border border-secondary/30 shadow-xl center-flex">
-            <img
-              alt="icon"
-              src="/images/icons8-linkedin-48.png"
-              className="w-[30px] h-[30px]"
-            />
+            <FaLinkedin size={"20px"} color="#fff" />
           </div>
         </a>
       </div>

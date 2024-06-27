@@ -3,7 +3,7 @@ import { useAppContext } from "../../contexts/AppContext";
 import { GiSplash } from "react-icons/gi";
 import { useSelector } from "react-redux";
 
-const Section2 = ({}) => {
+const Section2 = () => {
   const { allPodcasts } = useSelector((state) => state.dataManagement);
 
   const { handleToggleModal } = useAppContext();
@@ -11,7 +11,7 @@ const Section2 = ({}) => {
   const latestEpisode = allPodcasts?.[0];
 
   return (
-    <div className="w-full bg-[#ffa88c] text-primary1 pb-[80px] px-3 pt-10 md:pt-0 relative">
+    <div className="w-full bg-[#ff4402]/70 text-white pb-[80px] px-3 pt-10 md:pt-0 relative">
       <div className="w-full">
         <h3 className="text-center mb-10 md:mb-5">Latest Episode</h3>
 

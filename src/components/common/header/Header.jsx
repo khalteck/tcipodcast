@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { IoShareSocial } from "react-icons/io5";
 
 const Header = () => {
-  const { isScrolled, setIsScrolled, navigate, handleScrollTo, currentPage } =
+  const { isScrolled, toggleComm, navigate, handleScrollTo, currentPage } =
     useAppContext();
 
   const user = useSelector((state) => state.user.user);
@@ -45,7 +45,7 @@ const Header = () => {
                 <Logo type={"secondary"} />
               </div>
 
-              <ul className="hidden md:flex gap-5 lg:gap-7 items-center font-medium text-[.7rem] lg:text-sm">
+              <ul className="hidden md:flex gap-5 lg:gap-7 items-center font-bold text-[.7rem] lg:text-sm">
                 <li className={`nav-link cursor-pointer hover:text-secondary`}>
                   <Link to={"/"}>Home</Link>
                 </li>
@@ -53,7 +53,10 @@ const Header = () => {
                   <Link to={"/about"}>About</Link>
                 </li>
                 <li
-                  onClick={() => handleScrollTo("community")}
+                  onClick={() => {
+                    handleScrollTo("community");
+                    toggleComm();
+                  }}
                   className={`nav-link cursor-pointer hover:text-secondary`}
                 >
                   Community

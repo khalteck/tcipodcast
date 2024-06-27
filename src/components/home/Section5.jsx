@@ -65,7 +65,6 @@ const Section5 = () => {
 
   return (
     <div className="w-full bg-slate-50/90 text-primary1">
-      <Divider />
       <section
         id="community"
         className="py-[80px] md:pb-[80px] flex flex-col md:flex-row md:items-center gap-10"

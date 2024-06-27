@@ -26,20 +26,20 @@ const Popup = ({ onClose }) => {
             className="w-[200px] h-auto mx-auto"
           />
           <p className="text-center">
-            We’re excited to announce our new mini-series, Immigrants Corner!
+            We are excited to announce our new mini-series, Immigrants Corner!
             This is where we bring you the heartfelt and inspiring stories of
             immigrants from all over the world. Real people, real journeys, real
             emotions.
             <br />
-            <br /> Stay tuned as we get ready to launch. Whether you’re in the
+            <br /> Stay tuned as we get ready to launch. Whether you are in the
             UK or anywhere else on this globe, your story matters to us, and we
-            want to share it with everyone. This isn’t just a series – it’s a
-            celebration of our shared experiences and a chance to connect with a
+            want to share it with everyone. This is not just a series – it is a
+            recognition of our shared experiences and a chance to connect with a
             community that truly understands.
             <br />
-            <br /> We can’t wait to bring you along on this incredible journey.
-            Keep an eye out, because Immigrants Corner is coming soon, and we’d
-            love for you to be a part of it!
+            <br /> We cannot wait to bring you along on this incredible journey.
+            Keep an eye out, because Immigrants Corner is coming soon, and we
+            would love for you to be a part of it!
           </p>
         </div>
       </div>
