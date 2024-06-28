@@ -5,7 +5,7 @@ import { useAppContext } from "../../../contexts/AppContext";
 import Logo from "../Logo";
 
 const Footer = () => {
-  const { handleScrollTo, navigate } = useAppContext();
+  const { handleScrollTo, navigate, toggleComm } = useAppContext();
   return (
     <footer className="text-center bg-primary1 text-white lg:text-left">
       <div className="pt-[60px] text-left px-5 lg:px-[100px]">
@@ -36,7 +36,7 @@ const Footer = () => {
               </Link>
             </p>
             <p
-              onClick={() => handleScrollTo("about")}
+              onClick={() => navigate("/about")}
               className="mb-4 cursor-pointer"
             >
               About
@@ -47,7 +47,10 @@ const Footer = () => {
               </Link>
             </p>
             <p
-              onClick={() => handleScrollTo("community")}
+              onClick={() => {
+                handleScrollTo("community");
+                toggleComm();
+              }}
               className="mb-4 cursor-pointer"
             >
               Community
@@ -57,10 +60,7 @@ const Footer = () => {
                 Immigrants Corner
               </Link>
             </p>
-            <p
-              onClick={() => handleScrollTo("contact")}
-              className="cursor-pointer"
-            >
+            <p onClick={() => navigate("/contact")} className="cursor-pointer">
               Contact
             </p>
           </div>
