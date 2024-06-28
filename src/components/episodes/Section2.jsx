@@ -29,7 +29,8 @@ const Section2 = () => {
             <div className="w-full md:w-[55%]">
               <img
                 alt="hero"
-                src={latestEpisode?.thumbnail}
+                // src={latestEpisode?.thumbnail}
+                src="/images/Spotify Cover -100.jpg"
                 className="w-full h-auto object-cover rounded-[50px]"
               />
             </div>

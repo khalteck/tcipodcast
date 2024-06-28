@@ -33,7 +33,7 @@ const Modal = ({ onClose, action }) => {
         </div>
         <div className="flex flex-col gap-3 mt-5">
           <p className="font-bold">Listen on:</p>
-          <div className="flex flex-wrap justify-center gap-4 items-center">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 items-center">
             <a href={podcast?.spotifyLink} target="_blank" rel="noreferrer">
               <button className="btn-custom4 w-fit">
                 Spotify{" "}

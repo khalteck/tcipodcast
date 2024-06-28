@@ -76,7 +76,8 @@ const Section3 = () => {
                 data-aos="zoom-in"
                 data-aos-duration="1000"
                 alt="hero"
-                src={latestEpisode?.thumbnail}
+                // src={latestEpisode?.thumbnail}
+                src="/images/Spotify Cover -100.jpg"
                 className="w-full h-auto md:max-h-[700px] object-cover rounded-[50px]"
               />
             </div>
