@@ -78,7 +78,7 @@ const Section2 = () => {
             className="w-full h-auto md:h-[700px] object-cover rounded-[50px]"
           />
         </div>
-        <div className="w-full md:w-1/2 flex items-center justify-center text-center px-3 pb-[80px] md:p-[50px] xl:md:p-[80px]">
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center px-3 pb-[80px] md:p-[50px] xl:md:p-[80px]">
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -89,13 +89,25 @@ const Section2 = () => {
               Volunteer with Us
             </h4>
             <p>
-              We need a Community Manager who is passionate about global
-              migration and community building. This is a volunteer role perfect
-              for someone with creative ideas and a love for connecting with
-              people. We are also looking for enthusiastic volunteers to help
-              with our podcast, assist with the creative process, and contribute
-              to our projects. Your efforts will help us share meaningful
-              stories and build a supportive global community.
+              We need a <strong>Community Manager</strong> passionate about
+              global migration and community building. This volunteer role is
+              perfect for someone with creative ideas and a love for connecting
+              with people. We also seek volunteers to help with our podcast, the
+              creative process, and other projects.
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            className="mt-10"
+          >
+            <h4 className="text-center font-bold text-[1.5rem] mb-3">
+              We Value Your Feedback
+            </h4>
+            <p>
+              Share your thoughts and suggestions to help us improve.
               <br />
               <br />
               Interested? Contact us at{" "}
@@ -108,32 +120,6 @@ const Section2 = () => {
               – we cannot wait to hear from you!
             </p>
           </div>
-
-          {/* <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-            className="mt-10"
-          >
-            <h4 className="text-center font-bold text-[1.5rem] mb-3">
-              Be Our Next Podcast Guest
-            </h4>
-            <p>
-              Have you ever wanted to share your immigration journey? Now is
-              your chance! Join us on The Chronicles of an Immigrant Podcast and
-              let your story inspire our global community. It does not matter
-              where you are in the UK – if you are an immigrant, we want to hear
-              from you!
-              <br />
-              <br />
-              <a
-                href="mailto:hello@tcipod.com"
-                className="underline text-secondary2"
-              >
-                hello@tcipod.com
-              </a>
-            </p>
-          </div> */}
         </div>{" "}
       </div>
     </section>
